@@ -1,0 +1,13 @@
+{
+
+    "viewportWidth": 2024,
+    "viewportHeight": 1080,
+    "chromeWebSecurity": false,
+    "defaultCommandTimeout": 15000,
+    "numTestsKeptInMemory": 5,
+    "requestTimeout": 15000,
+    "video": false,
+    "defaultCommandTimeout": 60000,
+    "responseTimeout": 300000
+
+}
