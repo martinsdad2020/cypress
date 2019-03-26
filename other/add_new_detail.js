@@ -1,4 +1,4 @@
-//Главная страница, авторизация
+//Главная страница, авторизация sfgsdfgsdfgsdfsd
 var mail = '#form-email'
 var pass = '#form-password'
 var enter = '.ng-scope.ng-valid-minlength > :nth-child(2) > .btn'
@@ -26,7 +26,7 @@ var submit_detail = '[actions="confirmActions"] > .btn'//Кнопка пдтве
 //Оцениваем деталь
 var price_menu = ':nth-child(2) > .nav > :nth-child(2) > .ng-binding'//Неоценне
 var car_type = '#filter-type'//Поле грузовые-легковые
-var car_content = '#content'//Поля марка модель и номер авто (поиск тоже)
+var car_content = '#content'//Поля марка модель и номер авто (поиск тоже)ds
 var success = '.pull-right > .btn-success'//Кнопка применить (поиск тоже)
 var details = '.collectionTable__container'//Область с найденными деталями (поиск тоже)
 var detail_profile = '.app__content'//Профиль детали
