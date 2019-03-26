@@ -38,7 +38,7 @@ var info_detail = '.partsView__info'//Информация в профиле о 
 
 var magaz_detail = 'https://magaz.apgrup.ru/cars/audi/a3/a3-8pa-2004-2013/dvigatel/absorber-filtr-ugolnyy/00022112180012/'
 
-describe("добавление детали в систему", function() 
+describe("добавление детали в систему", function() {
    before('cookie', function() {
       cy.setCookie('guid-1', '%7BF297B6FE-1AA5-EB18-DA2F-5F9037E08528%7D')
       cy.server();
