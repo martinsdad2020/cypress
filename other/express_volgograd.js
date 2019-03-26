@@ -9,7 +9,7 @@ describe('Экспресс Волгоград', function() {
 
       it('visit', function() {
       cy.clearCookies()
-      cy.visit('https://express.apgrup.ru')
+      cy.visit('https://express.apgrup.ru')//fdf
 })
 
 //Авторизация
@@ -111,5 +111,3 @@ describe('Экспресс Волгоград', function() {
 })
 
 })
-
-
