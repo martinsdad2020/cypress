@@ -1,4 +1,4 @@
-//Главная страница, авторизация sfgsdfgsdfgsdfsd
+//Главная страница, авторизация sfgsdfgsdfgsdfsddgdf
 var mail = '#form-email'
 var pass = '#form-password'
 var enter = '.ng-scope.ng-valid-minlength > :nth-child(2) > .btn'
