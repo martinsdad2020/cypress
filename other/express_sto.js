@@ -27,7 +27,7 @@ describe('Экспресс СТО', function() {
 
 //Город и компания
    it('gorod and company', function() {
-      cy.get('._container_1k0mk_7 > :nth-child(3)')
+      cy.get('._container_1k0mk_7')
           .contains(',00')
           .should('be.visible')
       cy.get(':nth-child(1) > [style="width: 164px;"] > .link')
