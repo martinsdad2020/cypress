@@ -16,7 +16,7 @@ describe('Экспресс СТО', function() {
 
    it('visit', function() {
        cy.clearCookies()
-       cy.visit('https://express.apgrup.ru')
+       cy.visit('https://express.apgrup.ru');
 })
 
 //Авторизация
