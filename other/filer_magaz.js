@@ -14,7 +14,7 @@ describe("filter", function() {
       cy.get('.hmqi').contains('Все').click();
       cy.get('.En5g > .NXKZ > ._3hEL').click();
       cy.get('._3Sgn').contains('По возрастанию цены').click();
-      cy.get('._444m').contains('Фиксатор замка двери Dodge Journey c 2009 г.').should('be.visible');
+      cy.get('._444m').contains('Ручка двери задней наружная Dodge Intrepid 1998-2004').should('be.visible');
       cy.get('.En5g > .NXKZ > ._3hEL').click();
       cy.get('._3Sgn').contains('По убыванию цены').click();
       cy.get('._444m').contains('Двигатель Dodge Ram (DR/DH) 2001-2009').should('be.visible');
