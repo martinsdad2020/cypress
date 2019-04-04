@@ -2,6 +2,7 @@
 let mail = '#form-email'
 let pass = '#form-password'
 let enter = '.ng-scope.ng-valid-minlength > :nth-child(2) > .btn'
+let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
 //Добавляем новую деталь
 let prihod_menu = '.sidebar__menu > :nth-child(4) > :nth-child(1) > .ng-binding'//Приходные накладные
 let add_prihod = 'span.ng-scope > .btn'//Кнопка добавить приходную накладную
@@ -44,8 +45,7 @@ describe("добавление детали в систему", function() {
       cy.server();
       cy.route('GET', 'https://api.apgrup.ru/app_dev.php/v1/*')
         .as('ww');
-
-  });
+});
 
     it("visit apgrup", function() {
       cy.visit("https://apgrup.ru");
@@ -60,19 +60,18 @@ describe("добавление детали в систему", function() {
         .type('123456');
       cy.get(enter)
         .click();
-      cy.wait('@ww');
-      cy.wait('@ww');
+      // cy.wait('@ww');
+      // cy.wait('@ww');
+});
 
- });
-
-    it('pick ruusian village', function(){
-      cy.get('.sidebar__label')
-        .contains('Склад')
-        .next()
-        .click();
-      cy.get('.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup')
-        .contains('РУССКАЯ ДЕРЕВНЯ')
-        .click();
+ it('pick ruusian village', function(){
+   cy.get('.sidebar__label')
+     .contains('Склад')
+     .next()
+     .click();
+   cy.get(storages) // выпадающий список со складами
+     .contains('РУССКАЯ')
+     .click();
 });
 
     it('add new detail', function() {

@@ -39,7 +39,7 @@ describe("добавление детали в систему", function() {
         .next()
         .click();
       cy.get(storages) // выпадающий список со складами
-        .contains(' РУССКАЯ ДЕРЕВНЯ')
+        .contains('РУССКАЯ')
         .click();
 });
 
