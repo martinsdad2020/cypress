@@ -71,7 +71,7 @@ describe("добавление детали в систему", function() {
         .next()
         .click();
       cy.get('.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup')
-        .contains(' РУССКАЯ ДЕРЕВНЯ')
+        .contains('РУССКАЯ ДЕРЕВНЯ')
         .click();
 });
 
