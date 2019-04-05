@@ -1,4 +1,3 @@
-//Главная страница, авторизация
 let login = '#form-email'
 let password = '#form-password'
 let enter = '.ng-scope.ng-valid-minlength > :nth-child(2) > .btn'

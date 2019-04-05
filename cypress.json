@@ -7,7 +7,7 @@
     "numTestsKeptInMemory": 5,
     "requestTimeout": 15000,
     "video": false,
-    "defaultCommandTimeout": 60000,
+    "defaultCommandTimeout": 10000,
     "responseTimeout": 300000
 
 }

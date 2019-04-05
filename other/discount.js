@@ -29,8 +29,8 @@ describe("добавление детали в систему", function() {
         .type('123456');
       cy.get(enter)
         .click();
-      // cy.wait('@ww');
-      // cy.wait('@ww');
+      cy.wait('@ww');
+      cy.wait('@ww');
 });
 
     it('pick ruusian village', function(){
