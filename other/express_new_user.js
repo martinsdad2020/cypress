@@ -7,8 +7,8 @@ let fieldPhone = '._1sdN5 > div > .form-control' // поле телефон
 let fieldCode = '#order-code' // поле кода подтверждения
 let profile = '._2JR3u' // личный кабинет(мыло)
 
-describe('Экспресс новый юзер', function() {
-  beforeEach('cookie', function() {
+describe('express new user', function() {
+  before('cookie', function() {
    cy.server()
       cy.route('GET', 'https://api-express.apgrup.ru/app_dev.php/v2/partnames/existing').as('ww');
       cy.route('GET', 'https://api-express.apgrup.ru/app_dev.php/v1/checkspam/sms?type=alfadetali').as('ee');
