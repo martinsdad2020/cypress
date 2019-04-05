@@ -142,16 +142,4 @@ describe('add new detail', function() {
         .contains('Открыть в магазине')
         .click();
 });
-
-    /*it('go to magaz', function() {
-      cy.visit(magaz_detail)
-      cy.get('#search-page > div > div._2OVU > div._444m > div.awAG')
-          .contains('777')
-          .should('be.visible')
-      cy.get('#search-page > div > div._2OVU > div._444m > div.awAG')
-          .contains('Купить')
-          .should('be.visible')
-
-    })*/
-
 });
