@@ -21,7 +21,7 @@ describe('express new user', function() {
 
 //Авторизация
     it('auth', function() {
-      cy.get(login).type('nokenivune@datasoma.com').should('value', 'nokenivune@datasoma.com');
+      cy.get(login).type('nokenivune_prod@datasoma.com').should('value', 'nokenivune_prod@datasoma.com');
       cy.get(password).click().type('123456');
       cy.get('._3REB8').contains('Войти').click();
 });
