@@ -2,13 +2,14 @@ let login = '#form-email'
 let password = '#form-password'
 let enter = '.ng-scope.ng-valid-minlength > :nth-child(2) > .btn'
 let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
+let companies = '.sidebar__menu > :nth-child(1) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
 let name = '#form-name'
 let phone = '#form-phoneNumber'
 let para = ':nth-child(15) > :nth-child(2) > a'
 
 describe('Create an order', function() {
    before('cookie', function() {
-      cy.setCookie('guid-1', '%7BF297B6FE-1AA5-EB18-DA2F-5F9037E08528%7D')
+      cy.setCookie('guid-1', '%7B67F7C782-1A21-C70D-DC3F-4C2B6CA27E6B%7D')
       cy.server();
       cy.route('GET', 'https://api.apgrup.ru/app_dev.php/v1/*')
         .as('ww');
@@ -24,7 +25,7 @@ describe('Create an order', function() {
       cy.get(password)
         .click()
         .clear()
-        .type('123456');
+        .type('654321');
       cy.get(enter)
         .click();
       cy.wait('@ww');
@@ -32,6 +33,13 @@ describe('Create an order', function() {
 });
 
     it('pick ruusian village', function(){
+      cy.get('.sidebar__label')
+        .contains('Компания')
+        .next()
+        .click();
+      cy.get(companies) // выпадающий список со складами
+        .contains('Альфа')
+        .click();
       cy.get('.sidebar__label')
         .contains('Склад')
         .next()
@@ -66,7 +74,7 @@ describe('Create an order', function() {
       cy.get('.app__content')
         .contains('Создать')
         .click();
-      cy.wait(5000);
+      cy.wait(2000);
       cy.get('.messengerUpload')
         .contains('Предзаказ №')
         .should('be.visible');
@@ -95,7 +103,7 @@ describe('Create an order', function() {
         .should('be.visible')
         .click();
       cy.get('.modal-body')
-        .contains('A8 [D4] 2010-2017')
+        .contains('A8 [D4] 2010 - 2017')
         .should('be.visible')
         .click();
       cy.get('[style="margin-bottom: 20px"] > :nth-child(1) > .row > :nth-child(2) > div.ng-scope > .form-control') // поле наименование
@@ -110,7 +118,7 @@ describe('Create an order', function() {
         .contains('Система охлаждения');
       cy.get('.pull-right > .btn-success') // кнопка применить во всплывающем поиске
         .click({force:true});
-      cy.wait(5000);
+      cy.wait(2000);
       cy.get('.partsQuickSearch__content')
         .contains('Всего: 0')
         .should('be.visible');
@@ -128,7 +136,7 @@ describe('Create an order', function() {
       cy.get('.modal-footer')
         .contains('Создать')
         .click();
-      cy.wait(5000);
+      cy.wait(2000);
       cy.get('body > div.app')
         .contains('работе')
         .should('be.visible');

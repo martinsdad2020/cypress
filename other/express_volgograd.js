@@ -26,18 +26,14 @@ describe('Экспресс Волгоград', function() {
     it('gorod and company', function() {
       cy.get('._NY4w').contains(',00').should('be.visible');
       cy.get('._2rfW9').contains('Бампер задний').click();
-      // cy.get('._15-2L').contains('Компания').should('not.be.visible');
       cy.get('.nmPIX').contains('Город').should('be.visible');
-      // cy.get('._15-2L').contains('Показать телефон').should('not.be.visible');
       cy.get('._3Bz1P').click();
-      // cy.wait(3000);
 });
 
     it('add and order', function() {
       cy.get(addBasket).click();
       cy.get(basket).click();
       cy.get('._3Szvf').contains('Оформить заказ').click();
-      // cy.wait(3000);
       cy.get('._3Szvf').contains('Подтвердить').click();
       cy.get('body').contains('Заказ оформлен, спасибо!').should('be.visible');
 });
