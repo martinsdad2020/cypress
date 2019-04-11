@@ -69,6 +69,7 @@ describe("magaz pay", function() {
           .contains('Яндекс')
           .click();
         cy.get('#pay-form-submit')
+          .contains('Продолжить')
           .click();
         cy.get('.page-wrapper')
           .contains('Эмулировать оплату')

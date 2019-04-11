@@ -2,10 +2,11 @@ let login = '#form-email'
 let password = '#form-password'
 let enter = '.ng-scope.ng-valid-minlength > :nth-child(2) > .btn'
 let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
+let companies = '.sidebar__menu > :nth-child(1) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
 
 describe('add new detail', function() {
    before('cookie', function() {
-      cy.setCookie('guid-1', '%7BF297B6FE-1AA5-EB18-DA2F-5F9037E08528%7D')
+      cy.setCookie('guid-1', '%7B67F7C782-1A21-C70D-DC3F-4C2B6CA27E6B%7D')
       cy.server();
       cy.route('GET', 'https://api.apgrup.ru/app_dev.php/v1/*')
         .as('ww');
@@ -21,14 +22,21 @@ describe('add new detail', function() {
       cy.get(password)
         .click()
         .clear()
-        .type('123456');
+        .type('654321');
       cy.get(enter)
         .click();
       cy.wait('@ww');
-      cy.wait('@ww');
+      // cy.wait('@ww');
 });
 
     it('pick ruusian village', function(){
+      cy.get('.sidebar__label')
+        .contains('Компания')
+        .next()
+        .click();
+      cy.get(companies) // выпадающий список со складами
+        .contains('Альфа')
+        .click();
       cy.get('.sidebar__label')
         .contains('Склад')
         .next()
@@ -41,8 +49,8 @@ describe('add new detail', function() {
     it('add new detail', function() {
       cy.get('.sidebar__menu')
         .contains('Приходные накладные')
-        .click();
-      cy.wait(3000);
+        .click({force:true});
+      cy.wait(2000);
       cy.get('.app__content')
         .contains('Добавить')
         .click();
@@ -67,7 +75,7 @@ describe('add new detail', function() {
       cy.get('.modal-body')
         .contains('Добавить деталь')
         .click();
-      cy.wait(2000);
+      cy.wait(1000);
 });
 
     it('add new car', function() {
@@ -84,13 +92,13 @@ describe('add new detail', function() {
       cy.get('#carPiсker-generation')
         .click()
       cy.get(':nth-child(2) > .col-sm-8 > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup') // список с поколениями
-        .contains('A3 [8PA] 2004-2013')
+        .contains('A3 [8PA] 2004 - 2013')
         .click();
       cy.get(':nth-child(2) > .panel-body')
         .contains('Добавить')
         .click();
       cy.get('tbody > tr.ng-scope > :nth-child(3)') // область для проверки поколения авто на видимость после добавления к детали в окне ред.
-        .contains('A3 [8PA] 2004-2013')
+        .contains('A3 [8PA] 2004 - 2013')
         .should('be.visible');
 });
 

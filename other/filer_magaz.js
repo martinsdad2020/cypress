@@ -5,6 +5,7 @@ describe("filter", function() {
      cy.visit("https://magaz.apgrup.ru");
 })
      it('filter', function() {
+      cy.get('._18TB').contains('Все марки').click();
       cy.get('._18TB').contains("Dodge").click();
       cy.get('._1R8- > :nth-child(1)').contains('Кронштейн радиатора Dodge Caliber 2006-2011').should('be.visible');
       cy.get('.hmqi').contains('Б/У').click();
