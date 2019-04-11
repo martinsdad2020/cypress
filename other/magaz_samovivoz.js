@@ -64,6 +64,6 @@ describe("магаз самовывоз", function() {
         cy.get('#root > div')
             .contains('Спасибо за ваш заказ!')
             .should('be.visible')
-   })
 
-})
+});
+});
