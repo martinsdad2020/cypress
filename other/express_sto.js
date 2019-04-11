@@ -32,7 +32,6 @@ describe('express sto', function() {
        cy.get('._15-2L').contains('Показать телефон').should('be.visible').click();
        cy.get('._15-2L').contains('Контактная информация').should('be.visible');
        cy.get('._3Bz1P').click();
-       // cy.wait(3000);
 });
 
    it('add and order', function() {
@@ -40,7 +39,6 @@ describe('express sto', function() {
        cy.get(callButton).should('be.visible');
        cy.get(basket).click();
        cy.get('._3Szvf').contains('Оформить заказ').click();
-       // cy.wait(3000);
        cy.get('._3Szvf').contains('Подтвердить').click();
        cy.get('body').contains('Заказ оформлен, спасибо!').should('be.visible');
 });
