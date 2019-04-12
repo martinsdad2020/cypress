@@ -209,11 +209,10 @@ describe("магаз", function() {
         cy.get('._1rlq')
           .contains('Вся информация, представленная на сайте alfadetali.ru')
           .should('be.visible')
-})
+});
 
-
-
-/*авторизация с правильной почтой и неправильным паролем
+//авторизация с правильной почтой и неправильным паролем
+     it('wrong password', function() {
         cy.get('._1yzC')
             .contains('Вход / Регистрация')
             .click()
@@ -223,35 +222,14 @@ describe("магаз", function() {
         cy.get('div:nth-child(1) > label > input')
             .click()
             .clear()
-            .type('juluwunu@geroev.net')
+            .type('parole@provider.com')
         cy.get('div:nth-child(2) > label > input')
             .click()
-            .type('123456')
+            .type('1234567')
         cy.get('form > button')
             .click()
         cy.get('._32Go')
             .contains('Неверный пароль')
-            .should('be.visible') // КАПЧА!!!
-
-
-
-//авторизация с правильной почтой и правильным паролем
-        cy.get('._1yzC')
-            .contains('Вход / Регистрация')
-            .click()
-        cy.get('._11Gk')
-            .contains('Вход')
             .should('be.visible')
-        cy.get('div:nth-child(1) > label > input')
-            .click()
-            .clear()
-            .type('juluwunu@geroev.net')
-        cy.get('div:nth-child(2) > label > input')
-            .click()
-            .type('000000')
-        cy.get('form > button')
-            .click()
-        cy.get('._1yU2')
-            .contains('Личный кабинет')
-            .should('be.visible')*/
-})
+});
+});
