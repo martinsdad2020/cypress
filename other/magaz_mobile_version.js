@@ -127,7 +127,7 @@ describe('mobile version magaz', function() {
           .should('be.visible')
           .click()
       cy.get('[data-reactroot=""]')
-          .contains('ZX')
+          .contains('ZAZ')
           .should('be.visible')
       cy.get('[data-reactroot=""]')
           .contains('Грузовые')
