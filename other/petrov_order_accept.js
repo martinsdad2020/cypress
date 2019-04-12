@@ -242,7 +242,7 @@ describe('Create an order', function() {
       cy.wait(1000);
       cy.get('.col-md-8')
         .contains('№')
-        .click();
+        .click({force:true});
       cy.wait(2000);
       cy.get('.app__content')
         .contains('Закрыт')

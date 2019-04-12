@@ -17,16 +17,13 @@ describe('add new detail', function() {
 
       cy.get(login)
         .click()
-        .clear()
         .type('ra-nt-office@yandex.ru');
       cy.get(password)
         .click()
-        .clear()
         .type('654321');
       cy.get(enter)
         .click();
       cy.wait('@ww');
-      // cy.wait('@ww');
 });
 
     it('pick ruusian village', function(){
