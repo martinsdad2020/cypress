@@ -101,7 +101,7 @@ describe('Create an order', function() {
           .contains('1')
           .should('be.visible');
         cy.get('.tab-pane.active > .panel.ng-scope > [filter-fields="$parent.undefined"] > .collection__wrapper > .collectionTable > .collectionTable__wrapper > .collectionTable__container > .collectionTable__table > .table > tbody > tr.ng-scope > .collectionTable__popover-wrapper > .collectionTable__popover > .ng-scope > .fa') // бургер
-          .click();
+          .click({force:true});
         cy.get('.contextPopover')
           .contains('Удалить')
           .click();
