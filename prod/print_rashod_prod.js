@@ -1,6 +1,6 @@
-var mail = '#form-email'
-var pass = '#form-password'
-var enter = '.ng-valid-email.ng-valid-minlength > :nth-child(2) > .btn'
+let mail = '#form-email'
+let pass = '#form-password'
+let enter = '.ng-valid-email.ng-valid-minlength > :nth-child(2) > .btn'
 
 describe("status", function() {
    before('cookie', function() {

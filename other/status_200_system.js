@@ -1,53 +1,18 @@
-//Главная страница, авторизация
-var mail = '#form-email'
-var pass = '#form-password'
-var enter = '.ng-scope.ng-valid-minlength > :nth-child(2) > .btn'
-//Добавляем новую деталь
-/*var prihod_menu = '.sidebar__menu > :nth-child(4) > :nth-child(1) > .ng-binding'//Приходные накладные
-var add_prihod = 'span.ng-scope > .btn'//Кнопка добавить приходную накладную
-var add_detail = 'header.ng-scope > span.ng-scope > .btn'//Кнопка Добавить деталь в приходной
-var edit_detail = '.modal-body'//Окно редактирования детали
-var group = 'div:nth-child(1) > div.fields > div:nth-child(1) > div > div:nth-child(1) > div'//Поле группа в окне ред.
-var nomination = 'div.fields > div:nth-child(2) > div > div:nth-child(1) > div'//Поле наименование в окне ред.
-var amount = '#form-quantity'//Поле количества деталей
-var add_edit_detail = '.col-sm-9 > .btn'//Кнопка добавить деталь в окне ред.
-//Список моделей в окне ред.
-var pick_car = 'div:nth-child(2) > div.panel-body.ng-scope > div > form > div:nth-child(1) > div:nth-child(2) > div'//Выбор марки авто в окне ред.
-var pick_model = 'div > form > div:nth-child(1) > div:nth-child(3)'//Выбор модели в окне ред.
-var pick_number = 'div:nth-child(2) > div.panel-body.ng-scope > div > form > div:nth-child(2) > div.col-sm-8 > div'//Выбор номера модели в окне ред.
-var add_car = ':nth-child(2) > .col-sm-4 > .btn'//Кнопка добавить в списке выбора авто в окне ред.
-//Поле дефект
-var defect = 'div.panel.panel-default.ng-scope.ng-binding > div.panel-body.ng-scope > form > div > div.col-sm-8 > div'//Поле выбора дефекта в окне ред.
-var add_defect = '.panel-body > form.ng-valid > .row > .col-sm-4 > .btn'//Кнопка добавить дефект в окне ред.
-var close_edit = '.popup__close'//Закрыть окно ред.
-//Подтверждаем деталь
-var checkbox_all_detail = 'div.collectionTable__wrapper > div > div > table > thead > tr > th:nth-child(2) > label > div'//Чекбокс в приходных деталях
-var submit_detail = '[actions="confirmActions"] > .btn'//Кнопка пдтвердить в приходной накладной
-//Оцениваем деталь
-var price_menu = ':nth-child(2) > .nav > :nth-child(2) > .ng-binding'//Неоценненые
-var car_type = '#filter-type'//Поле грузовые-легковые
-var car_content = '#content'//Поля марка модель и номер авто (поиск тоже)
-var success = '.pull-right > .btn-success'//Кнопка применить (поиск тоже)
-var details = '.collectionTable__container'//Область с найденными деталями (поиск тоже)
-var detail_profile = '.app__content'//Профиль детали
-var set_price = 'p.ng-scope > span.ng-scope > [ng-click="click(0)"]'//Кнопка оценить в профиле детали
-var selling_price = '#form-sellingPrice'//Цена продажи
-var purchase_price = '#form-purchasePrice'//Цена покупки
-var save = '.form__input > .btn'//Кнопка сохранить в окне оценить деталь
-var info_detail = '.partsView__info'//Информация в профиле о детали*/
-//for (let i = 0; i < 10; i++) {
-describe("status", function() {
-   beforeEach('cookie', function() {
-      cy.setCookie('guid-1', '%7BD9AD05E2-2345-B16A-3E61-8593AF2A620A%7D')
-      /*cy.server();
-        cy.route('GET', 'https://api.apgrup.ru/app_dev.php/v1/companies/1/suppliers').as('SUP');
-        cy.route('GET', 'https://api.apgrup.ru/app_dev.php/v1/partgroups').as('PTG');
-        cy.route('GET', 'https://api.apgrup.ru/app_dev.php/v1/storages/11/reservesbuyers').as('RES');
-        cy.route('GET', 'ttps://api.apgrup.ru/app_dev.php/v1/employee').as('EMP');
-        cy.route('GET', '/app_dev.php/v1/storages/11/partsinorder/').as('PAR');*/
-  })
+let login = '#form-email'
+let password = '#form-password'
+let enter = '.ng-scope.ng-valid-minlength > :nth-child(2) > .btn'
+let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
+let companies = '.sidebar__row'
 
-    it("Auth", function() {
+describe("status", function() {
+   before('cookie', function() {
+      cy.setCookie('guid-1', '%7B67F7C782-1A21-C70D-DC3F-4C2B6CA27E6B%7D')
+      cy.server();
+      cy.route('GET', 'https://api.apgrup.ru/app_dev.php/v1/*')
+        .as('ww');
+   });
+
+   it("Auth", function() {
       cy.visit("https://apgrup.ru")
 
       cy.get(mail)
@@ -57,11 +22,11 @@ describe("status", function() {
       cy.get(pass)
           .click()
           .clear()
-          .type('123456')
+          .type('654321')
       cy.get(enter)
           .click()
       cy.wait(4000)
-})
+   });
 
     it('Prihodnie', function() {
       cy.get('body > div.app > div > div.sidebar.ng-scope.sidebar--active > div.sidebar__content > div.sidebar__menu > div')
@@ -765,5 +730,3 @@ describe("status", function() {
           //cy.wait('@EMP').its('status').should('eq', 200)
 })*/
 })
-
-
