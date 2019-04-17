@@ -2,7 +2,7 @@ let login = '#form-email'
 let password = '#form-password'
 let enter = '.ng-scope.ng-valid-minlength > :nth-child(2) > .btn'
 let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
-let companies = '.sidebar__menu > :nth-child(1) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
+let companies = '.sidebar__row'
 
 describe('add new detail', function() {
    before('cookie', function() {
@@ -32,7 +32,7 @@ describe('add new detail', function() {
         .next()
         .click();
       cy.get(companies) // выпадающий список со складами
-        .contains('Альфа')
+        .contains('АльфаДетали')
         .click();
       cy.get('.sidebar__label')
         .contains('Склад')
