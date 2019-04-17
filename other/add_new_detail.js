@@ -41,6 +41,7 @@ describe('add new detail', function() {
       cy.get(storages) // выпадающий список со складами
         .contains('РУССКАЯ')
         .click();
+      cy.wait(3000);
 });
 
     it('add new detail', function() {
