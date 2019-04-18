@@ -113,5 +113,4 @@ describe('Create an order', function() {
           .contains('0')
           .should('be.visible');
       });
-
-});
+   });
