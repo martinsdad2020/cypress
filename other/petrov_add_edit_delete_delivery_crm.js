@@ -38,7 +38,7 @@ describe('Create an order', function() {
         .next()
         .click();
       cy.get(companies) // выпадающий список со складами
-        .contains('Альфа')
+        .contains('АльфаДетали')
         .click();
       cy.get('.sidebar__label')
         .contains('Склад')
