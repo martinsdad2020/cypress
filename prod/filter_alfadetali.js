@@ -59,7 +59,7 @@ describe('Filter', function() {
       .contains('Сначала б/у')
       .click();
     cy.get('._444m')
-      .contains('Бампер передний Dodge Journey c 2009 г.')
+      .contains('Кронштейн крепления крыла Dodge Caliber 2006 - 2011')
       .should('be.visible');
     cy.get('.En5g > .NXKZ > ._3hEL')
       .click();
