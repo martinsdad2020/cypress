@@ -1,0 +1,464 @@
+[33mcommit 11e73cae81fc682c4eb4751117e9a5d1f5556536[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: MD <martinsdad@icloud.com>
+Date:   Mon Apr 22 19:22:35 2019 +0300
+
+    second commit
+
+[33mcommit febd9f72a1ab04d64d32afa4610a186b2150ccc0[m
+Author: MD <martinsdad@icloud.com>
+Date:   Mon Apr 22 19:18:11 2019 +0300
+
+    first commit
+
+[33mcommit 3a53d28c6815b2f2d73c32833adcd5af90260bc3[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Mon Apr 22 17:53:05 2019 +0300
+
+    test
+
+[33mcommit 99eb4e4a7ac1204978c07899641070d31f5b107f[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Mon Apr 22 17:50:30 2019 +0300
+
+    go
+
+[33mcommit 0a958d402659831e489774f7515d7be1027e441c[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Mon Apr 22 16:15:23 2019 +0300
+
+    fix sto
+
+[33mcommit cbf195cafbd1bfe144f1bef66f3fd41b11f23691[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Mon Apr 22 15:24:18 2019 +0300
+
+    тест
+
+[33mcommit ce0ea84af63151cecd3e47b7c6fbcb5d6e11d969[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Mon Apr 22 15:16:57 2019 +0300
+
+    NEW VS
+
+[33mcommit c06b19ccaed2605545a3f89048d4cd7ae08634fc[m
+Merge: c8f7e90 221f435
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Mon Apr 22 14:52:07 2019 +0300
+
+    Merge branch 'master' of https://github.com/martinsdad/myTests
+
+[33mcommit c8f7e90ab442fe4bcde643d07677ea4d97b12ac6[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Mon Apr 22 14:51:36 2019 +0300
+
+    fix
+
+[33mcommit 221f435b41261dd4b4d5dc011dba597c97853599[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 19 09:55:09 2019 +0300
+
+    add new script
+
+[33mcommit 1ad109d5e8770d261328df100cc0665313be1e80[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 19 09:54:21 2019 +0300
+
+    add new discount script
+
+[33mcommit 1797e91f2c87b760ef2e965740a0e9a1783928c1[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 19 09:53:53 2019 +0300
+
+    delete old
+
+[33mcommit df614eec035fd99527330ff3e1f259ca91b45b7a[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 19 09:51:46 2019 +0300
+
+    to other
+
+[33mcommit 58b635130debd8618d9afa8817203e66e70351e8[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 19 09:50:50 2019 +0300
+
+    new api test
+
+[33mcommit 854dbb54a02082db93e8abe23f0e97d49442287c[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Apr 18 19:55:06 2019 +0300
+
+    new
+
+[33mcommit fff0464a66a2ef38ed1f9f2f0162024a4340e7c9[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Apr 18 18:50:03 2019 +0300
+
+    fix and half rights script
+
+[33mcommit 1146caf449416c4ec2bca9d4b4552b3bd8acbfc4[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Apr 18 12:07:02 2019 +0300
+
+    fix
+
+[33mcommit 02be01074b10644ccc93c2f84c559f66e7b4a55c[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Apr 18 12:06:29 2019 +0300
+
+    fix
+
+[33mcommit 6dc7d4f8f9564ea9c6df127417bd1254250f560b[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Apr 17 18:44:33 2019 +0300
+
+    fixes
+
+[33mcommit 03d96b50d4683cb0077650c543169462e644c643[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Apr 17 17:41:45 2019 +0300
+
+    down
+
+[33mcommit cc7ba40e7b0e1a3a0425efbf4a63125d3dce0d54[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Apr 17 17:38:23 2019 +0300
+
+    new prod script
+
+[33mcommit e199161fc4ef96f1b897268481e13fd3e90838f0[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Apr 17 17:23:31 2019 +0300
+
+    new prod script
+
+[33mcommit e7b9fd572af26b5edfbecc5b58b47d5bb650731a[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Apr 17 17:10:53 2019 +0300
+
+    new script
+
+[33mcommit 617444465b7cef123636f94d275d42f303e9d1d7[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Apr 17 11:19:53 2019 +0300
+
+    added wait after choose storage
+
+[33mcommit 75cb4cd7e6629a559b9b77362d485a934c008eed[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Apr 17 11:16:52 2019 +0300
+
+    fixed selector for companies
+
+[33mcommit 3bf551c1b2070d4180b2f8721331502b00df9b30[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Apr 16 12:09:51 2019 +0300
+
+    delete rashod lite
+
+[33mcommit c977eb222415a61c4603620ccfb6449bb01f1a64[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Apr 16 11:51:53 2019 +0300
+
+    fix
+
+[33mcommit 4ed88b0c5c57587a7c22e01c0fe778d45267dbc9[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Apr 16 11:46:48 2019 +0300
+
+    fix
+
+[33mcommit 6b197d519b59cb3c8a419b3f9fd0b7a2699a866d[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Mon Apr 15 19:17:48 2019 +0300
+
+    new prod script smoke test press
+
+[33mcommit 3044353f1826d006738ca902637f2cdd1518f730[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Mon Apr 15 12:39:43 2019 +0300
+
+    new smoke test for alfadetali prod
+
+[33mcommit 986c3d4f818195b4acbef3743731bc6b4addbbca[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Mon Apr 15 12:21:01 2019 +0300
+
+    new prod script
+
+[33mcommit 51483fdd7bfefde820e0f423f3315a4ff0da3a4e[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 12 19:25:09 2019 +0300
+
+    delete old print scrips
+
+[33mcommit f218087ea2cd28bf374695ce2309a1ac363d1bab[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 12 19:24:08 2019 +0300
+
+    new big print script
+
+[33mcommit 2b55841c4a649976e75b15efbe44e2750ce20610[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 12 17:28:18 2019 +0300
+
+    fixed
+
+[33mcommit f1ea62c58e822d7bd065fae82ebd3cdfb1dd2da3[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 12 16:28:29 2019 +0300
+
+    fixed
+
+[33mcommit 9f1c7d75a1a0b57340b5bcf84a10c6a28d6914f8[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 12 16:26:15 2019 +0300
+
+    add del script
+
+[33mcommit 79990cf2c710da2ee455701864de8b602bb694eb[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 12 16:23:58 2019 +0300
+
+    new script
+
+[33mcommit cc403785dc4aeca24ba905b2fb95b3fea53629a3[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 12 15:40:11 2019 +0300
+
+    fixes
+
+[33mcommit 8357e17b7c4e5b96728455bf9478caa141ec5b53[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 12 13:59:54 2019 +0300
+
+    fixed and add new scripts
+
+[33mcommit 9e395ca16f3b1c2663af8907a92e0b6b230d8e14[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Apr 11 19:40:33 2019 +0300
+
+    FIX
+
+[33mcommit 9fa3e241749cec356df5dbf376879bf24c7c8f7b[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Apr 11 14:13:51 2019 +0300
+
+    fixed
+
+[33mcommit 32497669005ec0425d8707c9b59a205e1f764ea5[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Apr 11 13:07:54 2019 +0300
+
+    fixed
+
+[33mcommit 25046307513abb7b20b4ab7e74881eb096dbad1a[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Apr 11 12:53:09 2019 +0300
+
+    fixed
+
+[33mcommit 24d3cdbf3a84d1c8fe01f58b3275539c7a262356[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Apr 11 12:51:44 2019 +0300
+
+    delete waits
+
+[33mcommit 6b9081f0a380c2d22a0f2ce8efed379002c19207[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Apr 11 12:51:07 2019 +0300
+
+    fixed
+
+[33mcommit 4b27c808a5e45433057289616087dbbe28af7de4[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 5 19:22:24 2019 +0300
+
+    new scripts
+
+[33mcommit c6a4a2abd87ab86b112d63f1d1928900b96037bd[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 5 18:53:25 2019 +0300
+
+    fix
+
+[33mcommit 69df5d2f285c33d9cba0e20cc44e0aba2a7fca51[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 5 18:51:42 2019 +0300
+
+    fixes and new script
+
+[33mcommit a9c662307330bd62b5c12f4336ca33de2044037f[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 5 18:21:16 2019 +0300
+
+    fix new detail
+
+[33mcommit 238110e8c6fdf31a5e8db2f056b1d87d564a1e7b[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Fri Apr 5 18:20:17 2019 +0300
+
+    big fixes
+
+[33mcommit 3f7c160f75dafb8f662d9603632377a86a5add8e[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Apr 4 19:16:55 2019 +0300
+
+    big fix and refactoring
+
+[33mcommit 35600dca14265fb2944f8b8c974f09dff0b18179[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Apr 4 15:23:18 2019 +0300
+
+    fix russian village
+
+[33mcommit 37cf798f6e09164cb2d2dc12e2d0c911ce6d1e05[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Apr 3 18:55:05 2019 +0300
+
+    add discount script
+
+[33mcommit c31b8fe288ac39262c3e056c2c6875f9b1114abe[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Apr 3 15:16:19 2019 +0300
+
+    fix
+
+[33mcommit 6da42fb1021a2ae232c9a2a5e7d8c4544bb92596[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Apr 2 16:48:38 2019 +0300
+
+    dinamic selector for select storage
+
+[33mcommit 68cc2c4b951de6a5fe2a258d75806fce7901da94[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Mar 28 18:15:11 2019 +0300
+
+    ref express sto and volgograd
+
+[33mcommit 6e26740d8ac48d335ae3e9fd21df311a31854b58[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Mar 28 17:48:02 2019 +0300
+
+    ref exp new user
+
+[33mcommit 9627e3ce38adfe5d47f5dd7177c271dbe6692778[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Mar 28 17:36:02 2019 +0300
+
+    refactoring express_sto
+
+[33mcommit f13895876a17a87cd1cccbb8a17b2dfb597b8021[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Thu Mar 28 15:53:14 2019 +0300
+
+    refactoring express_new_user
+
+[33mcommit 671f6300379be12c077e974253c1232d277f2c82[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Mar 27 11:36:19 2019 +0300
+
+    sa
+
+[33mcommit a64a6f4e126a2d9aad3bafb63953344d30a2903a[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Mar 27 11:35:31 2019 +0300
+
+    as
+
+[33mcommit 8fc4620d330ac2d19addd56f48da4d26e9fa9226[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Mar 27 11:34:29 2019 +0300
+
+    settings cypress
+
+[33mcommit 9af2889480d60465c4b9b34b8c266759eb60a2b7[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Mar 27 11:34:01 2019 +0300
+
+    Delete dsdf
+
+[33mcommit 2031771e420631cec8bae7cfb130177b94b791e5[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Mar 27 11:32:40 2019 +0300
+
+    d
+    
+    s
+
+[33mcommit 7f040f87b1102ea9683ef26783f0e87b6d63f8b0[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Mar 27 11:23:41 2019 +0300
+
+    delete json cypress and add new cyget for express_sto
+
+[33mcommit 9886af06e039e002922f95de01e1a3f5fde8f389[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Wed Mar 27 11:03:52 2019 +0300
+
+    sa
+
+[33mcommit c12806de4cc1dd0be651713977e2cacf7eaed066[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Mar 26 19:21:58 2019 +0300
+
+    add cypress.json
+
+[33mcommit 0d3c7cb3275e9a26b3b6e9780ffae664c1e2d2b0[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Mar 26 19:19:30 2019 +0300
+
+    add all tests
+
+[33mcommit 3e23704b0e5d969b45112771917c695908eaee77[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Mar 26 19:17:59 2019 +0300
+
+    add {
+
+[33mcommit a6f0b057a5dfff44d7156db0ef137064943bbe22[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Mar 26 19:16:26 2019 +0300
+
+    Dekete {
+
+[33mcommit fb39b46ca23e9124a8859c07ac42afe33075bb80[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Mar 26 19:15:34 2019 +0300
+
+    xs
+
+[33mcommit b581e447e646fd9899ead5849d3a78f25dfdfe66[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Mar 26 19:14:54 2019 +0300
+
+    s
+
+[33mcommit 7da95f5eeedb094f5a0c397d2af0d4452ddaaa80[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Mar 26 19:14:00 2019 +0300
+
+    dsfs
+
+[33mcommit 207f4e8ccca8f9894dcfd0a3382af2c55916f0ab[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Mar 26 19:13:22 2019 +0300
+
+    4wrerw
+
+[33mcommit 504699281b81884cb5350b24c7bfe67db389b4e7[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Mar 26 19:12:09 2019 +0300
+
+    s
+
+[33mcommit 9e3a23f9733e8f027d3350463a863c9671a0413f[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Mar 26 12:44:27 2019 +0300
+
+    адд
+
+[33mcommit 6b225b828b73d6c9429547a9457d31d324c68da7[m
+Author: martinsdad <48945072+martinsdad@users.noreply.github.com>
+Date:   Tue Mar 26 12:43:16 2019 +0300
+
+    Пробую добавить файл в гит
