@@ -28,7 +28,7 @@ describe("print", function () {
       .contains('Закрыть')
       .click();
 
-    // блокнот
+    // блокнот fdf
     cy.get('.nav')
       .contains('Блокнот')
       .click();
