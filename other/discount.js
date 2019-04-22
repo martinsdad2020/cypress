@@ -8,6 +8,17 @@ let endDate = 'div[name="endDate"] > .ng-valid-mask.ng-valid-date-time-required-
 let carModel = '.conditionsCondition__list > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
 let burger = ':nth-child(1) > .collectionTable__popover-wrapper > .collectionTable__popover > .ng-scope > .fa'
 
+function randomInteger(min, max) {
+let rand = min + Math.random() * (max - min)
+return rand;
+};
+let model = ['Audi', 'BMW', 'Hummer', 'Toyota', 'Acura', 'Honda'];
+let randn = randomInteger(0, model.length - 1).toFixed(0) // рандомная марка
+let randPercent = randomInteger(1, 99).toFixed(0) // рандомное число от 1 до 99
+let randGroup = randomInteger(0, 15).toFixed(0)
+// console.log(randomInteger(0, model.length - 1).toFixed(2));
+// console.log(model[randn.toFixed(0)]);
+
 describe("добавление детали в систему", function() {
    before('cookie', function() {
       cy.setCookie('guid-1', '%7BF297B6FE-1AA5-EB18-DA2F-5F9037E08528%7D')
@@ -51,12 +62,11 @@ describe("добавление детали в систему", function() {
       cy.wait(3000);
       cy.get('.app__content')
         .contains('Добавить скидку')
-        .click()
         .click();
       cy.get('#form-title')
-        .type('тест');
+        .type(model[randn]);
       cy.get('#form-discountPercent')
-        .type('20');
+        .type(randPercent);
       cy.get('#form-startDate')
         .click();
       cy.get('#form-startDate')
@@ -82,8 +92,16 @@ describe("добавление детали в систему", function() {
         .next()
         .click();
       cy.get(carModel) // выпадающий список с марками
-        .contains('Aston Martin')
+        .contains(model[randn])
         .click();
+cy.get('#content')
+.contains('Условие')
+.click();
+cy.get('.form-control.inputAutocomplete__input')
+.eq(3).
+click();
+cy.get('.inputAutocomplete__popup').eq(3)
+.children().eq(randGroup).click();
       cy.get('.app__content')
         .contains('Создать')
         .click();
