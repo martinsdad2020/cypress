@@ -22,7 +22,7 @@ describe('Rights', function() {
       .click();
     cy.wait('@wait');
   });
-
+// ТЕСТ ТЕСТ ТЕСТ
   it('pick storage', function(){
     cy.get('.sidebar__label')
       .contains('Компания')
