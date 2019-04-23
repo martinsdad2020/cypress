@@ -14,7 +14,6 @@ describe('add new detail', function() {
 
     it("visit apgrup", function() {
       cy.visit("https://apgrup.ru");
-
       cy.get(login)
         .click()
         .type('ra-nt-office@yandex.ru');

@@ -60,16 +60,15 @@ describe("добавление детали в систему", function () {
 
   it('pick discount', function () {
     cy.get('.sidebar__menu')
-      .contains('Скидки')
-      .next()
+      .contains('Наценки')
       .click();
     cy.wait(3000);
     cy.get('.app__content')
-      .contains('Добавить скидку')
+      .contains('Добавить наценку')
       .click();
     cy.get('#form-title')
       .type(model[randn]);
-    cy.get('#form-discountPercent')
+      cy.get('#form-markupPercent')
       .type(randPercent);
     cy.get('#form-startDate')
       .click();
