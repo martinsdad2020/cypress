@@ -20,7 +20,7 @@ describe("status", function () {
       cy.get('.ng-binding.ng-scope > span.ng-scope > [ng-click="click(0)"]').contains('Печать ТТН').click();
       cy.get('[ng-click="click(1)"]').contains('Печать Товарного чека').click();
       cy.get('[ng-click="click(2)"]').contains('Печать Торг 12').click();
-      cy.get('[ng-click="click(3)"]').contains('Печать TTH Альфадетали').click();
-      cy.get('[ng-click="click(4)"]').contains('Печать Торг 12 Альфадетали').click();
+      cy.get('[ng-click="click(3)"]').contains('Печать TTH Альфадетали').click({force:true});
+      cy.get('[ng-click="click(4)"]').contains('Печать Торг 12 Альфадетали').click({force:true});
    });
 });
