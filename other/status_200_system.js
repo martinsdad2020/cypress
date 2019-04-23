@@ -47,18 +47,18 @@ describe('add new detail', function () {
     it('Income', function () {
         cy.get(side)
             .contains('Приходные накладные')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div')
             .contains('Добавить приходную накладную')
             .should('be.visible')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div')
             .contains('Добавить деталь')
             .should('be.visible')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('body > div.popup_stack.popup_stack--opened > div.modal.popup_stack__wrapper.fade.ng-scope.ng-isolate-scope.in > div > div > div > div > div')
             .contains('Информация о детали')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@SUP').its('status').should('eq', 200)
         //cy.wait(7000)
     })
@@ -66,43 +66,43 @@ describe('add new detail', function () {
     it('In storage', function () {
         cy.get(side)
             .contains('На складе')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div')
             .contains('Список деталей на складе')
-            .should('be.visible')
+            .should('be.visible');
         cy.get('#filter-type')
-            .select('Легковая')
+            .select('Легковая');
         cy.get('#content > div > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div.col-md-8 > div > div:nth-child(2) > div > div ')
-            .click()
+            .click();
         cy.get('#content > div > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div.col-md-8 > div > div:nth-child(2) > div > div > div.inputPopup.ng-scope > div > div')
             .contains('Acura')
-            .click()
+            .click();
         cy.get('#content > div')
             .contains('Применить')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > div > div.collection__wrapper')
             .contains('Acura')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@SUP').its('status').should('eq', 200)
     })
 
     it('Unprice', function () {
         cy.get(side)
             .contains('Неоцененные')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#filter-type')
-            .select('Легковая')
+            .select('Легковая');
         cy.get('#content > div > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div.col-md-10 > div > div:nth-child(2) > div > div')
-            .click()
+            .click();
         cy.get('#content > div > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div.col-md-10 > div > div:nth-child(2) > div > div > div.inputPopup.ng-scope > div > div')
             .contains('Audi')
-            .click()
+            .click();
         cy.get('#content > div')
             .contains('Применить')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > div > div.collection__wrapper')
             .contains('Audi')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@SUP').its('status').should('eq', 200)
 
     })
@@ -110,20 +110,20 @@ describe('add new detail', function () {
     it('Unfind', function () {
         cy.get(side)
             .contains('Неопознанные')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#filter-type')
-            .select('Легковая')
+            .select('Легковая');
         cy.get('#content > div > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div.col-md-8 > div > div:nth-child(2) > div > div')
-            .click()
+            .click();
         cy.get('#content > div > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div.col-md-8 > div > div:nth-child(2) > div > div > div.inputPopup.ng-scope > div > div')
             .contains('Audi')
-            .click()
+            .click();
         cy.get('#content > div')
             .contains('Применить')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > div > div.collection__wrapper')
             .contains('Audi')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@SUP').its('status').should('eq', 200)
 
     })
@@ -131,10 +131,10 @@ describe('add new detail', function () {
     it('Reserv', function () {
         cy.get(side)
             .contains('В резерве')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div')
             .contains('0')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@RES').its('status').should('eq', 200)
 
     })
@@ -142,22 +142,22 @@ describe('add new detail', function () {
     it('Waiting for submit', function () {
         cy.get(side)
             .contains('Ожидают подтверждения')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > div')
             .contains('0')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@EMP').its('status').should('eq', 200)
     })
 
     it('Disposed', function () {
         cy.get(side)
             .contains('Утилизировано')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#filter-isTrashed')
             .select('Да')
         cy.get('#content')
             .contains('Применить')
-            .click()
+            .click();
         cy.get('#content > div > ui-view > div')
             .contains('VW')
             .should('be.visible');
@@ -276,33 +276,33 @@ describe('add new detail', function () {
     it('My closed orders', function () {
         cy.get(side)
             .contains('Мои закрытые')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div:nth-child(6) > div > div')
-            .click()
+            .click();
         cy.get('#content > div > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div:nth-child(6) > div > div > div.inputPopup.ng-scope > div > div')
             .contains('Программа')
-            .click()
+            .click();
         cy.get('#content')
             .contains('Применить')
-            .click()
+            .click();
         cy.get('.app__content')
             .contains('Roman')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@EMP').its('status').should('eq', 200)
     })
 
     it('Incoming move ', function () {
         cy.get(side)
             .contains('Входящие')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div:nth-child(1) > div > div')
-            .click()
+            .click();
         cy.get('#content > div > ui-view > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div:nth-child(1) > div > div > div.inputPopup.ng-scope > div')
             .contains('РУССКАЯ ДЕРЕВНЯ')
-            .click()
+            .click();
         cy.get('#content')
             .contains('Применить')
-            .click()
+            .click();
         /*cy.get('.app__content')
             .contains('Ракушин')
             .should('be.visible')*/
@@ -313,33 +313,33 @@ describe('add new detail', function () {
     it('Outgoing move', function () {
         cy.get(side)
             .contains('Исходящие')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div:nth-child(1) > div > div')
-            .click()
+            .click();
         cy.get('#content > div > ui-view > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div:nth-child(1) > div > div > div.inputPopup.ng-scope > div')
             .contains('склад Д2 AutoOEM')
-            .click()
+            .click();
         cy.get('#content')
             .contains('Применить')
-            .click()
+            .click();
         cy.get('#content > div > ui-view > ui-view > div > div.collection__wrapper > div.collectionTable--padding.collectionTable.ng-scope > div.collectionTable__wrapper > div')
             .contains('склад Д2 AutoOEM')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@EMP').its('status').should('eq', 200)
     })
 
     it('Move return incoming', function () {
         cy.get(side)
             .contains('Возврат (входящие)')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div.col-md-3 > div > div')
-            .click()
+            .click();
         cy.get('#content > div > ui-view > ui-view > div > div.filter.ng-scope > form > div:nth-child(1) > div.col-md-3 > div > div > div.inputPopup.ng-scope > div')
             .contains('РУССКАЯ ДЕРЕВНЯ')
-            .click()
+            .click();
         cy.get('#content')
             .contains('Применить')
-            .click()
+            .click();
         /*cy.get('#content > div > ui-view > ui-view > div > div.collection__wrapper > div.collectionTable--padding.collectionTable.ng-scope > div.collectionTable__wrapper > div')
             .contains('РУССКАЯ ДЕРЕВНЯ')
             .should('be.visible')*/
@@ -349,10 +349,10 @@ describe('add new detail', function () {
     it('Move return outgoing', function () {
         cy.get(side)
             .contains('Возврат (исходящие)')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > ui-view > div > div.collection__wrapper > div.collectionTable--padding.collectionTable.ng-scope > div.collectionTable__wrapper > div > div')
             .contains('Список заявок на возврат перемещения пуст')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@RES').its('status').should('eq', 200)
 
     })
@@ -360,55 +360,55 @@ describe('add new detail', function () {
     it('Details waiting for confirm', function () {
         cy.get(side)
             .contains('Детали, ожидающие подтверждения')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > div > div.collection__wrapper > div.collectionTable--padding.collectionTable.ng-scope > div.collectionTable__wrapper > div > div')
             .contains('Список деталей пуст')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@EMP').its('status').should('eq', 200)
     })
 
     it('Details for return to partners', function () {
         cy.get(side)
             .contains('Детали к возврату партерам')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#filter-type')
-            .select('Легковая')
+            .select('Легковая');
         cy.get('#content')
             .contains('Применить')
-            .click()
+            .click();
         cy.get('#content > div > ui-view > div > div.collection__wrapper > div.collectionTable--padding.collectionTable.ng-scope > div.collectionTable__wrapper > div > div')
             .contains('Список деталей пуст')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@EMP').its('status').should('eq', 200)
     })
 
     it('New sales invoice', function () {
         cy.get('body > div.app > div > div.sidebar.ng-scope.sidebar--active > div.sidebar__content > div.sidebar__menu > div > div:nth-child(7) > div:nth-child(2)')
             .contains('Новые')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > ui-view > div > div.collection__wrapper > div.collectionTable--padding.collectionTable.ng-scope > div.collectionTable__wrapper > div > div')
             .contains('Список расходных накладных пуст')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@EMP').its('status').should('eq', 200)
     })
 
     it('Confirmed sales invoice', function () {
         cy.get(side)
             .contains('Подтвержденные')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > ui-view > div > div.collection__wrapper > div.collectionTable--padding.collectionTable.ng-scope > div.collectionTable__wrapper > div > div')
             .contains('Список расходных накладных пуст')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@EMP').its('status').should('eq', 200)
     })
 
     it('Payed salec invoice', function () {
         cy.get(side)
             .contains('Оплаченные')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > ui-view > div > div.collection__wrapper > div.collectionTable--padding.collectionTable.ng-scope > div.collectionTable__wrapper > div > div')
             .contains('Список расходных накладных пуст')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@RES').its('status').should('eq', 200)
 
     })
@@ -416,61 +416,61 @@ describe('add new detail', function () {
     it('To send sales invoice ', function () {
         cy.get(side)
             .contains('На отправку')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#filter-number')
             .click()
-            .type('2')
+            .type('2');
         cy.get('#content')
             .contains('Применить')
-            .click()
+            .click();
         cy.get('#content > div > ui-view > ui-view > div > div.collection__wrapper > div.collectionTable--padding.collectionTable.ng-scope > div.collectionTable__wrapper > div > div')
             .contains('Хачик')
-            .should('be.visible')
+            .should('be.visible');
 
     })
 
     it('Sended', function () {
         cy.get(side)
             .contains('Отправленные')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > ui-view > div > div.collection__wrapper > div.collectionTable--padding.collectionTable.ng-scope > div.collectionTable__wrapper > div > div')
             .contains('Список расходных накладных пуст')
-            .should('be.visible')
+            .should('be.visible');
 
     })
 
     it('Returned', function () {
         cy.get(side)
             .contains('Возвраты')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div > ui-view > div > div.collection__wrapper > div.collectionTable--padding.collectionTable.ng-scope > div.collectionTable__wrapper > div > div')
             .contains('Список деталей пуст')
-            .should('be.visible')
+            .should('be.visible');
 
     })
 
     it('New repairs', function () {
         cy.get('body > div.app > div > div.sidebar.ng-scope.sidebar--active > div.sidebar__content > div.sidebar__menu > div > div:nth-child(8) > div:nth-child(2)')
             .contains('Новые')
-            .click({ force: true })
+            .click({ force: true });
         cy.get('#content > div')
             .contains('Добавить заявку на ремонт')
-            .click()
+            .click();
         cy.get('body > div.app > div > div.sidebar.ng-scope.sidebar--active > div.sidebar__content > div.sidebarWidget__wrapper > div:nth-child(3) > div')
             .contains('Перейти к ремонту')
-            .click()
+            .click();
         cy.get('#content > div')
             .contains('Накладная на ремонт')
-            .should('be.visible')
+            .should('be.visible');
         cy.get('#content > div')
             .contains('Удалить')
-            .click()
+            .click();
         cy.get('body > div.modal.fade.ng-scope.ng-isolate-scope.in > div > div.modal-dialog.modal-sm > div > div > div.modal-footer.ng-scope')
             .contains('Удалить')
-            .click()
+            .click();
         cy.get('#content > div')
             .contains('Список новых заявок на ремонт')
-            .should('be.visible')
+            .should('be.visible');
         //cy.wait('@EMP').its('status').should('eq', 200)
     })
     /*it('V remonte', function() {
