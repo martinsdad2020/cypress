@@ -31,7 +31,7 @@ describe('express new user', function() {
       cy.get('._2JR3u').contains('0').should('be.visible');
       cy.get('._NY4w').contains(',00').should('not.be.visible');
       cy.get(callButton).should('not.be.visible');
-      cy.get('._2rfW9').contains('Бампер задний').click();
+      cy.get('._2rfW9').contains('Локер').click();
       cy.get('._15-2L').contains('Компания').should('not.be.visible');
       cy.get('._15-2L').contains('Город').should('not.be.visible');
       cy.get('._15-2L').contains('Показать телефон').should('not.be.visible');
