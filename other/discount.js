@@ -14,7 +14,7 @@ function randomInteger(min, max) {
 };
 let model = ['Audi', 'BMW', 'Hummer', 'Toyota', 'Acura', 'Honda', 'Honda', 'Dodge', 'Aston Martin', 'BYD', 'Bentley', 'Cadillac', 'Chery', 'Chevrolet'];
 let randn = randomInteger(0, model.length - 1).toFixed(0) // рандомная марка
-let randPercent = randomInteger(1, 99).toFixed(0) // рандомное число от 1 до 99
+let randPercent = randomInteger(1, 50).toFixed(0) // рандомное число от 1 до 99
 let randGroup = randomInteger(0, 15).toFixed(0)
 // console.log(randomInteger(0, model.length - 1).toFixed(2));
 // console.log(model[randn.toFixed(0)]);
