@@ -141,13 +141,17 @@ describe('add new detail', function () {
             .type('123213123')
             .should('value', '123213123');
         cy.get('.popup__close')
-            .click({force:true});
+            .click({ force: true });
+        // cy.get('.collectionTable__popover > .ng-scope > .fa')
+        //     .click();
+        // cy.get('.contextPopover')
+        //     .contains('штрихкода')
+        //     .click();
         cy.get('.collectionTable__body-label > .inputBoolean > .inputBoolean__checkbox')
             .click();
         cy.get('.btn-print')
             .click();
-        cy.get('.app__content')
-            .contains('Печать')
+        cy.get('.ng-binding.ng-scope > span.ng-scope > .btn')
             .click();
     });
 });
