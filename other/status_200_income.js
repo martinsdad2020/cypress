@@ -140,11 +140,14 @@ describe('add new detail', function () {
         cy.get('#form-kod')
             .type('123213123')
             .should('value', '123213123');
-            cy.get('.popup__close')
+        cy.get('.popup__close')
             .click({force:true});
         cy.get('.collectionTable__body-label > .inputBoolean > .inputBoolean__checkbox')
             .click();
         cy.get('.btn-print')
+            .click();
+        cy.get('.app__content')
+            .contains('Печать')
             .click();
     });
 });
