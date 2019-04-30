@@ -16,6 +16,9 @@ let randProducer = randomInteger(0, 500).toFixed(0); // производител
 let randColor = randomInteger(0, 7).toFixed(0); // цвет
 let randRate = randomInteger(0, 4).toFixed(0); // рейтинг
 let randDefect = randomInteger(0, 24).toFixed(0); // рейтинг
+let randBrand = randomInteger(0, 97).toFixed(0);
+let randModel = randomInteger(0, 1).toFixed(0);
+let randGen = randomInteger(0, 1).toFixed(0);
 
 describe('add new detail', function () {
   before('cookie', function () {
@@ -97,27 +100,27 @@ describe('add new detail', function () {
     cy.get('#form-quantity')
       .type('1')
       .should('value', '1');
-    cy.get(':nth-child(12) > .form__label')
+    cy.get(':nth-child(11) > .form__label')
       .next()
       .click();
     cy.get('.inputAutocomplete__popup')
-      .eq(8) // производитель
+      .eq(7) // производитель
       .children()
       .eq(randProducer)
+      .click();
+    cy.get(':nth-child(15) > .form__label')
+      .next()
+      .click();
+    cy.get('.inputAutocomplete__popup')
+      .eq(8) // Цвет
+      .children()
+      .eq(randColor)
       .click();
     cy.get(':nth-child(16) > .form__label')
       .next()
       .click();
     cy.get('.inputAutocomplete__popup')
-      .eq(9) // Цвет
-      .children()
-      .eq(randColor)
-      .click();
-    cy.get(':nth-child(17) > .form__label')
-      .next()
-      .click();
-    cy.get('.inputAutocomplete__popup')
-      .eq(10) // Рейтинг
+      .eq(9) // Рейтинг
       .children()
       .eq(randRate)
       .click();
@@ -131,7 +134,8 @@ describe('add new detail', function () {
     cy.get('#carPiсker-brand')
       .click();
     cy.get('form.ng-pristine > :nth-child(1) > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope') // список с марками
-      .contains('Audi')
+      .children()
+      .eq(randBrand)
       .click();
     cy.get('#carPiсker-model')
       .click();
@@ -156,7 +160,7 @@ describe('add new detail', function () {
       .next()
       .click();
     cy.get('.inputAutocomplete__popup')
-      .eq(14) // дефект
+      .eq(13) // дефект
       .children()
       .eq(randDefect)
       .click();
