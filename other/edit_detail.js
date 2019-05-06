@@ -60,16 +60,16 @@ describe('edit detail', function() {
         .clear()
         .type('21')
         .should('be.visible');
-      cy.get(':nth-child(10) > .form__label') // поставщик
+      // cy.get(':nth-child(10) > .form__label') // поставщик
+      //   .next()
+      //   .click();
+      // cy.get(':nth-child(10) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup')
+      //   .contains('ВОСТОК')
+      //   .click();
+      cy.get(':nth-child(10) > .form__label') // производитель
         .next()
         .click();
       cy.get(':nth-child(10) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup')
-        .contains('ВОСТОК')
-        .click();
-      cy.get(':nth-child(11) > .form__label') // производитель
-        .next()
-        .click();
-      cy.get(':nth-child(11) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup')
         .contains('AMC')
         .click();
       cy.get('#form-defects')
@@ -84,26 +84,26 @@ describe('edit detail', function() {
         .clear()
         .type('коммент')
         .should('be.visible');
-      cy.get(':nth-child(15) > .form__label')  // цвет
+      cy.get(':nth-child(14) > .form__label')  // цвет
+        .next()
+        .click();
+      cy.get(':nth-child(14) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup')
+        .contains('Желтый')
+        .click();
+        cy.get(':nth-child(15) > .form__label') // рейтинг
         .next()
         .click();
       cy.get(':nth-child(15) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup')
-        .contains('Желтый')
-        .click();
-        cy.get(':nth-child(16) > .form__label') // рейтинг
-        .next()
-        .click();
-      cy.get(':nth-child(16) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup')
         .contains('3')
         .click();
       cy.get('#form-gtd')
         .clear()
         .type('GDT1')
         .should('be.visible');
-      cy.get(':nth-child(18) > .form__label') // страна
+      cy.get(':nth-child(17) > .form__label') // страна
         .next()
         .click();
-      cy.get(':nth-child(18) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup')
+      cy.get(':nth-child(17) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup')
         .contains('Россия')
         .click();
       cy.get('.modal-body')
@@ -139,24 +139,26 @@ describe('edit detail', function() {
         .should('be.visible');
       cy.get(':nth-child(2) > .table > tbody > :nth-child(2) > .w1 > .ng-scope > .glyphicon') // удалить авто
         .click();
+      cy.get('.panel.ng-binding > .table > tbody > tr.ng-scope > .w1 > .ng-scope > .glyphicon')
+        .click();
       cy.get('.panel.ng-binding > .panel-heading')
         .next()
         .click();
       cy.get('.ng-pristine > .row > .col-sm-8 > .inputAutocomplete > .inputPopup > .inputPopup__popup')
-        .contains('Задиры поверхности')
+        .contains('На запчасти')
         .click();
       cy.get('.panel.ng-binding > .panel-body')
         .contains('Добавить')
         .click();
       cy.wait(3000);
       cy.get('.modal-body')
-        .contains('Задиры поверхности')
+        .contains('На запчасти')
         .should('be.visible');
       cy.get('.panel.ng-binding > .table > tbody > [style=""] > .w1 > .ng-scope > .glyphicon')
         .click();
-      cy.wait(5000)
+      cy.wait(7000)
       cy.get('.panel.ng-binding')
-        .contains('Задиры поверхности')
+        .contains('На запчасти')
         .should('not.be.visible');
       cy.get('.popup__close')
         .click();
