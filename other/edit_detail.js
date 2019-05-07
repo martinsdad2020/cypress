@@ -139,8 +139,8 @@ describe('edit detail', function() {
         .should('be.visible');
       cy.get(':nth-child(2) > .table > tbody > :nth-child(2) > .w1 > .ng-scope > .glyphicon') // удалить авто
         .click();
-      cy.get('.panel.ng-binding > .table > tbody > tr.ng-scope > .w1 > .ng-scope > .glyphicon')
-        .click();
+      // cy.get('.panel.ng-binding > .panel-heading')
+      //   .click();
       cy.get('.panel.ng-binding > .panel-heading')
         .next()
         .click();
