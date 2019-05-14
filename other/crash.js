@@ -29,5 +29,8 @@ describe('crash', function () {
                 .should('be.visible');
             cy.wait(600000);
         });
+        it('fake', function(){
+            
+        })
     };
 });

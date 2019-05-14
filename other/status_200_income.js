@@ -73,20 +73,20 @@ describe('add new detail', function () {
         cy.get(':nth-child(3) > [field="field"]')
             .contains('Владелец Компании Галаника')
             .click();
-        cy.wait('@ww').its('status').should('eq', 200);
+        // cy.wait('@ww').its('status').should('eq', 200);
         cy.get('.app__content')
             .contains('Поставщик')
             .next()
             .click();
-        cy.wait('@ww').its('status').should('eq', 200);
+        // cy.wait('@ww').its('status').should('eq', 200);
         cy.get(':nth-child(4) > [field="field"]')
             .contains('ЭМЕКС')
             .click();
-        cy.wait('@ww').its('status').should('eq', 200);
+        // cy.wait('@ww').its('status').should('eq', 200);
         cy.get('.app__content')
             .contains('Применить')
             .click();
-        cy.wait('@ww').its('status').should('eq', 200);
+        // cy.wait('@ww').its('status').should('eq', 200);
         cy.get('.collectionTable__container')
             .contains('Владелец Компании Галаника')
             .should('be.visible');
@@ -100,47 +100,47 @@ describe('add new detail', function () {
             .contains('24825')
             .should('be.visible')
             .click();
-        cy.wait('@ww').its('status').should('eq', 200);
+        // cy.wait('@ww').its('status').should('eq', 200);
         cy.get('.app__content')
             .contains('Группа')
             .next()
             .click();
-        cy.wait('@ww').its('status').should('eq', 200);
+        // cy.wait('@ww').its('status').should('eq', 200);
         cy.get('.inputAutocomplete__popup') // поле группа в приходной 
             .eq(2)
             .children()
             .eq(randGroup)
             .click();
-        cy.wait('@ww').its('status').should('eq', 200);
+        // cy.wait('@ww').its('status').should('eq', 200);
         cy.get('.app__content')
             .contains('Наименование')
             .next()
             .click()
-        cy.wait('@ww').its('status').should('eq', 200);
+        // cy.wait('@ww').its('status').should('eq', 200);
         cy.get('.inputAutocomplete__popup') // поле наименование в приходной 
             .eq(3)
             .children()
             .eq(randName)
             .click()
-        cy.wait('@ww').its('status').should('eq', 200);
+        // cy.wait('@ww').its('status').should('eq', 200);
         cy.get('#filter-code')
             .type('1234567890')
             .should('value', '1234567890')
         cy.get('.app__content')
             .contains('Применить')
             .click();
-        cy.wait('@ww').its('status').should('eq', 200);
+        // cy.wait('@ww').its('status').should('eq', 200);
         cy.get('.app__content')
             .contains('Список деталей пуст')
             .should('be.visible');
         cy.get('.app__content')
             .contains('Очистить')
             .click();
-        cy.wait('@ww').its('status').should('eq', 200);
+        // cy.wait('@ww').its('status').should('eq', 200);
         cy.get('.app__content')
             .contains('Применить')
             .click();
-        cy.wait('@ww').its('status').should('eq', 200);
+        // cy.wait('@ww').its('status').should('eq', 200);
         cy.wait(2000);
         cy.get('.collectionTable__wrapper')
             .contains('Кронштейн КПП')
