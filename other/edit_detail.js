@@ -47,7 +47,7 @@ describe('edit detail', function() {
       cy.get('.app__content')
         .contains('Изменить')
         .click();
-      cy.wait(3000);
+      cy.wait(5000);
       cy.get('#form-kod') // поле ориг номер
         .clear()
         .type('hsfdg5784')
