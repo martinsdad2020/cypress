@@ -27,10 +27,7 @@ describe('crash', function () {
             cy.get('#app')
                 .contains('Авторизация')
                 .should('be.visible');
-            cy.wait(600000);
+            cy.wait(60000);
         });
-        it('fake', function(){
-            
-        })
     };
 });
