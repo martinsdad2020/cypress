@@ -199,5 +199,11 @@ describe('SMOKE PRESS', function() {
     cy.get('#app')
       .contains('Создать предзаказ')
       .should('be.visible');
+    cy.get('._2JR3u')
+      .contains('ngrak')
+      .click();
+    cy.get('.nmPIX')
+      .contains('Выход')
+      .click();
   });
 });

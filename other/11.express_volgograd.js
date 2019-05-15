@@ -50,5 +50,8 @@ describe('Экспресс Волгоград', function () {
     cy.get('[placeholder="Повтор нового пароля"]').click().type('123456');
     cy.get('._15-2L').contains('Сохранить').click();
     cy.get('._15-2L').contains('Пароль успешно изменен').should('be.visible');
+    cy.get('._3Bz1P').click();
+    cy.get('._2JR3u').contains('volgograd').click();
+    cy.get('.nmPIX').contains('Выход').click();
   });
 });

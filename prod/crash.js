@@ -5,8 +5,8 @@ describe('crash', function () {
     //     // cy.route('https://api.alfa-mt.ru/v1/**')
     //     //     .as('ww',);
     // });
-    for (let i = 0; i < 50; i++) { // 40 это колво циклов хватит на 10 часов
-        it('visit', function () {
+    for (let i = 0; i < 550; i++) { // 40 это колво циклов хватит на 10 часов
+        it('alfa-mt.ru', function () {
             cy.visit('https://alfa-mt.ru/');
             cy.wait(2000);
             // cy.wait('@ww').its('status').should('eq', 200);
@@ -14,14 +14,14 @@ describe('crash', function () {
                 .contains('Авторизация')
                 .should('be.visible');
         });
-        it('visit', function () {
+        it('alfadetali.ru', function () {
             cy.visit('https://alfadetali.ru/');
             // cy.wait('@ww').its('status').should('eq', 200);
             cy.get('#root')
                 .contains('запчасти')
                 .should('be.visible');
         });
-        it('visit', function () {
+        it('express.alfadetali.ru', function () {
             cy.visit('https://express.alfadetali.ru/');
             // cy.wait('@ww').its('status').should('eq', 200);
             cy.get('#app')

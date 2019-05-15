@@ -26,7 +26,7 @@ describe('express sto', function () {
     it('gorod and company', function () {
         cy.get('._2JR3u').contains('0').should('be.visible');
         cy.get('._NY4w').contains(',00').should('be.visible');
-        cy.get('._2rfW9').contains('Локер').click();
+        cy.get('._2rfW9').contains('Молдинг').click();
         cy.get('._15-2L').contains('Компания').should('be.visible');
         cy.get('._15-2L').contains('Город').should('be.visible');
         cy.get('._15-2L').contains('Показать телефон').should('be.visible').click();
@@ -55,5 +55,8 @@ describe('express sto', function () {
         cy.get('[placeholder="Повтор нового пароля"]').click().type('123456');
         cy.get('._15-2L').contains('Сохранить').click();
         cy.get('._15-2L').contains('Пароль успешно изменен').should('be.visible');
+        cy.get('._3Bz1P').click();
+        cy.get('._2JR3u').contains('menufolesu_prod').click();
+        cy.get('.nmPIX').contains('Выход').click();
     });
 });
