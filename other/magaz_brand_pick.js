@@ -234,17 +234,17 @@ describe('Brands', function() {
     cy.get('#root')
       .contains('Все марки')
       .click();
-    cy.get('#root')
-      .contains('Ferrari')
-      .click();
-    cy.get('._444m') // область с результатами
-      .contains('Ferrari')
-      .should('be.visible');
-    cy.get('._2S9w') // логотип афльа детали
-      .click();
-    cy.get('#root')
-      .contains('Все марки')
-      .click();
+    // cy.get('#root')
+    //   .contains('Ferrari')
+    //   .click();
+    // cy.get('._444m') // область с результатами
+    //   .contains('Ferrari')
+    //   .should('be.visible');
+    // cy.get('._2S9w') // логотип афльа детали
+    //   .click();
+    // cy.get('#root')
+    //   .contains('Все марки')
+    //   .click();
     cy.get('#root')
       .contains('Fiat')
       .click();
