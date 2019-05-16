@@ -18,7 +18,7 @@ let randRate = randomInteger(0, 4).toFixed(0); // рейтинг
 let randDefect = randomInteger(0, 24).toFixed(0); // рейтинг
 let randBrand = randomInteger(0, 97).toFixed(0);
 let randModel = randomInteger(0, 1).toFixed(0);
-let randGen = randomInteger(0, 1).toFixed(0);
+let randGen = randomInteger(0, 0).toFixed(0);
 
 describe('add new detail', function () {
   before('cookie', function () {
