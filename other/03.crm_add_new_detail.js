@@ -1,7 +1,7 @@
 let login = '#form-email'
 let password = '#form-password'
-let enter = '.ng-scope.ng-valid-minlength > :nth-child(2) > .btn'
-let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
+let enter = '.ng-valid-email.ng-valid-minlength > :nth-child(2) > .btn'
+let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > [ng-class="{inProgress: loading}"] > .inputAutocomplete__popup'
 let companies = '.sidebar__row'
 
 function randomInteger(min, max) {
@@ -16,7 +16,7 @@ let randProducer = randomInteger(0, 500).toFixed(0); // производител
 let randColor = randomInteger(0, 7).toFixed(0); // цвет
 let randRate = randomInteger(0, 4).toFixed(0); // рейтинг
 let randDefect = randomInteger(0, 24).toFixed(0); // рейтинг
-let randBrand = randomInteger(0, 97).toFixed(0);
+let randBrand = randomInteger(0, 88).toFixed(0);
 let randModel = randomInteger(0, 1).toFixed(0);
 let randGen = randomInteger(0, 0).toFixed(0);
 
@@ -161,7 +161,7 @@ describe('add new detail', function () {
   });
 
   it('add defeсt', function () {
-    cy.get('.panel.ng-binding > .panel-heading')
+    cy.get(':nth-child(4) > .panel-heading')
       .next()
       .click();
     cy.get('.inputAutocomplete__popup')
@@ -169,10 +169,11 @@ describe('add new detail', function () {
       .children()
       .eq(randDefect)
       .click();
-    cy.get('.panel.ng-binding > .panel-body')
+    cy.get(':nth-child(4) > .panel-body')
       .contains('Добавить')
       .click();
-    cy.get('tr.ng-scope > .ng-binding') // область с названием добавленного дефекта
+    cy.wait(3000);
+    cy.get(':nth-child(4) > .panel-body') // область с названием добавленного дефекта
       .should('have.attr', 'class');
     cy.get('.popup__close')
       .click();
@@ -188,7 +189,7 @@ describe('add new detail', function () {
   });
 
   it('add price', function () {
-    cy.get('tr.ng-scope > :nth-child(3) > a')
+    cy.get('tr > :nth-child(4) > a')
       .click();
     cy.wait(2000)
     cy.get('.app__content')
@@ -200,12 +201,12 @@ describe('add new detail', function () {
     cy.get('#form-sellingPrice')
       .click()
       .type('777');
-    cy.get('body > div.popup_stack.popup_stack--opened > div.modal.popup_stack__wrapper.fade.ng-scope.ng-isolate-scope.in > div > div')
+    cy.get('.popup__inner')
       .contains('Сохранить')
       .click();
     cy.wait(2000);
-    cy.get('#content > div > ui-view > div.partsView__wrapper.ng-scope')
+    cy.get('.partModels__item')
       .contains('Открыть в магазине')
-      .click({force:true});
+      .click({ force: true });
   });
 });
