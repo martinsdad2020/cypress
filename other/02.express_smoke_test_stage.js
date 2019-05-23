@@ -117,7 +117,7 @@ describe('SMOKE PRESS', function () {
       .next()
       .click()
     cy.get('._2vpgU > .form-control')
-      .type('Фара левая');
+      .type('Фара правая');
     cy.get('._2ZST_')
       .contains('Фара')
       .click();
@@ -125,9 +125,9 @@ describe('SMOKE PRESS', function () {
       .contains('Применить')
       .click();
     cy.get(':nth-child(1) > :nth-child(1) > ._2rfW9') // euroavto search result
-      .contains('КСЕНОН')
+      .contains('Фара')
       .should('be.visible');
-    cy.get('._1rCPk > .btn')
+    cy.get(':nth-child(1) > :nth-child(10) > ._1rCPk > .btn')
       .click();
     cy.wait(1000);
     cy.get('.tuVoQ')

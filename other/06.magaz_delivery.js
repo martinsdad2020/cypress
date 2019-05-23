@@ -1,97 +1,91 @@
-describe("магаз доставка", function() {
+describe("магаз доставка", function () {
 
-     it("visit", function() {
-     cy.clearCookies()
-     cy.visit("https://magaz.apgrup.ru")
+    it("visit", function () {
+        cy.clearCookies()
+        cy.visit("https://magaz.apgrup.ru")
 
-//Авто на главной странице отображаются, выбираем ауди
-        cy.get('._2S9w')
-            .click()
-        cy.get('._3HZ_')
-            .click()
-        cy.get('._1rlq')
+        //Авто на главной странице отображаются, выбираем ауди
+        cy.get('#root')
+            .contains('Все марки')
+            .click();
+        cy.get('#root')
             .contains('Audi')
             .should('be.visible')
-            .click()
-        cy.get('._2OVU')
+            .click();
+        cy.get('._20fvB')
             .contains('Купить')
-            .click()
-        cy.get('._2K0Z')
+            .click();
+        cy.get('._2lT_o')
             .contains('Товар успешно добавлен')
-            .should('be.visible')
-        cy.get('.exzB > :nth-child(2) > ._2sMB')
+            .should('be.visible');
+        cy.get('._2lT_o')
             .contains('Перейти в корзину')
-            .click()
-        cy.get('._1rlq')
+            .click();
+        cy.get('#root')
             .contains('Корзина')
-            .should('be.visible')
-//Оформляем доставку
-        cy.get('._28dd > ._2sMB')
+            .should('be.visible');
+        //Оформляем доставку
+        cy.get('#root')
             .contains('Оформить заказ')
-            .click()
-        cy.get(':nth-child(2) > ._3tbD')
+            .click();
+        cy.get('._3eTHD')
             .contains('Доставка')
-            .click()
-        cy.get('._11Gk > :nth-child(1) > :nth-child(1)')
+            .click();
+        cy.get('#root')
             .contains('Город')
-            .should('be.visible')
-        cy.get('form > ._2sMB')
-            .click()
-        cy.get(':nth-child(1) > ._1kfX > ._3iJa')
+            .should('be.visible');
+        cy.get('form > .iFdeK')
+            .click();
+        cy.get('#root')
             .contains('Введите город')
-            .should('be.visible')
-        cy.get(':nth-child(2) > ._1kfX > ._3iJa')
+            .should('be.visible');
+        cy.get('#root')
             .contains('Введите улицу')
-            .should('be.visible')
-        cy.get(':nth-child(3) > ._1kfX > ._3iJa')
+            .should('be.visible');
+        cy.get('#root')
             .contains('Введите номер дома')
-            .should('be.visible')
-        cy.get(':nth-child(1) > ._1kfX > ._2WYl')
-            .click()
+            .should('be.visible');
+        cy.get(':nth-child(1) > ._2EEno > .aEtUW')
             .clear()
             .type('asd')
-            .should('value', 'asd')
-        cy.get(':nth-child(2) > ._1kfX > ._2WYl')
-            .click()
+            .should('value', 'asd');
+        cy.get(':nth-child(2) > ._2EEno > .aEtUW')
             .clear()
             .type('qwq')
-            .should('value', 'qwq')
-        cy.get(':nth-child(3) > ._1kfX > ._2WYl')
-            .click()
+            .should('value', 'qwq');
+        cy.get(':nth-child(3) > ._2EEno > .aEtUW')
             .clear()
             .type('10')
-            .should('value', '10')
-        cy.get('form > ._2sMB')
+            .should('value', '10');
+        cy.get('form > .iFdeK')
             .click()
-        cy.get('._11Gk > :nth-child(1) > :nth-child(1)')
+        cy.get('#root')
             .contains('Артикул')
-            .should('be.visible')
-        cy.get('._3zZ- > ._2sMB')
+            .should('be.visible');
+        cy.get('#root')
             .contains('Отправить смс')
-            .click()
-        cy.get('._3vPm > ._1z4-')
+            .click();
+        cy.get('#root')
             .contains('Введите')
-            .should('be.visible')
-        cy.get('._3vPm > ._1z4- > ._1kfX > ._2WYl')
-            .click()
+            .should('be.visible');
+        cy.get('._26W7Q > .dmvaJ > ._2EEno > .aEtUW')
             .clear()
             .type('1234567890')
-            .should('value', '+7 (123) 456-78-90')
-        cy.get('#root > div > div.TjJL > div._11Gk > div > div > form > div._3vPm > div._3zZ-')
+            .should('value', '+7 (123) 456-78-90');
+        cy.get('#root')
             .contains('Отправить смс')
-            .click( {force:true} )
-            cy.wait(1000)
-        cy.get('#root > div > div.TjJL > div._11Gk > div > div > form > div._3vPm > div._1z4- > label > input')
-            .click( {force:true} )
-            .type('123456')
-        cy.get('#root > div > div.TjJL > div._11Gk > div > div > form > div:nth-child(4) > label > label > svg')
-            .click( {force:true} )
-        cy.get('#root > div > div.TjJL > div._11Gk > div > div > form > div:nth-child(4) > button')
+            .click({ force: true });
+        cy.wait(1000);
+        cy.get('._26W7Q > .dmvaJ > ._2EEno > .aEtUW')
+            .click({ force: true })
+            .type('123456');
+        cy.get('._39Hhf')
+            .click({ force: true });
+        cy.get(':nth-child(4) > .iFdeK')
             .contains('Подтвердить заказ')
-            .click( {force:true} )
-        cy.get('#root > div')
+            .click({ force: true });
+        cy.get('#root')
             .contains('Спасибо за ваш заказ!')
-            .should('be.visible')
-   })
-
-})
+            .should('be.visible');
+    });
+});
