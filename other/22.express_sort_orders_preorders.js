@@ -57,7 +57,7 @@ describe('express sto', function() {
       .contains('Предзаказы')
       .click();
     cy.get('tbody > :nth-child(1) > :nth-child(3)')
-      .contains('Новый')
+      .contains('В заказе')
       .should('be.visible');
     cy.get('._2R0XK > thead > tr > :nth-child(3) > ._2VmXN')
       .click();

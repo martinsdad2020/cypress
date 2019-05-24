@@ -1,8 +1,8 @@
 let login = '#form-email'
 let password = '#form-password'
-let enter = '.ng-scope.ng-valid-minlength > :nth-child(2) > .btn'
-let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
-let companies = '.sidebar__menu > :nth-child(1) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
+let enter = '.ng-valid-email.ng-valid-minlength > :nth-child(2) > .btn'
+let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > [ng-class="{inProgress: loading}"] > .inputAutocomplete__popup'
+let companies = '.sidebar__row'
 let name = '#form-name'
 let phone = '#form-phoneNumber'
 let para = ':nth-child(15) > :nth-child(2) > a'
@@ -32,7 +32,7 @@ describe('Create an order', function() {
       cy.wait('@ww');
     });
 
-    it('pick ruusian village', function() {
+    it('pick ruusian village', function () {
       cy.get('.sidebar__label')
         .contains('Компания')
         .next()
@@ -46,7 +46,8 @@ describe('Create an order', function() {
         .click();
       cy.get(storages) // выпадающий список со складами
         .contains('РУССКАЯ')
-        .click({force:true});
+        .click();
+      cy.wait(3000);
     });
 
       it('add delivery', function() {
@@ -84,7 +85,7 @@ describe('Create an order', function() {
         cy.get(':nth-child(8) > .currency')
           .contains('7')
           .should('be.visible')
-        cy.get('.tab-pane.active > .panel.ng-scope > [filter-fields="$parent.undefined"] > .collection__wrapper > .collectionTable > .collectionTable__wrapper > .collectionTable__container > .collectionTable__table > .table > tbody > tr.ng-scope > .collectionTable__popover-wrapper > .collectionTable__popover > .ng-scope > .fa') // бургер
+        cy.get('.tab-pane.active > [template="template"] > [filter-fields="$parent.undefined"] > .collection__wrapper > .collectionTable > .collectionTable__wrapper > .collectionTable__container > .collectionTable__table > .table > tbody > tr > .collectionTable__popover-wrapper > .collectionTable__popover > span') // бургер
           .click();
         cy.get('.contextPopover')
           .contains('Изменить')
@@ -100,7 +101,7 @@ describe('Create an order', function() {
         cy.get(':nth-child(8) > .currency')
           .contains('1')
           .should('be.visible');
-        cy.get('.tab-pane.active > .panel.ng-scope > [filter-fields="$parent.undefined"] > .collection__wrapper > .collectionTable > .collectionTable__wrapper > .collectionTable__container > .collectionTable__table > .table > tbody > tr.ng-scope > .collectionTable__popover-wrapper > .collectionTable__popover > .ng-scope > .fa') // бургер
+        cy.get('.tab-pane.active > [template="template"] > [filter-fields="$parent.undefined"] > .collection__wrapper > .collectionTable > .collectionTable__wrapper > .collectionTable__container > .collectionTable__table > .table > tbody > tr > .collectionTable__popover-wrapper > .collectionTable__popover > span') // бургер
           .click({force:true});
         cy.get('.contextPopover')
           .contains('Удалить')

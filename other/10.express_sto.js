@@ -24,6 +24,7 @@ describe('express sto', function () {
     });
 
     it('gorod and company', function () {
+        cy.get('._2JR3u').contains('Создать обращение').should('be.visible');
         cy.get('._2JR3u').contains('0').should('be.visible');
         cy.get('._NY4w').contains(',00').should('be.visible');
         cy.get('._2rfW9').contains('Молдинг').click();

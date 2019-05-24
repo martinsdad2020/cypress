@@ -1,78 +1,78 @@
-describe("magaz pay", function() {
+describe("магаз самовывоз", function () {
 
-      it("visit", function() {
-        cy.clearCookies()
-        cy.clearLocalStorage()
-        cy.visit("https://magaz.apgrup.ru")
+  it("visit", function () {
+    cy.clearCookies()
+    cy.clearLocalStorage()
+    cy.visit("https://magaz.apgrup.ru")
 
-        cy.get('._2S9w')
-          .click()
-        cy.get('._3HZ_')
-          .click()
-        cy.get('._1rlq')
-          .contains('Audi')
-          .should('be.visible')
-          .click()
-        cy.get('._2OVU')
-          .contains('Купить')
-          .click()
-        cy.get('._2K0Z')
-          .contains('Товар успешно добавлен')
-          .should('be.visible')
-        cy.get('.exzB > :nth-child(2) > ._2sMB')
-          .contains('Перейти в корзину')
-          .click()
-        cy.get('._1rlq')
-          .contains('Корзина')
-          .should('be.visible')
-        cy.get('._28dd > ._2sMB')
-          .contains('Оформить заказ')
-          .click()
-        cy.get('._1rlq')
-          .contains('Химический переулок, дом 1, литер АЦ')
-          .should('be.visible')
-        cy.get('._1Y2L > ._2sMB')
-          .contains('Забрать отсюда')
-          .click()
-        cy.get('._11Gk > :nth-child(1) > :nth-child(1)')
-          .contains('Артикул')
-          .should('be.visible')
-        cy.get('._3zZ- > ._2sMB')
-          .contains('Отправить смс')
-          .click()
-        cy.get('._3vPm > ._1z4-')
-          .contains('Введите')
-          .should('be.visible')
-        cy.get('._3vPm > ._1z4- > ._1kfX > ._2WYl')
-          .click( {force:true} )
-          .clear()
-          .type('1234567890')
-          .should('value', '+7 (123) 456-78-90')
-        cy.get('#root > div > div.TjJL > div._11Gk > div > div > form > div._3vPm > div._3zZ-')
-          .contains('Отправить смс')
-          .click( {force:true} )
-        cy.wait(2000)
-        cy.get('#root > div > div.TjJL > div._11Gk > div > div > form > div._3vPm > div._1z4- > label > input')
-          .click( {force:true} )
-          .type('123456')
-        cy.get('#root > div > div.TjJL > div._11Gk > div > div > form > div:nth-child(4) > label > label > svg')
-          .click( {force:true} )
-        cy.get('#root > div > div.TjJL > div._11Gk > div > div > form > div:nth-child(4) > button')
-          .contains('Подтвердить заказ')
-          .click( {force:true} )
-        cy.get('#root > div')
-          .contains('Спасибо за ваш заказ!')
-          .should('be.visible')
-        cy.get('._25tR > ._2sMB')
-          .click();
-        cy.get('.pay-container')
-          .contains('Яндекс')
-          .click();
-        cy.get('#pay-form-submit')
-          .contains('Продолжить')
-          .click();
-        cy.get('.page-wrapper')
-          .contains('Эмулировать оплату')
-          .click();
-});
+    //Покупаем деталь ауди
+    cy.get('#root')
+      .contains('Все марки')
+      .click();
+    cy.get('#root')
+      .contains('Audi')
+      .should('be.visible')
+      .click();
+    cy.get('._20fvB')
+      .contains('Купить')
+      .click();
+    cy.get('._2lT_o')
+      .contains('Товар успешно добавлен')
+      .should('be.visible');
+    cy.get('._2lT_o')
+      .contains('Перейти в корзину')
+      .click();
+    cy.get('#root')
+      .contains('Корзина')
+      .should('be.visible');
+    //Оформляем доставку
+    cy.get('#root')
+      .contains('Оформить заказ')
+      .click();
+    cy.get('._3eTHD')
+      .contains('Самовывоз')
+      .click();
+    cy.get('#root')
+      .contains('Забрать отсюда')
+      .click();
+    cy.get('#root')
+      .contains('Артикул')
+      .should('be.visible');
+    cy.get('#root')
+      .contains('Отправить смс')
+      .click();
+    cy.get('#root')
+      .contains('Введите')
+      .should('be.visible');
+    cy.get('._26W7Q > .dmvaJ > ._2EEno > .aEtUW')
+      .clear()
+      .type('1234567890')
+      .should('value', '+7 (123) 456-78-90');
+    cy.get('#root')
+      .contains('Отправить смс')
+      .click({ force: true });
+    cy.wait(1000);
+    cy.get('._26W7Q > .dmvaJ > ._2EEno > .aEtUW')
+      .click({ force: true })
+      .type('123456');
+    cy.get('._39Hhf')
+      .click({ force: true });
+    cy.get(':nth-child(4) > .iFdeK')
+      .contains('Подтвердить заказ')
+      .click({ force: true });
+    cy.get('#root')
+      .contains('Спасибо за ваш заказ!')
+      .should('be.visible');
+    cy.get('#root')
+      .contains('Оплатить онлайн')
+      .click();
+    cy.get('.pay-container')
+      .contains('Яндекс')
+      .click();
+    cy.get('#pay-form-submit')
+      .contains('Продолжить')
+      .click();
+    cy.get('#payButton')
+      .click();
+  });
 });

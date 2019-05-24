@@ -115,14 +115,9 @@ describe('Create an order', function () {
     cy.get('.modal-body')
       .contains('Патрубок')
       .click({ force: true });
-    cy.get('[style="margin-bottom: 20px"] > :nth-child(1) > .row > :nth-child(2) > [field="field"] > .form-control')
-      .contains('Система охлаждения');
     cy.get('.pull-right > .btn-success') // кнопка применить во всплывающем поиске
       .click({ force: true });
     cy.wait(2000);
-    // cy.get('.partsQuickSearch__content')
-    //   .contains('Всего: 0')
-    //   .should('be.visible');
     cy.get('.partsQuickSearch__content')
       .contains('Добавить')
       .click({ force: true });

@@ -28,6 +28,7 @@ describe('express new user', function () {
 
   //Цена город компания
   it('gorod and company', function () {
+    cy.get('._2JR3u').contains('Создать обращение').should('not.be.visible');
     cy.get('._2JR3u').contains('0').should('be.visible');
     cy.get('._NY4w').contains(',00').should('not.be.visible');
     cy.get(callButton).should('not.be.visible');

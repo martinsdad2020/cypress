@@ -26,6 +26,7 @@ describe('SMOKE PRESS', function () {
   });
 
   it('check', function () {
+    cy.get('._2JR3u').contains('Создать обращение').should('be.visible');
     cy.get(':nth-child(1) > :nth-child(13) > ._1rCPk > .nowrap > ._3Iwt4') // add button
       .click();
     cy.get('.tuVoQ')

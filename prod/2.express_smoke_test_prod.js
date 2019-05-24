@@ -125,7 +125,7 @@ describe('SMOKE PRESS', function() {
       .contains('Применить')
       .click();
     cy.get(':nth-child(1) > :nth-child(1) > ._2rfW9') // euroavto search result
-      .contains('КСЕНОН')
+      .contains('Фара')
       .should('be.visible');
     cy.get('._1rCPk > .btn')
       .click();

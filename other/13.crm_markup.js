@@ -1,12 +1,12 @@
 let login = '#form-email'
 let password = '#form-password'
-let enter = '.ng-scope.ng-valid-minlength > :nth-child(2) > .btn'
-let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
+let enter = '.ng-valid-email.ng-valid-minlength > :nth-child(2) > .btn'
+let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > [ng-class="{inProgress: loading}"] > .inputAutocomplete__popup'
 let companies = '.sidebar__row'
 let startDate = 'div[name="startDate"] > .ng-valid-mask.ng-valid-date-time-required-date > .row > .has-error > .form-control'
 let endDate = 'div[name="endDate"] > .ng-valid-mask.ng-valid-date-time-required-date > .row > .has-error > .form-control'
-let carModel = '.conditionsCondition__list > .inputAutocomplete > .inputPopup > .inputPopup__popup > .ng-scope > .inputAutocomplete__popup'
-let burger = ':nth-child(1) > .collectionTable__popover-wrapper > .collectionTable__popover > .ng-scope > .fa'
+let carModel = '.conditionsCondition__list > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup'
+let burger = ':nth-child(1) > .collectionTable__popover-wrapper > .collectionTable__popover > span'
 
 function randomInteger(min, max) {
   let rand = min + Math.random() * (max - min)

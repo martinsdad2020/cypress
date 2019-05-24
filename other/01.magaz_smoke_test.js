@@ -10,34 +10,34 @@ describe("магаз", function () {
     });
     // Шапка
     it('head', function () {
-        cy.get('._1Aqx')
+        cy.get('#root')
             .contains('О компании')
             .click();
-        cy.get('._3eTH')
+        cy.get('#root')
             .contains('Мы рады приветствовать вас на сайте нашей компании.')
             .should('be.visible');
-        cy.get('._1Aqx')
+        cy.get('#root > div > div._3WKxw > div:nth-child(1) > div._1Aqxs > nav')
             .contains('Доставка')
             .click();
-        cy.get('._3eTH')
+        cy.get('#root')
             .contains('AlfaDetali осуществляет доставку Товара:')
             .should('be.visible');
-        cy.get('._1Aqx')
+        cy.get('#root > div > div._3WKxw > div:nth-child(1) > div._1Aqxs > nav')
             .contains('Как купить')
             .click();
-        cy.get('._3eTH')
+        cy.get('#root')
             .contains('Процедура покупки товара в интернет-магазине')
             .should('be.visible');
-        cy.get('._1Aqx')
+        cy.get('#root > div > div._3WKxw > div:nth-child(1) > div._1Aqxs > nav')
             .contains('Что с моим заказом?')
             .click();
-        cy.get('._3uJh')
+        cy.get('#root > div > div._3eTHD > div > div > h1')
             .contains('Что с моим заказом?')
             .should('be.visible');
-        cy.get('._1Aqx')
+        cy.get('#root > div > div._3WKxw > div:nth-child(1) > div._1Aqxs > nav')
             .contains('Контакты')
             .click();
-        cy.get('._3eTH')
+        cy.get('#root')
             .contains('Контакты')
             .should('be.visible');
     });
@@ -47,7 +47,7 @@ describe("магаз", function () {
         cy.get('#root')
             .contains('Вход / Регистрация')
             .click();
-        cy.get('._3eTH')
+        cy.get('#root')
             .contains('Вход')
             .should('be.visible');
         cy.get(':nth-child(1) > ._2EEn > .aEtU')
@@ -145,19 +145,19 @@ describe("магаз", function () {
         cy.get('._2MwC')
             .contains('О компании')
             .click();
-        cy.get('._3eTH')
+        cy.get('#root')
             .contains('Мы рады приветствовать вас на сайте нашей компании.')
             .should('be.visible');
         cy.get('._2MwC')
             .contains('Доставка')
             .click();
-        cy.get('._3eTH')
+        cy.get('#root')
             .contains('AlfaDetali осуществляет доставку Товара:')
             .should('be.visible');
         cy.get('._2MwC')
             .contains('Как купить')
             .click();
-        cy.get('._3eTH')
+        cy.get('#root')
             .contains('Процедура покупки товара в интернет-магазине')
             .should('be.visible');
         cy.get('._2MwC')
@@ -210,7 +210,7 @@ describe("магаз", function () {
         cy.get(head)
             .contains('Вход')
             .click({ force: true });
-        cy.get('._3eTH')
+        cy.get('#root')
             .contains('Вход')
             .should('be.visible');
         cy.get(':nth-child(1) > ._2EEn > .aEtU')
