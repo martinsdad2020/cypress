@@ -32,7 +32,7 @@ describe('EA express visible', function () {
         cy.get('._2vpgU > .form-control').type('Радиатор кондиционера');
         cy.get('.CFKjt').contains('Радиатор').click();
         cy.get('._NY4w').contains('Применить').click();
-        cy.wait(1000);
+        cy.wait(3000);
         cy.get(':nth-child(1) > :nth-child(1) > ._2rfW9').contains('Радиатор').click();
         cy.get('.nmPIX').contains('В корзину').click();
         cy.wait(1000);
