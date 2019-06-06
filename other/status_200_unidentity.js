@@ -13,7 +13,7 @@ function randomInteger(min, max) {
 let randGroup = randomInteger(0, 17).toFixed(0);
 let randName = randomInteger(0, 10).toFixed(0);
 
-describe('storage', function () {
+describe('unidentity', function () {
     before('cookie', function () {
         cy.setCookie('guid-1', '%7B67F7C782-1A21-C70D-DC3F-4C2B6CA27E6B%7D')
         cy.server();
@@ -54,7 +54,7 @@ describe('storage', function () {
 
     it('at a storage', function () {
         cy.get('.sidebar__menu')
-            .contains('На складе')
+            .contains('Неопознанные')
             .click();
         cy.get('#filter-type')
             .select('Легковая');
@@ -63,23 +63,26 @@ describe('storage', function () {
             .eq(2)
             .click();
         cy.get('.inputAutocomplete__popup')
-            .contains('Cadillac')
+            .contains('Audi')
             .click();
         cy.get('.app__content')
-          .contains('Применить')
-          .click();
+            .contains('Применить')
+            .click();
         cy.wait(1000);
         cy.get('.collectionTable__container')
-          .contains('Cadillac')
-          .should('be.visible');
-        cy.get('.app__content')
-          .contains('Очистить')
-          .click();
-        cy.get('.app__content')
-          .contains('Применить')
-          .click();
+            .contains('Audi')
+            .should('be.visible');
         cy.get('.collectionTable__container')
-          .contains('Cadillac')
-          .should('not.be.visible');
+            .contains('Jeep')
+            .should('not.be.visible');
+        cy.get('.app__content')
+            .contains('Очистить')
+            .click();
+        cy.get('.app__content')
+            .contains('Применить')
+            .click();
+        cy.get('.collectionTable__container')
+            .contains('Jeep')
+            .should('be.visible');
     });
 });

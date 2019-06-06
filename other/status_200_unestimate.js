@@ -13,7 +13,7 @@ function randomInteger(min, max) {
 let randGroup = randomInteger(0, 17).toFixed(0);
 let randName = randomInteger(0, 10).toFixed(0);
 
-describe('storage', function () {
+describe('unestimate', function () {
     before('cookie', function () {
         cy.setCookie('guid-1', '%7B67F7C782-1A21-C70D-DC3F-4C2B6CA27E6B%7D')
         cy.server();
@@ -54,32 +54,13 @@ describe('storage', function () {
 
     it('at a storage', function () {
         cy.get('.sidebar__menu')
-            .contains('На складе')
-            .click();
-        cy.get('#filter-type')
-            .select('Легковая');
-        cy.get(':nth-child(2) > label')
-            .next()
-            .eq(2)
-            .click();
-        cy.get('.inputAutocomplete__popup')
-            .contains('Cadillac')
+            .contains('Неоцененные')
             .click();
         cy.get('.app__content')
-          .contains('Применить')
-          .click();
-        cy.wait(1000);
-        cy.get('.collectionTable__container')
-          .contains('Cadillac')
-          .should('be.visible');
+            .contains('Применить')
+            .click();
         cy.get('.app__content')
-          .contains('Очистить')
-          .click();
-        cy.get('.app__content')
-          .contains('Применить')
-          .click();
-        cy.get('.collectionTable__container')
-          .contains('Cadillac')
-          .should('not.be.visible');
+            .contains('Список деталей пуст')
+            .should('be.visible');
     });
 });
