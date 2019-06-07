@@ -1,7 +1,7 @@
 let login = ':nth-child(1) > .form-control'// поле логин
 let password = ':nth-child(2) > .form-control' // поле пароль
 let basket = '._3L1Qv > ._2-2Tl' // корзина в шапке
-let addBasket = ':nth-child(1) > :nth-child(12) > ._1rCPk > .nowrap > ._3Iwt4' //Положить в корзину
+let addBasket = ':nth-child(1) > :nth-child(14) > ._1rCPk > .nowrap > .btn' //Положить в корзину
 let callButton = ':nth-child(1) > :nth-child(12) > ._1rCPk > .nowrap > ._3ZaEA' //кнопка звонка
 let profile = '._2JR3u' // личный кабинет(мыло)
 
@@ -26,12 +26,12 @@ describe('SMOKE PRESS', function() {
   });
 
   it('check', function() {
-    cy.get(':nth-child(1) > :nth-child(13) > ._1rCPk > .nowrap > .btn') // add button
+    cy.get(addBasket) // add button
       .click();
     cy.get('.tuVoQ')
       .contains('1')
       .should('be.visible');
-    cy.get(':nth-child(1) > :nth-child(13) > ._1rCPk > .nowrap > .btn')
+    cy.get(':nth-child(1) > :nth-child(14) > ._1rCPk > .nowrap > .btn')
       .click();
     cy.get('.tuVoQ')
       .contains('0')
@@ -152,9 +152,9 @@ describe('SMOKE PRESS', function() {
       .should('be.visible');
     cy.get('.tuVoQ')
       .click();
-    cy.get(':nth-child(1) > :nth-child(13) > ._1rCPk > .btn')
+    cy.get(':nth-child(1) > :nth-child(14) > ._1rCPk > .btn')
       .click();
-    cy.get(':nth-child(2) > :nth-child(13) > ._1rCPk > .btn')
+    cy.get(':nth-child(2) > :nth-child(14) > ._1rCPk > .btn')
       .click();
     cy.get('#app')
       .contains('Оформить заказ')

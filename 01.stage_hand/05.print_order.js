@@ -1,24 +1,33 @@
-var mail = '#form-email'
-var pass = '#form-password'
-var enter = '.ng-scope.ng-valid-minlength > :nth-child(2) > .btn'
+let login = '#form-email'
+let password = '#form-password'
+let enter = '.ng-valid-email.ng-valid-minlength > :nth-child(2) > .btn'
+let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > [ng-class="{inProgress: loading}"] > .inputAutocomplete__popup'
+let companies = '.sidebar__row'
+let side = '.sidebar__menu'
+let first = '.tab-pane.active > [scope="ctrl.orderScope"] > [table-template="template"] > .panel-footer' //1-5, 12
+let second = '.tab-pane.active > [template="template"] > [filter-fields="$parent.undefined"] > .panel-footer' // 6-11, 13-14
+
 
 describe("print", function () {
   before('cookie', function () {
-    cy.setCookie('guid-191', '%7B1A4781F3-8401-B3AD-A5E7-2594B38BAC26%7D');
+    cy.setCookie('guid-191', '%7B1A4781F3-8401-B3AD-A5E7-2594B38BAC26%7D')
+    cy.server();
+    cy.route('app_dev.php/v1/**')
+      .as('ww');
   });
 
   it("Auth", function () {
     cy.visit("https://apgrup.ru/orders/56156/");
 
-    cy.get(mail).click().type('jinda.project@gmail.com');
-    cy.get(pass).click().type('123456');
+    cy.get(login).type('jinda.project@gmail.com');
+    cy.get(password).type('123456');
     cy.get(enter).click();
     cy.wait(2000);
   });
 
   // прикрепленные NTCN NTCN
   it('print', function () {
-    cy.get('#content > div > ui-view > div:nth-child(4) > div > div.tab-pane.active > div > div:nth-child(3) > div.panel-footer.collection__footer.collection__footer--panel > div.collection__print.ng-scope')
+    cy.get(first)
       .contains('Печать')
       .click();
     cy.get('[style="padding-top: 40px;"] > .collectionTable > .collectionTable__wrapper')
@@ -28,12 +37,12 @@ describe("print", function () {
       .contains('Закрыть')
       .click();
 
-    // блокнот fdf
+    // блокнот
     cy.get('.nav')
       .contains('Блокнот')
       .click();
     cy.wait(1000);
-    cy.get('.tab-pane.active > .panel.ng-scope > [table-template="template"] > .panel-footer')
+    cy.get(first)
       .contains('Печать')
       .click();
     cy.get('[style="padding-top: 40px;"] > .collectionTable > .collectionTable__wrapper')
@@ -48,10 +57,10 @@ describe("print", function () {
       .contains('Сохраненный поиск')
       .click();
     cy.wait(1000);
-    cy.get('.tab-pane.active > .panel.ng-scope')
+    cy.get('.app__content')
       .contains('Да')
       .should('be.visible');
-    cy.get('.tab-pane.active > .panel.ng-scope > [table-template="template"] > .panel-footer')
+    cy.get(first)
       .contains('Печать')
       .click();
     cy.get('[style="padding-top: 40px;"] > .collectionTable > .collectionTable__wrapper')
@@ -66,10 +75,10 @@ describe("print", function () {
       .contains('История поиска')
       .click();
     cy.wait(1000);
-    cy.get('.tab-pane.active > .panel.ng-scope')
+    cy.get('.app__content')
       .contains('Да')
       .should('be.visible');
-    cy.get('.tab-pane.active > .panel.ng-scope > [table-template="template"] > .panel-footer')
+    cy.get(first)
       .contains('Печать')
       .click();
     cy.get('[style="padding-top: 40px;"] > .collectionTable > .collectionTable__wrapper')
@@ -84,10 +93,10 @@ describe("print", function () {
       .contains('комментариев')
       .click();
     cy.wait(1000);
-    cy.get('.tab-pane.active > .panel.ng-scope')
+    cy.get('.app__content')
       .contains('sdf')
       .should('be.visible');
-    cy.get('.tab-pane.active > .panel.ng-scope > [table-template="template"] > .panel-footer')
+    cy.get(first)
       .contains('Печать')
       .click();
     cy.get('[style="padding-top: 40px;"] > .collectionTable > .collectionTable__wrapper')
@@ -102,10 +111,10 @@ describe("print", function () {
       .contains('Доставки')
       .click();
     cy.wait(1000);
-    cy.get('.tab-pane.active > .panel.ng-scope')
+    cy.get('.app__content')
       .contains('500,00')
       .should('be.visible');
-    cy.get('.tab-pane.active > .panel.ng-scope > [filter-fields="$parent.undefined"] > .panel-footer')
+    cy.get(second)
       .contains('Печать')
       .click();
     cy.get('[style="padding-top: 40px;"] > .collectionTable > .collectionTable__wrapper')
@@ -120,10 +129,10 @@ describe("print", function () {
       .contains('Счета')
       .click();
     cy.wait(1000);
-    cy.get('.tab-pane.active > .panel.ng-scope')
+    cy.get('.app__content')
       .contains('0,00')
       .should('be.visible');
-    cy.get('.tab-pane.active > .panel.ng-scope > [filter-fields="$parent.undefined"] > .panel-footer')
+    cy.get(second)
       .contains('Печать')
       .click();
     cy.get('[style="padding-top: 40px;"] > .collectionTable > .collectionTable__wrapper')
@@ -138,10 +147,10 @@ describe("print", function () {
       .contains('Платежи')
       .click();
     cy.wait(1000);
-    cy.get('.tab-pane.active > .panel.ng-scope')
+    cy.get('.app__content')
       .contains('Банковская карта')
       .should('be.visible');
-    cy.get('.tab-pane.active > .panel.ng-scope > [filter-fields="$parent.undefined"] > .panel-footer')
+    cy.get(second)
       .contains('Печать')
       .click();
     cy.get('[style="padding-top: 40px;"] > .collectionTable > .collectionTable__wrapper')
@@ -156,10 +165,10 @@ describe("print", function () {
       .contains('Расходные')
       .click();
     cy.wait(1000);
-    cy.get('.tab-pane.active > .panel.ng-scope')
+    cy.get('.app__content')
       .contains('NOKIA')
       .should('be.visible');
-    cy.get('.tab-pane.active > .panel.ng-scope > [filter-fields="$parent.undefined"] > .panel-footer')
+    cy.get(second)
       .contains('Печать')
       .click();
     cy.get('[style="padding-top: 40px;"] > .collectionTable > .collectionTable__wrapper')
@@ -174,10 +183,10 @@ describe("print", function () {
       .contains('Заявки')
       .click();
     cy.wait(1000);
-    cy.get('.tab-pane.active > .panel.ng-scope')
+    cy.get('.app__content')
       .contains('ПЕТРОВ')
       .should('be.visible');
-    cy.get('.tab-pane.active > .panel.ng-scope > [filter-fields="$parent.undefined"] > .panel-footer')
+    cy.get(second)
       .contains('Печать')
       .click();
     cy.get('[style="padding-top: 40px;"] > .collectionTable > .collectionTable__wrapper')
@@ -195,7 +204,7 @@ describe("print", function () {
     cy.get('tr > .text-center')
       .contains('пуст')
       .should('be.visible');
-    cy.get('.tab-pane.active > .panel.ng-scope > [filter-fields="$parent.undefined"] > .panel-footer')
+    cy.get(second)
       .contains('Печать')
       .click();
     cy.get('[style="padding-top: 40px;"] > .collectionTable > .collectionTable__wrapper')
@@ -209,13 +218,14 @@ describe("print", function () {
     cy.get('.nav')
       .contains('ответственных')
       .click();
-    cy.wait(3000);
-    cy.get('.tab-pane.active > .panel.ng-scope')
+    cy.wait(1000);
+    cy.get('.app__content')
       .contains('ПЕТРОВ')
       .should('be.visible');
-    cy.get('.tab-pane.active > .panel.ng-scope > [table-template="template"] > .panel-footer > .collection__print > .btn-print')
+    cy.get(first)
+      .contains('Печать')
       .click();
-    cy.wait(3000);
+    cy.wait(1000);
     cy.get('[style="padding-top: 40px;"] > .collectionTable > .collectionTable__wrapper')
       .contains('ПЕТРОВ')
       .should('be.visible');
@@ -228,10 +238,10 @@ describe("print", function () {
       .contains('Звонки')
       .click();
     cy.wait(1000);
-    cy.get('.tab-pane.active > .panel.ng-scope')
+    cy.get('.app__content')
       .contains('Исходящий')
       .should('be.visible');
-    cy.get('.tab-pane.active > .panel.ng-scope > [filter-fields="$parent.undefined"] > .panel-footer')
+    cy.get(second)
       .contains('Печать')
       .click();
     cy.get('[style="padding-top: 40px;"]')
@@ -246,10 +256,10 @@ describe("print", function () {
       .contains('Повторные')
       .click();
     cy.wait(1000);
-    cy.get('.tab-pane.active > .panel.ng-scope')
+    cy.get('.app__content')
       .contains('ау')
       .should('be.visible');
-    cy.get('.tab-pane.active > .panel.ng-scope > [filter-fields="$parent.undefined"] > .panel-footer')
+    cy.get(second)
       .contains('Печать')
       .click();
     cy.get('[style="padding-top: 40px;"] > .collectionTable > .collectionTable__wrapper')

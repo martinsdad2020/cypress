@@ -186,25 +186,25 @@ describe('SMOKE PRESS', function () {
     cy.get('#app')
       .contains('Отменен')
       .should('be.visible');
-    cy.get('#app')
-      .contains('Создать')
-      .click();
-    cy.get('.form-control')
-      .type('ТЕСТ ТЕСТ ТЕСТ ТЕСТ ТЕСТ ТЕСТ ТЕСТ')
-      .should('be.visible');
-    cy.get('._3_FkZ')
-      .click();
-    cy.get('._2JR3u')
-      .contains('Создать обращение')
-      .click();
-    cy.get('#app')
-      .contains('Создать предзаказ')
-      .should('be.visible');
-    cy.get('._2JR3u')
-      .contains('menufolesu')
-      .click();
-    cy.get('.nmPIX')
-      .contains('Выход')
-      .click();
+    // cy.get('#app')
+    //   .contains('Создать')
+    //   .click();
+    // cy.get('.form-control')
+    //   .type('ТЕСТ ТЕСТ ТЕСТ ТЕСТ ТЕСТ ТЕСТ ТЕСТ')
+    //   .should('be.visible');
+    // cy.get('._3_FkZ')
+    //   .click();
+    // cy.get('._2JR3u')
+    //   .contains('Создать обращение')
+    //   .click();
+    // cy.get('#app')
+    //   .contains('Создать предзаказ')
+    //   .should('be.visible');
+    // cy.get('._2JR3u')
+    //   .contains('menufolesu')
+    //   .click();
+    // cy.get('.nmPIX')
+    //   .contains('Выход')
+    //   .click();
   });
 });
