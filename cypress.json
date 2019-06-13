@@ -7,6 +7,7 @@
     "numTestsKeptInMemory": 5,
     "requestTimeout": 15000,
     "video": false,
+    "integrationFolder": "cypress/integration",
     "defaultCommandTimeout": 10000,
     "responseTimeout": 300000
 
