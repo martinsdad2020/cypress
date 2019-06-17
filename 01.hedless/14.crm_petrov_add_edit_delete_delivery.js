@@ -11,7 +11,7 @@ describe('Create an order', function() {
    before('cookie', function() {
       cy.setCookie('guid-191', '%7B1A4781F3-8401-B3AD-A5E7-2594B38BAC26%7D')
       cy.server();
-      cy.route('GET', 'https://api.apgrup.ru/app_dev.php/v1/*')
+      cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
         .as('ww');
     });
 
