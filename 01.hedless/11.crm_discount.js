@@ -101,14 +101,17 @@ describe("добавление детали в систему", function () {
     cy.get('#content')
       .contains('Условие')
       .click();
+    cy.get(':nth-child(3) > .conditionsCondition > .conditionsCondition__condition')
+      .next()
+      .click();
     cy.get('.form-control.inputAutocomplete__input') // группа деталей
       .eq(3).
-      click();
+      click({force:true});
     cy.get('.inputAutocomplete__popup').eq(3)
       .children().eq(randGroup).click();
     cy.get('.form-control.inputAutocomplete__input') // наименование деталей
       .eq(4).
-      click();
+      click({force:true});
     cy.get('.inputAutocomplete__popup').eq(4)
       .children().eq(randGroup).click();
     cy.get('.app__content')
