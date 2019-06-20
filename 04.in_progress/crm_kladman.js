@@ -7,6 +7,9 @@ let companies = '.sidebar__row'
 describe ('kladman', function(){
 	beforeEach('cookie', function(){
 	cy.setCookie('guid-266', '%7B9ED77B5F-8D1B-E432-3F6B-7D0FFDC081F3%7D');
+	cy.server();
+	cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
+	.as('ww');
 	});
 
 	it("visit apgrup", function () {
@@ -19,6 +22,7 @@ describe ('kladman', function(){
       .type('123456');
     cy.get(enter)
       .click();
+    cy.wait('@ww');
   });
 
   it('pick ruusian village', function () {
