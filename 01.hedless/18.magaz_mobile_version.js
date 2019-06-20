@@ -134,7 +134,7 @@ describe('mobile version magaz', function () {
       .should('be.visible')
       .click();
     cy.get('html')
-      .contains('Neoplan')
+      .contains('L200')
       .should('be.visible');
     cy.get('._2UU7K')
       .contains('Главная')
