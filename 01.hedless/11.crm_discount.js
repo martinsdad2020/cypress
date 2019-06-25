@@ -92,9 +92,9 @@ describe("добавление детали в систему", function () {
       .click();
     cy.get('.conditionsCondition__field')
       .select('Марка');
-    cy.get('.conditionsCondition__list > .ng-pristine')
+    cy.get('.conditionsCondition__list > .form-control')
       .next()
-      .click();
+      .click({force:true});
     cy.get(carModel) // выпадающий список с марками
       .contains(model[randn])
       .click();
