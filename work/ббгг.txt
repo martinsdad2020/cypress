@@ -154,3 +154,10 @@ https://apgrup.ru/parts/3720012/
 
 Рэббит   192.168.1.181:15672 tonyg  MG#5757-
 админка   magaz.apgrup.ru   shoh5phief0fae0O
+
+
+выгрузки:
+https://static.apgrup.ru/avito/omsk.xml
+https://static.apgrup.ru/gnauto/autoru_31_spb.xml
+https://static.apgrup.ru/gnauto/file32.xlsx
+https://static.apgrup.ru/gnauto/k50.csv
