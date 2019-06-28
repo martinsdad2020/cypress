@@ -81,6 +81,7 @@ describe('add new detail', function () {
     cy.get('.app__content')
       .contains('Добавить деталь')
       .click();
+    cy.wait(4000);
     cy.get(':nth-child(1) > .form__label')
       .next()
       .click();
@@ -127,7 +128,7 @@ describe('add new detail', function () {
     cy.get('.modal-body')
       .contains('Добавить деталь')
       .click();
-    cy.wait(1000);
+    cy.wait(4000);
   });
 
   it('add new car', function () {

@@ -94,7 +94,7 @@ describe("добавление детали в систему", function () {
       .select('Марка');
     cy.get('.conditionsCondition__list > .form-control')
       .next()
-      .click({force:true});
+      .click();
     cy.get(carModel) // выпадающий список с марками
       .contains(model[randn])
       .click();
