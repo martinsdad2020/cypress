@@ -5,29 +5,29 @@ let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopu
 let companies = '.sidebar__row'
 let startDate = 'div[name="startDate"] > .ng-valid-mask.ng-valid-date-time-required-date > .row > .has-error > .form-control'
 let endDate = 'div[name="endDate"] > .ng-valid-mask.ng-valid-date-time-required-date > .row > .has-error > .form-control'
-let carModel = '.conditionsCondition__list > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup'
+let carModel = '.css-1sati5h-menu'
 let burger = ':nth-child(1) > .collectionTable__popover-wrapper > .collectionTable__popover > span'
 
 function randomInteger(min, max) {
   let rand = min + Math.random() * (max - min)
   return rand;
 };
-let model = ['Audi', 'BMW', 'Hummer', 'Toyota', 'Acura', 'Honda', 'Honda', 'Dodge', 'Aston Martin', 'BYD', 'Bentley', 'Cadillac', 'Chery', 'Chevrolet'];
+let model = ['Audi', 'Acura', 'Aston Martin', 'Cadillac'];
 let randn = randomInteger(0, model.length - 1).toFixed(0) // рандомная марка
 let randPercent = randomInteger(1, 50).toFixed(0) // рандомное число от 1 до 99
 let randGroup = randomInteger(0, 15).toFixed(0)
 // console.log(randomInteger(0, model.length - 1).toFixed(2));
 // console.log(model[randn.toFixed(0)]);
 
-describe("добавление детали в систему", function () {
-  before('cookie', function () {
+describe("добавление детали в систему", function() {
+  before('cookie', function() {
     cy.setCookie('guid-1', '%7B67F7C782-1A21-C70D-DC3F-4C2B6CA27E6B%7D')
     cy.server();
     cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
       .as('ww');
   });
 
-  it("visit apgrup", function () {
+  it("visit apgrup", function() {
     cy.visit("https://apgrup.ru");
     cy.get(login)
       .click()
@@ -40,7 +40,7 @@ describe("добавление детали в систему", function () {
     cy.wait('@ww');
   });
 
-  it('pick ruusian village', function () {
+  it('pick ruusian village', function() {
     cy.get('.sidebar__label')
       .contains('Компания')
       .next()
@@ -58,7 +58,7 @@ describe("добавление детали в систему", function () {
     cy.wait(3000);
   });
 
-  it('pick discount', function () {
+  it('pick discount', function() {
     cy.get('.sidebar__menu')
       .contains('Наценки')
       .click();
@@ -68,7 +68,7 @@ describe("добавление детали в систему", function () {
       .click();
     cy.get('#form-title')
       .type(model[randn]);
-      cy.get('#form-markupPercent')
+    cy.get('#form-markupPercent')
       .type(randPercent);
     cy.get('#form-startDate')
       .click();
@@ -82,37 +82,23 @@ describe("добавление детали в систему", function () {
       .type('2020');
   });
 
-  it('pick rules', function () {
+  it('pick rules', function() {
     cy.get('.app__content')
       .contains('ИЛИ')
       .click();
     cy.get('.form-horizontal')
       .contains('Условие')
       .click();
-    cy.get('.conditionsCondition__field')
-      .select('Марка');
-    cy.get('.conditionsCondition__list > .ng-pristine')
-      .next()
+    cy.get('.css-1hwfws3')
+      .click()
+    cy.get('.css-11unzgr')
+      .contains('Марка')
+      .click();
+    cy.get('.css-1hwfws3')
       .click();
     cy.get(carModel) // выпадающий список с марками
       .contains(model[randn])
       .click();
-    cy.get('#content')
-      .contains('Условие')
-      .click();
-    cy.get(':nth-child(3) > .conditionsCondition > .conditionsCondition__condition')
-      .next()
-      .click();
-    cy.get('.form-control.inputAutocomplete__input') // группа деталей
-      .eq(3).
-      click({force:true});
-    cy.get('.inputAutocomplete__popup').eq(3)
-      .children().eq(randGroup).click();
-    cy.get('.form-control.inputAutocomplete__input') // наименование деталей
-      .eq(4)
-      .click({force:true});
-    cy.get('.inputAutocomplete__popup').eq(4)
-      .children().eq(randGroup).click();
     cy.get('.app__content')
       .contains('Создать')
       .click();
