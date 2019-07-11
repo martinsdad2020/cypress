@@ -5,104 +5,115 @@ describe('Filter', function() {
   });
 
   it('filter', function() {
-    cy.get('._18TB')
+    cy.get('#root')
       .contains('Все марки')
       .click();
-    cy.get('._18TB')
+    cy.get('#root')
       .contains("Dodge")
       .click();
-    cy.get('._1R8- > :nth-child(1)')
+    cy.get('._20fvB > :nth-child(1)')
       .contains('Амортизатор задний Dodge')
       .should('be.visible');
-    cy.get('.hmqi')
+    cy.get('.FQzr2')
       .contains('Б/У')
       .click();
-    cy.get('._444m')
+    cy.wait(1500);
+    cy.get('._20fvB > :nth-child(1)')
       .contains('Юбка передняя Dodge Journey c 2009 г.')
       .should('be.visible');
-    cy.get('.hmqi')
+    cy.get('.FQzr2')
       .contains('Новые')
       .click();
-    cy.get('._444m')
+    cy.wait(1500);
+    cy.get('._20fvB > :nth-child(1)')
       .contains('Амортизатор задний Dodge')
       .should('be.visible');
-    cy.get('.hmqi')
+    cy.get('.FQzr2')
       .contains('Все')
       .click();
-    cy.get('.En5g > .NXKZ > ._3hEL')
+    cy.wait(1500);
+    cy.get('.dFQW3 > ._20KFe > .fqKS8')
       .click();
-    cy.get('._3Sgn')
+    cy.get('.VRfPe')
       .contains('По возрастанию цены')
       .click();
-    cy.get('._444m')
+    cy.wait(1500);
+    cy.get('._20fvB > :nth-child(1)')
       .contains('Переключатель отопителя Dodge Caravan IV 2001 - 2007')
       .should('be.visible');
-    cy.get('.En5g > .NXKZ > ._3hEL')
+    cy.get('.dFQW3 > ._20KFe > .fqKS8')
       .click();
-    cy.get('._3Sgn')
+    cy.get('.VRfPe')
       .contains('По убыванию цены')
       .click();
-    cy.get('._444m')
-      .contains('Двигатель Dodge Ram (DR/DH) 2001 - 2009')
+    cy.wait(1500);
+    cy.get('._20fvB > :nth-child(1)')
+      .contains('Двигатель Dodge Journey c 2009 г.')
       .should('be.visible');
-    cy.get('.En5g > .NXKZ > ._3hEL')
+    cy.get('.dFQW3 > ._20KFe > .fqKS8')
       .click();
-    cy.get('._3Sgn')
+    cy.get('.VRfPe')
       .contains('Сначала новые')
       .click();
-    cy.get('._444m')
+    cy.wait(1500);
+    cy.get('._20fvB > :nth-child(1)')
       .contains('Кронштейн радиатора Dodge Caliber 2006 - 2011')
       .should('be.visible');
-    cy.get('.En5g > .NXKZ > ._3hEL')
+    cy.get('.dFQW3 > ._20KFe > .fqKS8')
       .click();
-    cy.get('._3Sgn')
+    cy.get('.VRfPe')
       .contains('Сначала б/у')
       .click();
-    cy.get('._444m')
+    cy.wait(1500);
+    cy.get('._20fvB > :nth-child(1)')
       .contains('Кронштейн крепления крыла Dodge Caliber 2006 - 2011')
       .should('be.visible');
-    cy.get('.En5g > .NXKZ > ._3hEL')
+    cy.get('.dFQW3 > ._20KFe > .fqKS8')
       .click();
-    cy.get('._3Sgn')
+    cy.get('.VRfPe')
       .contains('По умолчанию')
       .click();
-    cy.get('._444m')
+    cy.wait(1500);
+    cy.get('._20fvB > :nth-child(1)')
       .contains('Амортизатор задний Dodge')
       .should('be.visible');
-    cy.get('._2dgX > .NXKZ > ._3hEL')
+    cy.get('._2yev3 > ._20KFe > .fqKS8')
       .click();
-    cy.get('._3Sgn')
+    cy.get('.VRfPe')
       .contains('Москва')
       .click();
-    cy.get('._444m')
+    cy.wait(1500);
+    cy.get('._20fvB > :nth-child(1)')
       .contains('Крыло переднее левое Dodge Journey c 2009 г.')
       .should('be.visible');
-    cy.get('._2dgX > .NXKZ > ._3hEL')
+    cy.get('._2yev3 > ._20KFe > .fqKS8')
       .click();
-    cy.get('._3Sgn')
+    cy.get('.VRfPe')
       .contains('Санкт-Петербург')
       .click();
-    cy.get('._444m')
+    cy.wait(1500);
+    cy.get('._20fvB > :nth-child(1)')
       .contains('Амортизатор задний Dodge')
       .should('be.visible');
-    cy.get('._2dgX > .NXKZ > ._3hEL')
+    cy.get('._2yev3 > ._20KFe > .fqKS8')
       .click();
-    cy.get('._3Sgn')
+    cy.get('.VRfPe')
       .contains('Минск')
       .click();
-    cy.get('._444m')
+    cy.wait(1500);
+    cy.get('._20fvB > :nth-child(1)')
       .contains('Моторчик отопителя Dodge Nitro 2007 - 2011')
       .should('be.visible');
-    cy.get('._2dgX > .NXKZ > ._3hEL')
-      .click();
-    cy.get('._3Jvj > :nth-child(1) > .tysP')
+    // cy.get('._2yev3 > ._20KFe > .fqKS8')
+    //   .click();
+    cy.get('._1QftT > :nth-child(1) > ._1iTML')
       .click();
     cy.get('._1gOd')
       .contains('Артикул')
       .should('not.be.visible');
     cy.get('._3Jvj > :nth-child(2)')
       .click();
-    cy.get('._444m')
+    cy.get('._20fvB > :nth-child(1)')
       .contains('Нет')
       .should('not.be.visible');
     cy.get('._3Jvj > :nth-child(3)')

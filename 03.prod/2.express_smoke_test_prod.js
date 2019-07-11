@@ -117,7 +117,7 @@ describe('SMOKE PRESS', function() {
       .next()
       .click()
     cy.get('._2vpgU > .form-control')
-      .type('Фара левая');
+      .type('Фара правая');
     cy.get('._2ZST_')
       .contains('Фара')
       .click();
