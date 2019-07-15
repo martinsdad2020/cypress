@@ -1,22 +1,22 @@
-let login = '#form-email'
-let password = '#form-password'
-let enter = '.ng-valid-email.ng-valid-minlength > :nth-child(2) > .btn'
-let storages = '.sidebar__menu > :nth-child(2) > .inputAutocomplete > .inputPopup > .inputPopup__popup > [ng-class="{inProgress: loading}"] > .inputAutocomplete__popup'
-let companies = '.sidebar__row'
+let login = ':nth-child(1) > .form-control'
+let password = ':nth-child(2) > .form-control'
+let enter = 'p > .btn'
+let companies = '.css-11unzgr'
+let storages = '.css-11unzgr'
 let name = '#form-name'
 let phone = '#form-phoneNumber'
 let para = ':nth-child(15) > :nth-child(2) > a'
 
 describe('Create an order', function () {
-  before('cookie', function () {
-    cy.setCookie('guid-191', '%7B1A4781F3-8401-B3AD-A5E7-2594B38BAC26%7D')
+  beforeEach('cookie', function () {
+    cy.setCookie('guid-191', '{9470534C-70C9-5366-B92F-AFE2007F0B1A}')
     cy.server();
     cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
       .as('ww');
   });
 
   it('visit apgrup', function () {
-    cy.visit("https://apgrup.ru");
+    cy.visit("https://react.apgrup.ru/");
 
     cy.get(login)
       .click()
@@ -33,14 +33,14 @@ describe('Create an order', function () {
   });
 
   it('pick ruusian village', function () {
-    cy.get('.sidebar__label')
+    cy.get('._2Hrbd')
       .contains('Компания')
       .next()
       .click();
     cy.get(companies) // выпадающий список со складами
       .contains('АльфаДетали')
       .click();
-    cy.get('.sidebar__label')
+    cy.get('._2Hrbd')
       .contains('Склад')
       .next()
       .click();
@@ -51,7 +51,7 @@ describe('Create an order', function () {
   });
 
   it('preorder', function () {
-    cy.get('.sidebar__menu')
+    cy.get('._2Hrbd')
       .contains('Добавить предзаказ')
       .click({ force: true });
     cy.get('.app__content')

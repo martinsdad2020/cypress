@@ -143,115 +143,20 @@ describe('Create an order', function () {
     cy.get('.app__content')
       .contains('работе')
       .should('be.visible');
-  });
-
-  it('close order', function () {
-    cy.get('._2JR3u')
-      .contains('Мои задачи')
-      .click();
-    cy.get(':nth-child(2) > .list-group > .list-group-item') // в задачах первое поле с задачей
-      .contains('наличие')
-      .click({ force: true });
-    cy.get('.collectionTable__popover > span') // бургер на странице проверить наличие детали
-      .click();
-    cy.get('.contextPopover')
-      .contains('Подтвердить')
-      .click();
-    cy.get('.modal-body')
-      .contains('Сохранить')
-      .click();
-    cy.wait(4000);
-    cy.get('.alert')
-      .contains('№')
-      .click();
-  });
-
-  it('add payment', function () {
     cy.get('.app__content')
-      .contains('Платежи')
+      .contains('Отказ')
       .click();
-    cy.get('.app__content')
-      .contains('Добавить платеж')
-      .click();
-    cy.get(':nth-child(1) > .form__label') // Тип
+    cy.get(':nth-child(1) > .form__label')
       .next()
       .click();
-    cy.get('[name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup')
-      .contains('карта')
-      .click();
-    cy.get('#form-summ')
-      .type('135790')
-    cy.get('.modal-body')
-      .contains('Создать')
-      .click();
-    cy.wait(3000);
-    cy.get('.tab-pane.active > [template="template"] > [filter-fields="$parent.undefined"] > .collection__wrapper > .collectionTable > .collectionTable__wrapper > .collectionTable__container > .collectionTable__table > .table > tbody > tr > .collectionTable__popover-wrapper > .collectionTable__popover > span') // бургер
-      .click();
-    cy.get('.contextPopover')
-      .contains('Подтвердить')
-      .click();
-    cy.get('.modal-footer')
-      .contains('Подтвердить')
-      .click();
-    cy.wait(4000);
-  });
-
-  it('close order', function () {
-    cy.get('.app__content')
-      .contains('Прикрепленные')
-      .click();
-    cy.get('[scope="ctrl.orderScope"] > .panel-body')
-      .contains('Добавить')
+    cy.get('[name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup')
+      .contains('Дорого')
       .click();
     cy.get('.popup__inner')
-      .contains('Создать')
+      .contains('Сохранить')
       .click();
-    cy.get(':nth-child(2) > .inputBoolean > .inputBoolean__checkbox') // checkbox
-      .click();
-    cy.get('.modal-footer')
-      .contains('Добавить')
-      .click();
-    cy.get('.modal-content > :nth-child(1) > .modal-footer')
-      .contains('Добавить')
-      .click();
-    cy.wait(2000);
-    cy.get('.nav')
-      .contains('Расходные')
-      .click();
-    cy.get('.tab-pane.active > [template="template"] > [filter-fields="$parent.undefined"] > .collection__wrapper > .collectionTable > .collectionTable__wrapper > .collectionTable__container > .collectionTable__table > .table > tbody > tr > :nth-child(2) > a')
-      .click();
-    cy.wait(2000);
     cy.get('.app__content')
-      .contains('Подтвердить')
-      .click();
-    cy.wait(1000);
-    cy.get('.modal-footer')
-      .contains('Подтвердить')
-      .click();
-    cy.wait(1000);
-    cy.get('.app__content')
-      .contains('Оплатить')
-      .click();
-    cy.wait(1000);
-    cy.get('.modal-footer')
-      .contains('Оплатить')
-      .click();
-    cy.wait(1000);
-    cy.get('.app__content')
-      .contains('Отгружено')
-      .click();
-    cy.wait(1000);
-    cy.get('.modal-footer')
-      .contains('Подтвердить')
-      .click();
-    cy.wait(1000);
-    cy.get('.col-md-8')
-      .contains('№')
-      .click({ force: true });
-    cy.wait(2000);
-    cy.get('.app__content')
-      .contains('Закрыт')
+      .contains('Предварительно отменен')
       .should('be.visible');
-
   });
 });
