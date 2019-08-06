@@ -141,7 +141,7 @@ describe('Create an order', function () {
       .contains('Создать')
       .click();
     cy.wait(4000);
-    cy.get('body > div.app')
+    cy.get('.app__content')
       .contains('работе')
       .should('be.visible');
     cy.get('.app__content')
