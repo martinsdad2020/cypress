@@ -1,6 +1,7 @@
 //for (let i = 0; i < 10; i++) {
 let head = '._3WKxw > :nth-child(1)'
 
+// for (let i = 0; i < 3; i++)
 describe("магаз", function() {
 
   it("visit", function() {
