@@ -137,7 +137,7 @@ describe('edit detail', function () {
     cy.get('tbody > :nth-child(2) > :nth-child(3)')
       .contains('DB9 I 2003 - н.в.')
       .should('be.visible');
-    cy.get(':nth-child(2) > .w1 > a > .glyphicon') // удалить авто
+    cy.get(':nth-child(2) > .table > tbody > :nth-child(2) > .w1 > a > .glyphicon') // удалить авто
       .click();
     cy.get(':nth-child(4) > .panel-heading')
       .next()
@@ -152,7 +152,7 @@ describe('edit detail', function () {
     cy.get('.modal-body')
       .contains('На запчасти')
       .should('be.visible');
-    cy.get(':nth-child(4) > .table > tbody > tr > .w1 > a > .glyphicon')
+    cy.get(':nth-child(4) > .table > tbody > :nth-child(2) > .w1 > a > .glyphicon')
       .click();
     cy.wait(3000)
     cy.get('.modal-body')
