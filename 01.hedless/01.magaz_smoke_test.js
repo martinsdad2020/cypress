@@ -63,7 +63,7 @@ describe("магаз", function() {
       .should('value', '123456');
     cy.get('form > .iFdeK')
       .click();
-    cy.wait(3000);
+    cy.wait(1000);
     cy.get('#root')
       .contains('Пользователь с такой почтой не найден')
       .should('be.visible')

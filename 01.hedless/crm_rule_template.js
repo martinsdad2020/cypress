@@ -68,5 +68,6 @@ describe ('rule_template', function() {
        .select('Нет');
      cy.get('.app__content').contains('Сохранить').click();
      cy.get('.app__content').contains('Успешно сохранено').should('be.visible');
+     
   });
 });

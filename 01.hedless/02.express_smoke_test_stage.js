@@ -29,12 +29,12 @@ describe('SMOKE PRESS', function () {
 
   it('check', function () {
     cy.get('._2JR3u').contains('Создать обращение').should('be.visible');
-    cy.get(':nth-child(1) > :nth-child(13) > ._1rCPk > .nowrap > ._3Iwt4') // add button
+    cy.get(':nth-child(1) > :nth-child(12) > ._1rCPk > .nowrap > .btn > ._2-2Tl') // add button
       .click();
     cy.get('.tuVoQ')
       .contains('1')
       .should('be.visible');
-    cy.get(':nth-child(1) > :nth-child(13) > ._1rCPk > .nowrap > ._3Iwt4')
+    cy.get(':nth-child(1) > :nth-child(12) > ._1rCPk > .nowrap > .btn > ._2-2Tl')
       .click();
     cy.get('.tuVoQ')
       .contains('0')
@@ -77,7 +77,7 @@ describe('SMOKE PRESS', function () {
       .next()
       .click();
     cy.get('._2ZST_')
-      .contains('Двигатель')
+      .contains('Кузов наружные элементы')
       .click();
     cy.get('._2ZST_')
       .contains('Выбрать')
@@ -98,7 +98,7 @@ describe('SMOKE PRESS', function () {
       .contains('Применить')
       .click();
     cy.get('._NY4w')
-      .contains('Крыльчатка')
+      .contains('Накладка')
       .should('be.visible');
     cy.get('._NY4w')
       .contains('Очистить')
@@ -155,9 +155,9 @@ describe('SMOKE PRESS', function () {
       .should('be.visible');
     cy.get('.tuVoQ')
       .click();
-    cy.get(':nth-child(1) > :nth-child(13) > ._1rCPk > .btn')
+    cy.get(':nth-child(1) > :nth-child(12) > ._1rCPk > .btn > ._2-2Tl')
       .click();
-    cy.get(':nth-child(2) > :nth-child(13) > ._1rCPk > .btn')
+    cy.get(':nth-child(2) > :nth-child(12) > ._1rCPk > .btn')
       .click();
     cy.get('#app')
       .contains('Оформить заказ')
@@ -177,7 +177,7 @@ describe('SMOKE PRESS', function () {
       .contains('История заказов')
       .click();
     cy.get('#app')
-      .contains('Закрыт')
+      .contains('Заказы не найдены')
       .should('be.visible');
     cy.get('._2JR3u')
       .contains('menufolesu_prod@2mailnext.com')
@@ -186,7 +186,7 @@ describe('SMOKE PRESS', function () {
       .contains('Предзаказы')
       .click();
     cy.get('#app')
-      .contains('Отменен')
+      .contains('Предзаказы не найдены')
       .should('be.visible');
     // cy.get('#app')
     //   .contains('Создать')
