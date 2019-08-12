@@ -1,7 +1,7 @@
 let login = ':nth-child(1) > .form-control'// поле логин
 let password = ':nth-child(2) > .form-control' // поле пароль
 let basket = '._3L1Qv > ._2-2Tl' // корзина в шапке
-let addBasket = ':nth-child(1) > :nth-child(12) > ._1rCPk > .nowrap > ._3Iwt4' //Положить в корзину
+let addBasket = ':nth-child(1) > :nth-child(12) > ._1rCPk > .nowrap > .btn > ._2-2Tl' //Положить в корзину
 let callButton = ':nth-child(1) > :nth-child(12) > ._1rCPk > .nowrap > ._3ZaEA' //кнопка звонка
 let profile = '._2JR3u' // личный кабинет(мыло)
 
@@ -26,7 +26,7 @@ describe('Экспресс Волгоград', function () {
   it('gorod and company', function () {
     cy.get('._2JR3u').contains('Создать обращение').should('be.visible');
     cy.get('._NY4w').contains(',00').should('be.visible');
-    cy.get('._2rfW9').contains('двери').click();
+    cy.get('._2rfW9').contains('Кузов').click();
     cy.get('.nmPIX').contains('Город').should('be.visible');
     cy.get('._3Bz1P').click();
   });

@@ -6,7 +6,7 @@ let companies = '.sidebar__row'
 
 describe('edit detail', function () {
   before('cookie', function () {
-    cy.setCookie('guid-1', '%7B67F7C782-1A21-C70D-DC3F-4C2B6CA27E6B%7D')
+    cy.setCookie('guid-1', '%7B66E14AEB-559A-8B1B-1E3E-491DE5A506DE%7D')
     cy.server();
     cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
       .as('ww');
@@ -41,14 +41,14 @@ describe('edit detail', function () {
     cy.get(storages) // выпадающий список со складами
       .contains('РУССКАЯ')
       .click();
-    cy.wait(3000);
+    cy.wait(2000);
   });
 
   it('edit', function () {
     cy.get('.app__content')
       .contains('Изменить')
       .click();
-    cy.wait(5000);
+    cy.wait(2000);
     cy.get('#form-kod') // поле ориг номер
       .clear()
       .type('hsfdg5784')

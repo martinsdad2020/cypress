@@ -15,7 +15,7 @@ let randName = randomInteger(0, 10).toFixed(0);
 
 describe('income 200', function () {
     before('cookie', function () {
-        cy.setCookie('guid-1', '%7B67F7C782-1A21-C70D-DC3F-4C2B6CA27E6B%7D')
+        cy.setCookie('guid-1', '%7B66E14AEB-559A-8B1B-1E3E-491DE5A506DE%7D')
         cy.server();
         cy.route('https://crm.api.apgrup.ru/v1/**')
             .as('ww');
@@ -63,37 +63,37 @@ describe('income 200', function () {
             .contains('Очистить')
             .click();
         cy.get('#filter-number')
-            .type('24825');
+            .type('29461');
         cy.get('.app__content')
             .contains('Принял')
             .next()
             .click();
         cy.get(':nth-child(3) > [field="field"]')
-            .contains('Владелец Компании Галаника')
+            .contains('Главный Админ')
             .click();
         cy.get('.app__content')
             .contains('Поставщик')
             .next()
             .click();
         cy.get(':nth-child(4) > [field="field"]')
-            .contains('ЭМЕКС')
+            .contains('Эрго-Русь')
             .click();
         cy.get('.app__content')
             .contains('Применить')
             .click();
         cy.get('.collectionTable__container')
-            .contains('Владелец Компании Галаника')
+            .contains('Главный Админ')
             .should('be.visible');
         cy.get('.collectionTable__container')
-            .contains('ЭМЕКС')
+            .contains('Эрго-Русь')
             .should('be.visible');
         cy.get('.collectionTable__table')
             .contains('Подтвержден')
             .should('be.visible');
         cy.get('.collectionTable__container')
-            .contains('24825')
+            .contains('29461')
             .should('be.visible')
-            .click();
+            .click({force:true});
         cy.get('.app__content')
             .contains('Группа')
             .next()
@@ -129,14 +129,14 @@ describe('income 200', function () {
             .click();
         cy.wait(2000);
         cy.get('.collectionTable__wrapper')
-            .contains('Кронштейн КПП')
+            .contains('Датчик кондиционера')
             .should('be.visible')
         cy.get('span > .fa')
             .click();
         cy.get('.contextPopover')
             .contains('Изменить')
             .click();
-        cy.wait(5000);
+        cy.wait(3000);
         cy.get('#form-kod')
             .type('123213123')
             .should('value', '123213123');

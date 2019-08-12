@@ -181,7 +181,7 @@ describe('Create an order', function () {
       .contains('карта')
       .click();
     cy.get('#form-summ')
-      .type('135790')
+      .type('777')
     cy.get('.modal-body')
       .contains('Создать')
       .click();

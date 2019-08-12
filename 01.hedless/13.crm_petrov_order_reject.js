@@ -9,7 +9,7 @@ let para = ':nth-child(15) > :nth-child(2) > a'
 
 describe('Create an order', function () {
   beforeEach('cookie', function () {
-    cy.setCookie('guid-191', '{9470534C-70C9-5366-B92F-AFE2007F0B1A}')
+    cy.setCookie('guid-191', '%7BC29F90D3-4704-90E8-6D86-CCEF56422218%7D')
     cy.server();
     cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
       .as('ww');

@@ -21,7 +21,7 @@ let randGroup = randomInteger(0, 15).toFixed(0)
 
 describe("добавление детали в систему", function() {
   before('cookie', function() {
-    cy.setCookie('guid-1', '%7B67F7C782-1A21-C70D-DC3F-4C2B6CA27E6B%7D')
+    cy.setCookie('guid-1', '%7B66E14AEB-559A-8B1B-1E3E-491DE5A506DE%7D')
     cy.server();
     cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
       .as('ww');
@@ -55,14 +55,14 @@ describe("добавление детали в систему", function() {
     cy.get(storages) // выпадающий список со складами
       .contains('РУССКАЯ')
       .click();
-    cy.wait(3000);
+    cy.wait(1000);
   });
 
   it('pick discount', function() {
     cy.get('.sidebar__menu')
       .contains('Наценки')
       .click();
-    cy.wait(3000);
+    cy.wait(1000);
     cy.get('.app__content')
       .contains('Добавить наценку')
       .click();
@@ -102,7 +102,7 @@ describe("добавление детали в систему", function() {
     cy.get('.app__content')
       .contains('Создать')
       .click();
-    cy.wait(3000);
+    cy.wait(1000);
     cy.get('tbody > :nth-child(1) > :nth-child(5)')
       .contains('Нет')
       .should('be.visible');
@@ -114,7 +114,7 @@ describe("добавление детали в систему", function() {
     cy.get('.modal-footer')
       .contains('Активировать')
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('tbody > :nth-child(1) > :nth-child(5)')
       .contains('Да')
       .should('be.visible');

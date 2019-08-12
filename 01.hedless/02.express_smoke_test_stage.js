@@ -186,7 +186,7 @@ describe('SMOKE PRESS', function () {
       .contains('Предзаказы')
       .click();
     cy.get('#app')
-      .contains('Предзаказы не найдены')
+      .contains('Отменен')
       .should('be.visible');
     // cy.get('#app')
     //   .contains('Создать')

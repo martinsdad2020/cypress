@@ -1,7 +1,7 @@
 let login = ':nth-child(1) > .form-control'// поле логин
 let password = ':nth-child(2) > .form-control' // поле пароль
 let basket = '._3L1Qv > ._2-2Tl' // корзина в шапке
-let addBasket = ':nth-child(1) > :nth-child(13) > ._1rCPk > .nowrap > ._3Iwt4' //Положить в корзину
+let addBasket = ':nth-child(1) > :nth-child(12) > ._1rCPk > .nowrap > .btn > ._2-2Tl' //Положить в корзину
 let callButton = ':nth-child(2) > :nth-child(13) > ._1rCPk > .nowrap > ._3ZaEA' //кнопка звонка
 let profile = '._2JR3u' // личный кабинет(мыло)
 
@@ -31,13 +31,13 @@ describe('express sto', function () {
         //cy.get('._15-2L').contains('Компания').should('be.visible');
         cy.get('._15-2L').contains('Город').should('be.visible');
         //cy.get('._15-2L').contains('Показать телефон').should('be.visible').click();
-        cy.get('._15-2L').contains('Контактная информация').should('be.visible');
+        //cy.get('._15-2L').contains('Контактная информация').should('be.visible');
         cy.get('._16iw4').click();
     });
 
     it('add and order', function () {
         cy.get(addBasket).click();
-        cy.get(callButton).should('be.visible');
+        //cy.get(callButton).should('be.visible');
         cy.get(basket).click();
         cy.get('._3Szvf').contains('Оформить заказ').click();
         cy.get('._3Szvf').contains('Подтвердить').click();
