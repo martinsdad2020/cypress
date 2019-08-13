@@ -124,13 +124,13 @@ describe('edit detail', function () {
     cy.get('#carPiсker-generation')
       .click();
     cy.get('.inputAutocomplete__popup') // список с моделями
-      .contains('DB9 I 2003 - н.в.')
+      .contains('DB9 2003 - 2016')
       .click();
     cy.get(':nth-child(2) > .col-sm-4 > .btn')
       .click();
     cy.wait(1000);
     cy.get('tbody > :nth-child(2) > :nth-child(3)')
-      .contains('DB9 I 2003 - н.в.')
+      .contains('DB9 2003 - 2016')
       .should('be.visible');
     cy.get(':nth-child(2) > .w1 > a > .glyphicon') // удалить авто
       .click();

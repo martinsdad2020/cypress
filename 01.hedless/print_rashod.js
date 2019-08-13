@@ -4,11 +4,11 @@ let enter = '.ng-valid-email.ng-valid-minlength > :nth-child(2) > .btn'
 
 describe("status", function () {
    before('cookie', function () {
-      cy.setCookie('guid-191', '%7B1A4781F3-8401-B3AD-A5E7-2594B38BAC26%7D');
+      cy.setCookie('guid-191', '%7BC29F90D3-4704-90E8-6D86-CCEF56422218%7D');
    });
 
    it("Auth", function () {
-      cy.visit("https://apgrup.ru/saleinvoices/45863/");
+      cy.visit("https://apgrup.ru/saleinvoices/52602/");
 
       cy.get(login).type('jinda.project@gmail.com');
       cy.get(password).type('123456');

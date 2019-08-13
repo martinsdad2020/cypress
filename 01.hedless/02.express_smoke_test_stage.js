@@ -177,7 +177,7 @@ describe('SMOKE PRESS', function () {
       .contains('История заказов')
       .click();
     cy.get('#app')
-      .contains('Заказы не найдены')
+      .contains('Закрыт')
       .should('be.visible');
     cy.get('._2JR3u')
       .contains('menufolesu_prod@2mailnext.com')

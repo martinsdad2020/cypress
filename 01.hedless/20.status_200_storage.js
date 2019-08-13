@@ -53,63 +53,71 @@ describe('storage', function () {
     });
 
     it('at a storage', function () {
-        cy.get('.sidebar__menu')
-            .contains('На складе')
-            .click();
-        cy.get('.app__content')
-            .contains('Группа')
-            .next()
-            .click();
-        cy.get('.inputAutocomplete__popup')
-            .contains('Кузов наружные')
-            .click();
-        cy.get('.app__content')
-            .contains('Наименование')
-            .next()
-            .click();
-        cy.get('.inputAutocomplete__popup')
-            .contains('Накладка переднего крыла левого')
-            .click();
-        cy.get('#filter-isFromRepair')
-            .select('Нет');
-        cy.get('#filter-isInventoried')
-            .select('Нет');
-        cy.get('#filter-original')
-            .select('Да');
-        cy.get('#filter-code')
-            .type('00020406150054')
-            .should('value', '00020406150054');
-        cy.get(':nth-child(7) > label')
-            .contains('Поставщик')
-            .next()
-            .click();
-        cy.get('.inputAutocomplete__popup')
-            .contains('ПРОЧИЕ')
-            .click();
-        // cy.get('#filter-type')
-        //     .select('Легковая');
-        // cy.get(':nth-child(2) > label')
-        //     .next()
-        //     .eq(2)
-        //     .click();
-        // cy.get('.inputAutocomplete__popup')
-        //     .contains('Cadillac')
-        //     .click();
-        // cy.get('.app__content')
-        //   .contains('Применить')
-        //   .click();
-        // cy.wait(1000);
-        // cy.get('.collectionTable__container')
-        //   .contains('Cadillac')
-        //   .should('be.visible');
-        // cy.get('.app__content')
-        //   .contains('Очистить')
-        //   .click();
-        // cy.get('.app__content')
-        //   .contains('Применить')
-        //   .click();
-        // cy.get('.collectionTable__container')
-        //   .contains('Cadillac')
-        //   .should('not.be.visible');
+        cy.get('.sidebar__menu').contains('На складе').click();
+        cy.get('.app__content').contains('Группа').next().click();
+        cy.get('.inputAutocomplete__popup').contains('Кузов наружные').click();
+        cy.get('.app__content').contains('Наименование').next().click();
+        cy.get('.inputAutocomplete__popup').contains('Накладка переднего крыла левого').click();
+        cy.get('#filter-isFromRepair').select('Нет');
+        cy.get('#filter-isInventoried').select('Нет');
+        cy.get('#filter-original').select('Да');
+        cy.get('#filter-code').type('00020406150054').should('value', '00020406150054');
+        cy.get(':nth-child(7) > label').contains('Поставщик').next().click();
+        cy.get('.inputAutocomplete__popup').contains('ПРОЧИЕ').click();
+        cy.get('#filter-used').select('Да');
+        cy.get('#filter-condition').select('Отличное');
+        cy.get('#filter-rating').select('5');
+        cy.get('#filter-type').select('Легковая');
+        cy.get('.app__content').contains('Марка').next().click();
+        cy.get('.inputAutocomplete__popup').contains('Ford America').click();
+        cy.get('.app__content').contains('Модель').next().click();
+        cy.get('.inputAutocomplete__popup').contains('Explorer').click();
+        cy.get('.app__content').contains('Поколение').next().click();
+        cy.get('.inputAutocomplete__popup').contains('Explorer c 2011 г.').click();
+        cy.get('#filter-rack').type('Р107Н1');
+        cy.get('#filter-section').type('321');
+        cy.get('.app__content').contains('Применить').click();
+        cy.wait(2000);
+        cy.get('.collectionTable__container').contains('Ford America').should('be.visible');
+        // cy.get('span > .fa').click();
+        // cy.get('.contextPopover').contains('Изменить').click();
+        // cy.get('.modal-body').contains('Информация о детали').should('be.visible');
+        // cy.get('.popup__close').click();
+        // cy.wait(2000);
+        // cy.get('span > .fa').click();
+        // cy.get('.contextPopover').contains('Добавить к ремонту').click();
+        // cy.get('.modal-body').contains('Заявка на ремонт').should('be.visible');
+        // cy.get('.popup__close').click();
+        // cy.wait(2000);
+        // cy.get('span > .fa').click();
+        // cy.get('.contextPopover').contains('Утилизировать').click();
+        // cy.get('.modal-body').contains('Утилизировать').should('be.visible');
+        // cy.get('.popup__close').click();
+        // cy.wait(2000);
+        // cy.get('span > .fa').click();
+        // cy.get('.contextPopover').contains('Оценить').click();
+        // cy.get('.modal-body').contains('Оценить деталь').should('be.visible');
+        // cy.get('.popup__close').click();
+        // cy.wait(2000);
+        // cy.get('span > .fa').click();
+        // cy.get('.contextPopover').contains('Добавить в резерв').click();
+        // cy.get('.modal-body').contains('Добавить в резерв').should('be.visible');
+        // cy.get('.popup__close').click();
+        // // cy.get('.modal-footer').contains('Закрыть').click({force:true});
+        // cy.wait(2000);
+        // cy.get('span > .fa').click();
+        // cy.get('.contextPopover').contains('Инвентаризировать').click();
+        // cy.get('.modal-body').contains('Вы действительно хотите').should('be.visible');
+        // cy.get('.app__content').dblclick({force:true});
+        // cy.wait(2000);
+        // cy.get('span > .fa').click({force:true});
+        // cy.get('.contextPopover').contains('На претензионный склад').click({force:true});
+        // cy.get('.modal-body').contains('на претензионный склад').should('be.visible');
+        // cy.get('.popup__close').click();
+        cy.get('.collectionTable__container').contains('Mini').should('not.be.visible');
+        cy.get('.app__content').contains('Очистить').click();
+        cy.get('.app__content').contains('Применить').click();
+        cy.wait(2000);
+        cy.get('.collectionTable__container').contains('Mini').should('be.visible');
     });
 });
