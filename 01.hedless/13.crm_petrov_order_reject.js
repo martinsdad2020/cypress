@@ -106,7 +106,7 @@ describe('Create an order', function () {
       .should('be.visible')
       .click();
     cy.get('.modal-body')
-      .contains('2 Active Tourer')
+      .contains('2-Series Active Tourer')
       .should('be.visible')
       .click();
     cy.get('.modal-body')
