@@ -77,8 +77,8 @@ describe('storage', function () {
         cy.get('#filter-original')
             .select('Да');
         cy.get('#filter-code')
-            .type('00020406150054')
-            .should('value', '00020406150054');
+            .type('00021508190002')
+            .should('value', '00021508190002');
         cy.get(':nth-child(7) > label')
             .contains('Поставщик')
             .next()
@@ -162,7 +162,7 @@ describe('storage', function () {
         // cy.get('.modal-body').contains('на претензионный склад').should('be.visible');
         // cy.get('.popup__close').click();
         cy.get('.collectionTable__container')
-            .contains('Mini')
+            .contains('Kia')
             .should('not.be.visible');
         cy.get('.app__content')
             .contains('Очистить')
@@ -172,7 +172,7 @@ describe('storage', function () {
             .click();
         cy.wait(2000);
         cy.get('.collectionTable__container')
-            .contains('Mini')
+            .contains('Kia')
             .should('be.visible');
     });
 });
