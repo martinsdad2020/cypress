@@ -13,7 +13,7 @@ function randomInteger(min, max) {
 let randGroup = randomInteger(0, 17).toFixed(0);
 let randName = randomInteger(0, 10).toFixed(0);
 
-describe('unidentity', function () {
+describe('waiting for submit', function () {
     before('cookie', function () {
         cy.setCookie('guid-1', '%7B66E14AEB-559A-8B1B-1E3E-491DE5A506DE%7D')
         cy.server();
@@ -54,7 +54,7 @@ describe('unidentity', function () {
 
     it('at a storage', function () {
         cy.get('.sidebar__menu')
-            .contains('Неопознанные')
+            .contains('Ожидают подтверждения')
             .click();
         cy.wait(2000);
         cy.get('.app__content')
@@ -69,54 +69,22 @@ describe('unidentity', function () {
             .next()
             .click();
         cy.get('.inputAutocomplete__popup')
-            .contains('Вставка замка двери')
+            .contains('Локер')
             .click();
         cy.get('#filter-code')
-            .type('00020106170014')
-            .should('value', '00020106170014');
-        cy.get('.app__content')
-            .contains('Поставщик')
-            .next()
-            .click();
-        cy.get('.inputAutocomplete__popup')
-            .contains('ООО "Альфа Северо-Запад"')
-            .click();
-        cy.get('#filter-used')
-            .select('Да');
-        cy.get('#filter-number')
-            .type('2448');
-        cy.get('#filter-type')
-            .select('Легковая');
-        cy.get('.app__content')
-            .contains('Марка')
-            .next()
-            .click();
-        cy.get('.inputAutocomplete__popup')
-            .contains('Opel')
-            .click();
-        cy.get('.app__content')
-            .contains('Модель')
-            .next()
-            .click();
-        cy.get('.inputAutocomplete__popup')
-            .contains('Vectra')
-            .click();
-        cy.get('.app__content')
-            .contains('Поколение')
-            .next()
-            .click();
-        cy.get('.inputAutocomplete__popup')
-            .contains('Vectra C 2002 - 2008')
-            .click();
+            .type('00020506150013')
+            .should('value', '00020506150013');
+        cy.get('#filter-order')
+            .type('62466');
         cy.get('.app__content')
             .contains('Применить')
             .click();
-        cy.wait(2000);
+        cy.wait(1000);
         cy.get('.collectionTable__container')
-            .contains('Opel Vectra')
+            .contains('Renault Logan')
             .should('be.visible');
         cy.get('.collectionTable__container')
-            .contains('Honda')
+            .contains('Lexus')
             .should('not.be.visible');
         cy.get('.app__content')
             .contains('Очистить')
@@ -124,9 +92,9 @@ describe('unidentity', function () {
         cy.get('.app__content')
             .contains('Применить')
             .click();
-        cy.wait(2000);
+        cy.wait(1000);
         cy.get('.collectionTable__container')
-            .contains('Honda')
+            .contains('Lexus')
             .should('be.visible');
     });
 });
