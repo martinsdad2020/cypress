@@ -13,7 +13,7 @@ function randomInteger(min, max) {
   let rand = min + Math.random() * (max - min)
   return rand;
 };
-let model = ['BMW', 'BYD', 'Bentley', 'Alfa Romeo', 'Brilliance'];
+let model = ['Audi', 'Acura', 'Aston Martin', 'Cadillac'];
 let randn = randomInteger(0, model.length - 1).toFixed(0) // рандомная марка
 let randPercent = randomInteger(1, 50).toFixed(0) // рандомное число от 1 до 99
 let randGroup = randomInteger(0, 15).toFixed(0)
@@ -22,7 +22,7 @@ let randGroup = randomInteger(0, 15).toFixed(0)
 
 describe("добавление детали в систему", function() {
   beforeEach('cookie', function() {
-    cy.setCookie('guid-1', '{2DFA0721-8FE7-6884-E7FB-E9DF09738CFF}')
+    cy.setCookie('guid-1', '%7B66E14AEB-559A-8B1B-1E3E-491DE5A506DE%7D')
     cy.server();
     cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
       .as('ww');
@@ -62,15 +62,14 @@ describe("добавление детали в систему", function() {
   it('pick discount', function() {
     cy.get(sidebar)
       .contains('Наценки')
-      .prev()
       .click();
     cy.wait(1000);
     cy.get('.app__content')
-      .contains('Добавить скидку')
+      .contains('Добавить наценку')
       .click();
     cy.get('#form-title')
       .type(model[randn]);
-    cy.get('#form-discountPercent')
+    cy.get('#form-markupPercent')
       .type(randPercent);
     cy.get('#form-startDate')
       .click();
@@ -93,7 +92,7 @@ describe("добавление детали в систему", function() {
       .click();
     cy.get('.css-1hwfws3')
       .eq(2)
-      .click()
+      .click();
     cy.get('.css-11unzgr')
       .contains('Марка')
       .click();
