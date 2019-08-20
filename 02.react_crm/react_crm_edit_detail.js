@@ -129,13 +129,13 @@ describe('edit detail', function () {
     cy.get('#carPiсker-generation')
       .click();
     cy.get('.inputAutocomplete__popup') // список с моделями
-      .contains('DB9 I 2003 - н.в.')
+      .contains('DB9 2003 - 2016')
       .click();
     cy.get(':nth-child(2) > .col-sm-4 > .btn')
       .click();
     cy.wait(1000);
     cy.get('tbody > :nth-child(2) > :nth-child(3)')
-      .contains('DB9 I 2003 - н.в.')
+      .contains('DB9 2003 - 2016')
       .should('be.visible');
     cy.get(':nth-child(2) > .table > tbody > :nth-child(2) > .w1 > a > .glyphicon') // удалить авто
       .click();
@@ -152,7 +152,7 @@ describe('edit detail', function () {
     cy.get('.modal-body')
       .contains('На запчасти')
       .should('be.visible');
-    cy.get(':nth-child(4) > .table > tbody > :nth-child(2) > .w1 > a > .glyphicon')
+    cy.get(':nth-child(4) > .table > tbody > tr > .w1 > a > .glyphicon')
       .click();
     cy.wait(3000)
     cy.get('.modal-body')

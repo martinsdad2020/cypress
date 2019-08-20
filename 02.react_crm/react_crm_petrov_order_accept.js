@@ -9,7 +9,7 @@ let para = ':nth-child(15) > :nth-child(2) > a'
 
 describe('Create an order', function () {
   beforeEach('cookie', function () {
-    cy.setCookie('guid-191', '{9470534C-70C9-5366-B92F-AFE2007F0B1A}')
+    cy.setCookie('guid-191', '{5BA16FE0-DB4C-B041-4D74-7B3CDD9BC1CF}')
     cy.server();
     cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
       .as('ww');
@@ -105,7 +105,7 @@ describe('Create an order', function () {
       .should('be.visible')
       .click();
     cy.get('.modal-body')
-      .contains('2 Active Tourer')
+      .contains('2-Series Active Tourer')
       .should('be.visible')
       .click();
     cy.get('.modal-body')
@@ -139,7 +139,7 @@ describe('Create an order', function () {
     cy.get('.modal-footer')
       .contains('Создать')
       .click();
-    cy.wait(4000);
+    cy.wait(2000);
     cy.get('.app__content')
       .contains('работе')
       .should('be.visible');
@@ -160,7 +160,7 @@ describe('Create an order', function () {
     cy.get('.modal-body')
       .contains('Сохранить')
       .click();
-    cy.wait(4000);
+    cy.wait(2000);
     cy.get('.alert')
       .contains('№')
       .click();
@@ -180,7 +180,7 @@ describe('Create an order', function () {
       .contains('карта')
       .click();
     cy.get('#form-summ')
-      .type('135790')
+      .type('777')
     cy.get('.modal-body')
       .contains('Создать')
       .click();
