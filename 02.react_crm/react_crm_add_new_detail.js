@@ -3,6 +3,7 @@ let password = ':nth-child(2) > .form-control'
 let enter = 'p > .btn'
 let companies = '.css-11unzgr'
 let storages = '.css-11unzgr'
+let side = '._2Hrbd'
 
 function randomInteger(min, max) {
   let rand = min + Math.random() * (max - min)
@@ -42,42 +43,46 @@ describe('add new detail', function () {
   });
 
   it('pick ruusian village', function () {
-    cy.get('._2Hrbd')
+    cy.get(side)
       .contains('Компания')
       .next()
       .click();
     cy.get(companies) // выпадающий список со складами
       .contains('АльфаДетали')
       .click();
-    cy.get('._2Hrbd')
+    cy.get(side)
       .contains('Склад')
       .next()
       .click();
     cy.get(storages) // выпадающий список со складами
       .contains('РУССКАЯ')
       .click();
-    cy.wait(3000);
+    cy.wait(1000);
   });
 
   it('add new detail', function () {
-    cy.get('._2Hrbd')
+    cy.get(side)
       .contains('Приходные накладные')
-      .click({ force: true });
-    cy.wait(2000);
-    cy.get('.app__content')
+      .click();
+    cy.wait(1000);
+    cy.get('button')
       .contains('Добавить')
-      .click({ force: true });
-    cy.get('.fields > .form__row > .form__label')
+      .click();
+    cy.wait(1000);
+    cy.get('label')
+      .eq(4)
+      .contains('Поставщик')
       .next()
       .click();
-    cy.get('.inputAutocomplete__popup')
-      .eq(2)
+    cy.wait(2000)
+    cy.get('.css-11unzgr')
       .children()
       .eq(randProvider)
       .click();
-    cy.get('.popup__inner')
-      .contains('Создать')
+    cy.get('.modal-body')
+      .contains('Сохранить')
       .click();
+    cy.wait(1000);
     cy.get('.app__content')
       .contains('Добавить деталь')
       .click();

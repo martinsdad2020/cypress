@@ -162,7 +162,7 @@ describe('storage', function () {
         // cy.get('.modal-body').contains('на претензионный склад').should('be.visible');
         // cy.get('.popup__close').click();
         cy.get('.collectionTable__container')
-            .contains('Kia')
+            .contains('Mazda')
             .should('not.be.visible');
         cy.get('.app__content')
             .contains('Очистить')
@@ -172,7 +172,7 @@ describe('storage', function () {
             .click();
         cy.wait(2000);
         cy.get('.collectionTable__container')
-            .contains('Kia')
+            .contains('Mazda')
             .should('be.visible');
     });
 });
