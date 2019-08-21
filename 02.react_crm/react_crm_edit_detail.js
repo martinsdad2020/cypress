@@ -13,7 +13,7 @@ describe('edit detail', function () {
     });
   
     it("visit apgrup", function () {
-      cy.visit("https://react.apgrup.ru/parts/708/");
+      cy.visit("https://apgrup.ru/parts/708/");
       cy.get(login)
         .click()
         .type('ra-nt-office@yandex.ru');

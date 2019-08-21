@@ -29,7 +29,7 @@ describe("добавление детали в систему", function() {
   });
 
   it("visit apgrup", function() {
-    cy.visit("https://react.apgrup.ru");
+    cy.visit("https://apgrup.ru");
     cy.get(login)
       .click()
       .type('ra-nt-office@yandex.ru');

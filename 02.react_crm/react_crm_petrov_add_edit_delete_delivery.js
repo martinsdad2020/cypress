@@ -16,7 +16,7 @@ describe('Create an order', function () {
   });
 
   it('visit apgrup', function () {
-    cy.visit("https://react.apgrup.ru/storages/2/orders/new?filter%5Bdef%5D%5Blimit%5D=50&filter%5Bdef%5D%5Boffset%5D=0&filter%5Bdef%5D%5Bsort%5D=id&filter%5Bdef%5D%5Border%5D=desc");
+    cy.visit("https://apgrup.ru/storages/2/orders/new?filter%5Bdef%5D%5Blimit%5D=50&filter%5Bdef%5D%5Boffset%5D=0&filter%5Bdef%5D%5Bsort%5D=id&filter%5Bdef%5D%5Border%5D=desc");
 
     cy.get(login)
       .click()

@@ -17,7 +17,7 @@ describe("print", function () {
       });
     
       it('visit apgrup', function () {
-        cy.visit("https://react.apgrup.ru/orders/56156/");
+        cy.visit("https://apgrup.ru/orders/56156/");
     
         cy.get(login)
           .click()

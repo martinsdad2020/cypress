@@ -16,7 +16,7 @@ describe('Create an order', function () {
   });
 
   it('visit apgrup', function () {
-    cy.visit("https://react.apgrup.ru/");
+    cy.visit("https://apgrup.ru/");
 
     cy.get(login)
       .click()
