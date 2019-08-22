@@ -3,6 +3,7 @@ let password = ':nth-child(2) > .form-control'
 let enter = 'p > .btn'
 let companies = '.css-11unzgr'
 let storages = '.css-11unzgr'
+let side = '._2Hrbd'
 
 describe('edit detail', function () {
     beforeEach('cookie', function () {
@@ -13,7 +14,7 @@ describe('edit detail', function () {
     });
   
     it("visit apgrup", function () {
-      cy.visit("https://apgrup.ru/parts/708/");
+      cy.visit("https://apgrup.ru/");
       cy.get(login)
         .click()
         .type('ra-nt-office@yandex.ru');
@@ -26,14 +27,14 @@ describe('edit detail', function () {
     });
   
     it('pick ruusian village', function () {
-      cy.get('._2Hrbd')
+      cy.get(side)
         .contains('Компания')
         .next()
         .click();
       cy.get(companies) // выпадающий список со складами
         .contains('АльфаДетали')
         .click();
-      cy.get('._2Hrbd')
+      cy.get(side)
         .contains('Склад')
         .next()
         .click();
@@ -44,7 +45,7 @@ describe('edit detail', function () {
     });
 
   it('edit', function () {
-    cy.get('._2Hrbd')
+    cy.get(side)
       .contains('На складе')
       .click();
     cy.get('tbody > :nth-child(1) > :nth-child(2)')

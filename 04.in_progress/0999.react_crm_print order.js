@@ -10,7 +10,7 @@ let second = '.tab-pane.active > [template="template"] > [filter-fields="$parent
 
 describe("print", function () {
     beforeEach('cookie', function () {
-        cy.setCookie('guid-191', '{9470534C-70C9-5366-B92F-AFE2007F0B1A}')
+        cy.setCookie('guid-191', '%7B41C7F036-D08D-55BD-DD99-49E286A4897D%7D')
         cy.server();
         cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
           .as('ww');
