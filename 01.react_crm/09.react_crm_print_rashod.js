@@ -57,9 +57,11 @@ describe("status", function () {
       cy.get('.app__content').contains('Счета').click();
       cy.wait(2000);
       cy.get(check).contains('62574-1').click();
+      cy.wait(2000);
       cy.get('.app__content').contains('Печать Счета').click();
       cy.wait(4000);
       cy.get('.app__content').contains('Башмак').click();
+      cy.wait(2000);
       cy.get('.app__content').contains('Печать штрихкода').click();
    });
 });
