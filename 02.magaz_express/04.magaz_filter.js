@@ -18,11 +18,11 @@ describe("filter", function () {
           cy.get('.dFQW3 > ._20KFe > .fqKS8').click();
           cy.get('._1xJW6').contains('По возрастанию цены').click();
           cy.wait(1000);
-          cy.get(':nth-child(1) > ._2DovX').contains('Переключатель отопителя Dodge Caravan IV 2001 - 2007').should('be.visible');
+          cy.get(':nth-child(1) > ._2DovX').contains('Накладка декоративная Dodge Journey c 2009 г.').should('be.visible');
           cy.get('.dFQW3 > ._20KFe > .fqKS8').click();
           cy.get('._1xJW6').contains('По убыванию цены').click();
           cy.wait(1000);
-          cy.get(':nth-child(1) > ._2DovX').contains('Двигатель Dodge Ram (DR/DH) 2001 - 2009').should('be.visible');
+          cy.get(':nth-child(1) > ._2DovX').contains('Двигатель Dodge Journey c 2009 г.').should('be.visible');
           cy.get('.dFQW3 > ._20KFe > .fqKS8').click();
           cy.get('._1xJW6').contains('Сначала новые').click();
           cy.wait(1000);
@@ -30,7 +30,7 @@ describe("filter", function () {
           cy.get('.dFQW3 > ._20KFe > .fqKS8').click();
           cy.get('._1xJW6').contains('Сначала б/у').click();
           cy.wait(1000);
-          cy.get(':nth-child(1) > ._2DovX').contains('Амортизатор задний Dodge Nitro 2007 - 2011').should('be.visible');
+          cy.get(':nth-child(1) > ._2DovX').contains('Крышка багажника Dodge Intrepid 1998 - 2004').should('be.visible');
           cy.get('.dFQW3 > ._20KFe > .fqKS8').click();
           cy.get('._1xJW6').contains('По умолчанию').click();
           cy.wait(1000);
@@ -38,7 +38,7 @@ describe("filter", function () {
           cy.get('._2yev3 > ._20KFe > .fqKS8').click();
           cy.get('._1xJW6').contains('Москва').click();
           cy.wait(1000);
-          cy.get(':nth-child(1) > ._2DovX').contains('Крыло переднее правое Dodge Journey c 2009 г.').should('be.visible');
+          cy.get(':nth-child(1) > ._2DovX').contains('Крыло переднее левое Dodge Journey c 2009 г.').should('be.visible');
           cy.get('._2yev3 > ._20KFe > .fqKS8').click();
           cy.get('._1xJW6').contains('Санкт-Петербург').click();
           cy.wait(1000);
