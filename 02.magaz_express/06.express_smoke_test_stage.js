@@ -25,16 +25,19 @@ describe('SMOKE PRESS', function () {
     cy.get('#app')
       .contains('Войти')
       .click();
+      cy.wait(2000);
   });
 
   it('check', function () {
     cy.get('._2JR3u').contains('Создать обращение').should('be.visible');
-    cy.get(':nth-child(1) > :nth-child(12) > ._1rCPk > .nowrap > .btn > ._2-2Tl') // add button
+    cy.get('button')
+      .eq(7) // add button
       .click();
     cy.get('.tuVoQ')
       .contains('1')
       .should('be.visible');
-    cy.get(':nth-child(1) > :nth-child(12) > ._1rCPk > .nowrap > .btn > ._2-2Tl')
+    cy.get('button')
+      .eq(7)
       .click();
     cy.get('.tuVoQ')
       .contains('0')
@@ -155,10 +158,13 @@ describe('SMOKE PRESS', function () {
       .should('be.visible');
     cy.get('.tuVoQ')
       .click();
-    cy.get(':nth-child(1) > :nth-child(12) > ._1rCPk > .btn > ._2-2Tl')
-      .click();
-    cy.get(':nth-child(2) > :nth-child(12) > ._1rCPk > .btn')
-      .click();
+    cy.wait(2000);
+    cy.get('button')
+      .eq(2)
+      .click({force:true});
+    cy.get('button')
+      .eq(3)
+      .click({force:true});
     cy.get('#app')
       .contains('Оформить заказ')
       .should('not.be.visible');
