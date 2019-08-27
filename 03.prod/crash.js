@@ -10,7 +10,7 @@ describe('crash', function () {
             cy.visit('https://alfa-mt.ru/');
             cy.wait(2000);
             // cy.wait('@ww').its('status').should('eq', 200);
-            cy.get('.app__content')
+            cy.get('#app')
                 .contains('Авторизация')
                 .should('be.visible');
         });
