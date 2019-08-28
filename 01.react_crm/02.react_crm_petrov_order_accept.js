@@ -52,7 +52,8 @@ describe('Create an order', function () {
   it('preorder', function () {
     cy.get('._2Hrbd')
       .contains('Добавить предзаказ')
-      .click({ force: true });
+      .click();
+    cy.wait(1000);
     cy.get('.app__content')
       .contains('Создать')
       .click();
@@ -151,7 +152,8 @@ describe('Create an order', function () {
       .click();
     cy.get(':nth-child(2) > .list-group > .list-group-item') // в задачах первое поле с задачей
       .contains('наличие')
-      .click({ force: true });
+      .click();
+    cy.wait(1000);
     cy.get('.collectionTable__popover > span') // бургер на странице проверить наличие детали
       .click();
     cy.get('.contextPopover')
