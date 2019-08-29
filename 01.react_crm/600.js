@@ -57,7 +57,7 @@ describe('600', function () {
     .contains('Поиск деталей к продаже')
     .click();
   cy.get('#filter-city')
-    .select('Волгоград');
+    .select('Москва');
     cy.get('.app__content')
     .contains('Применить')
     .click();
@@ -89,7 +89,7 @@ describe('600', function () {
         cy.get('.modal-body')
         .contains('Создать')
         .click();
-        cy.wait(2000);
+        cy.wait(3000);
         cy.get(':nth-child(1) > .collectionTable__popover-wrapper > .collectionTable__popover > span > .fa')
         .click();
         cy.get('.contextPopover')
@@ -99,6 +99,7 @@ describe('600', function () {
         cy.get('.modal-body')
         .contains('Создать')
         .click();
-        cy.wait(2000);
-     }); //it закончился
-   }; //for закончился
+        cy.wait(3000);
+     });
+   };
+  });
