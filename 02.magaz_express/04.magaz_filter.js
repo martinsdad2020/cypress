@@ -22,7 +22,7 @@ describe("filter", function () {
           cy.get('.dFQW3 > ._20KFe > .fqKS8').click();
           cy.get('._1xJW6').contains('По убыванию цены').click();
           cy.wait(1000);
-          cy.get(':nth-child(1) > ._2DovX').contains('Двигатель1 Dodge Journey c 2009 г.').should('be.visible');
+          cy.get(':nth-child(1) > ._2DovX').contains('Двигатель Dodge Journey c 2009 г.').should('be.visible');
           cy.get('.dFQW3 > ._20KFe > .fqKS8').click();
           cy.get('._1xJW6').contains('Сначала новые').click();
           cy.wait(1000);
@@ -30,7 +30,7 @@ describe("filter", function () {
           cy.get('.dFQW3 > ._20KFe > .fqKS8').click();
           cy.get('._1xJW6').contains('Сначала б/у').click();
           cy.wait(1000);
-          cy.get(':nth-child(1) > ._2DovX').contains('Вал привода Dodge Magnum c 2005 г.').should('be.visible');
+          cy.get(':nth-child(1) > ._2DovX').contains('Кронштейн крепления крыла Dodge Caliber 2006 - 2011').should('be.visible');
           cy.get('.dFQW3 > ._20KFe > .fqKS8').click();
           cy.get('._1xJW6').contains('По умолчанию').click();
           cy.wait(1000);
