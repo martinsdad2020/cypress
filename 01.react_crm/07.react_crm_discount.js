@@ -77,7 +77,7 @@ describe("добавление детали в систему", function() {
     cy.get('#form-startDate')
       .type('04.04.2019');
     cy.get('#form-endDate')
-      .type('30.08.2019');
+      .type('30.12.2019');
     cy.get(startDate) // поле начало даты в скидках
       .type('1010');
     cy.get(endDate) // поле окончания даты в скидках
