@@ -56,6 +56,7 @@ describe('unestimate', function () {
         cy.get(side)
             .contains('Неоцененные')
             .click();
+        cy.wait(1000);
         cy.get('.app__content')
             .contains('Группа')
             .next()
