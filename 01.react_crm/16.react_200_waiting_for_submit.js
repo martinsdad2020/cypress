@@ -69,19 +69,19 @@ describe('waiting for submit', function () {
             .next()
             .click();
         cy.get('.inputAutocomplete__popup')
-            .contains('Локер')
+            .contains('Решетка в бампер центральная')
             .click();
         cy.get('#filter-code')
-            .type('00020506150013')
-            .should('value', '00020506150013');
+            .type('00020103150138')
+            .should('value', '00020103150138');
         cy.get('#filter-order')
-            .type('62466');
+            .type('62464');
         cy.get('.app__content')
             .contains('Применить')
             .click();
         cy.wait(1000);
         cy.get('.collectionTable__container')
-            .contains('Renault Logan')
+            .contains('Peugeot 207 c 2006')
             .should('be.visible');
         cy.get('.collectionTable__container')
             .contains('Lexus')
