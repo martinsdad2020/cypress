@@ -53,6 +53,7 @@ describe('Create an order', function () {
     cy.get('._2Hrbd')
       .contains('Добавить предзаказ')
       .click({ force: true });
+    cy.wait(1000);
     cy.get('.app__content')
       .contains('Создать')
       .click();
