@@ -95,6 +95,7 @@ describe('Create an order', function () {
       .should('be.visible');
     cy.get(':nth-child(1) > .row > :nth-child(1) > [field="field"] > .form-control') //поле машина
       .click();
+    cy.wait(2000);
     cy.get('.modal-body') // список марок в поле поиска
       .contains('Audi')
       .should('be.visible')
@@ -123,6 +124,7 @@ describe('Create an order', function () {
       .click({ force: true });
     cy.get('.draggableWindow__close')
       .click({ force: true });
+    cy.wait(1000);
     cy.get('.app__content')
       .contains('Патрубок')
       .should('be.visible');
