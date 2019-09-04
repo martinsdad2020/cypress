@@ -101,7 +101,7 @@ describe('Create an order', function () {
       .should('be.visible');
     cy.get(':nth-child(1) > .row > :nth-child(1) > [field="field"] > .form-control') //поле машина
       .click();
-    cy.wait(2000);
+    cy.wait(4000);
     cy.get('.modal-body') // список марок в поле поиска
       .contains('BMW')
       .should('be.visible')
