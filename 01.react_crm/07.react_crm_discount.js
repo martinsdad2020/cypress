@@ -70,7 +70,7 @@ describe("добавление детали в систему", function() {
       .click();
     cy.get('#form-title')
       .type(model[randn]);
-    cy.get('#form-discountPercent')
+    cy.get('#form-percent')
       .type(randPercent);
     cy.get('#form-startDate')
       .click();
@@ -107,16 +107,22 @@ describe("добавление детали в систему", function() {
       .contains('Создать')
       .click();
     cy.wait(1000);
-    cy.get('tbody > :nth-child(1) > :nth-child(5)')
-      .contains('Нет')
-      .should('be.visible');
-    cy.get(burger) // бургер в скидках
-      .click();
-    cy.get('.contextPopover')
+    // cy.get('tbody > :nth-child(1) > :nth-child(5)')
+    //   .contains('Нет')
+    //   .should('be.visible');
+    // cy.get(burger) // бургер в скидках
+    //   .click();
+    // cy.get('.contextPopover')
+    cy.get('.app__content')
       .contains('Активировать')
       .click(); // бургер
     cy.get('.modal-footer')
       .contains('Активировать')
+      .click();
+    cy.wait(1000);
+    cy.get(sidebar)
+      .contains('Наценки')
+      .prev()
       .click();
     cy.wait(1000);
     cy.get('tbody > :nth-child(1) > :nth-child(5)')
