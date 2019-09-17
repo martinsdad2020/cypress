@@ -110,11 +110,14 @@ describe('Create an order', function () {
       .contains('2-Series Active Tourer')
       .should('be.visible')
       .click();
+    cy.wait(3000);
     cy.get('.modal-body')
       .contains('Выбрать')
       .click();
+    cy.wait(1000);
     cy.get('[style="margin-bottom: 20px"] > :nth-child(1) > .row > :nth-child(2) > [field="field"] > .form-control') // поле наименование
-      .click({ force: true });
+      .click();
+    cy.wait(5000);
     cy.get('.modal-body')
       .contains('Двигатель')
       .click({ force: true });
