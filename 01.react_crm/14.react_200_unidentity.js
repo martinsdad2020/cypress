@@ -68,6 +68,7 @@ describe('unidentity', function () {
             .contains('Наименование')
             .next()
             .click();
+        cy.wait(2000);
         cy.get('.inputAutocomplete__popup')
             .contains('Вставка замка двери')
             .click();
