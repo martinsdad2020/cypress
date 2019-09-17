@@ -117,15 +117,15 @@ describe('Create an order', function () {
     cy.wait(1000);
     cy.get('[style="margin-bottom: 20px"] > :nth-child(1) > .row > :nth-child(2) > [field="field"] > .form-control') // поле наименование
       .click();
-    cy.wait(5000);
+    cy.wait(25000);
     cy.get('.modal-body')
       .contains('Двигатель')
-      .click({ force: true });
+      .click();
     cy.get('.modal-body')
       .contains('Башмак')
-      .click({ force: true });
+      .click();
     cy.get('.pull-right > .btn-success') // кнопка применить во всплывающем поиске
-      .click({ force: true });
+      .click();
     cy.wait(2000);
     cy.get('.partsQuickSearch__content')
       .contains('Добавить')
