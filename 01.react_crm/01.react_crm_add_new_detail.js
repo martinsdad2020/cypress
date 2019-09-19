@@ -90,6 +90,7 @@ describe('add new detail', function () {
     cy.get(':nth-child(1) > .form__label')
       .next()
       .click();
+    cy.wait(2000);
     cy.get('.inputAutocomplete__popup')
       .eq(2) // группа
       .children()
@@ -98,6 +99,7 @@ describe('add new detail', function () {
     cy.get(':nth-child(2) > .form__label')
       .next()
       .click();
+    cy.wait(1000);
     cy.get('.inputAutocomplete__popup')
       .eq(3) // наименование
       .children()
@@ -109,6 +111,7 @@ describe('add new detail', function () {
     cy.get(':nth-child(11) > .form__label')
       .next()
       .click();
+    cy.wait(1000);
     cy.get('.inputAutocomplete__popup')
       .eq(5) // производитель
       .children()
@@ -117,6 +120,7 @@ describe('add new detail', function () {
     cy.get(':nth-child(15) > .form__label')
       .next()
       .click();
+    cy.wait(1000);
     cy.get('.inputAutocomplete__popup')
       .eq(6) // Цвет
       .children()
@@ -125,6 +129,7 @@ describe('add new detail', function () {
     cy.get(':nth-child(16) > .form__label')
       .next()
       .click();
+    cy.wait(1000);
     cy.get('.inputAutocomplete__popup')
       .eq(7) // Рейтинг
       .children()
