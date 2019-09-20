@@ -25,7 +25,7 @@ describe('SMOKE PRESS', function () {
     cy.get('#app')
       .contains('Войти')
       .click();
-      cy.wait(2000);
+      cy.wait(3000);
   });
 
   it('check', function () {
