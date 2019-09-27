@@ -37,14 +37,14 @@ describe('Create an order', function () {
       .next()
       .click();
     cy.get(companies) // выпадающий список со складами
-      .contains('АльфаДетали')
+      .contains('БитАвто')
       .click();
     cy.get('._2Hrbd')
       .contains('Склад')
       .next()
       .click();
     cy.get(storages) // выпадающий список со складами
-      .contains('РУССКАЯ')
+      .contains('Склад')
       .click();
     cy.wait(3000);
   });
@@ -107,7 +107,7 @@ describe('Create an order', function () {
       .should('be.visible')
       .click();
     cy.get('.modal-body')
-      .contains('2-Series Active Tourer')
+      .contains('2-Series Grand Tourer')
       .should('be.visible')
       .click();
     cy.wait(3000);
@@ -115,15 +115,15 @@ describe('Create an order', function () {
       .contains('Выбрать')
       .click();
     cy.wait(1000);
-    cy.get('[style="margin-bottom: 20px"] > :nth-child(1) > .row > :nth-child(2) > [field="field"] > .form-control') // поле наименование
-      .click();
-    cy.wait(25000);
-    cy.get('.modal-body')
-      .contains('Двигатель')
-      .click();
-    cy.get('.modal-body')
-      .contains('Башмак')
-      .click();
+    // cy.get('[style="margin-bottom: 20px"] > :nth-child(1) > .row > :nth-child(2) > [field="field"] > .form-control') // поле наименование
+    //   .click();
+    // cy.wait(25000);
+    // cy.get('.modal-body')
+    //   .contains('Двигатель')
+    //   .click();
+    // cy.get('.modal-body')
+    //   .contains('Башмак')
+    //   .click();
     cy.get('.pull-right > .btn-success') // кнопка применить во всплывающем поиске
       .click();
     cy.wait(2000);
