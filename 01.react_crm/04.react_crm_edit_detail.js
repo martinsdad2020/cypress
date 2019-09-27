@@ -140,6 +140,9 @@ describe('edit detail', function () {
       .should('be.visible');
     cy.get(':nth-child(2) > .table > tbody > :nth-child(2) > .w1 > a > .glyphicon') // удалить авто
       .click();
+    cy.get('tbody > :nth-child(2) > :nth-child(3)')
+      .contains('DB9 2003 - 2016')
+      .should('not.be.visible');
     cy.get(':nth-child(4) > .panel-heading')
       .next()
       .click();
