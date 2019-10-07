@@ -83,7 +83,7 @@ describe('add new detail', function () {
       .contains('Сохранить')
       .click();
     cy.wait(1000);
-    cy.get('.app__content')
+    cy.get('.E42Z0')
       .contains('Добавить деталь')
       .click();
     cy.wait(1000);

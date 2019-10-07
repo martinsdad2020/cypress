@@ -49,7 +49,7 @@ describe('edit detail', function () {
       .contains('На складе')
       .click();
     cy.get('tbody > :nth-child(1) > :nth-child(2)')
-      .contains('а')
+      .contains('у')
       .click();
     cy.get('.app__content')
       .contains('Изменить')
