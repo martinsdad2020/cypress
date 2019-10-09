@@ -112,7 +112,7 @@ describe('Create an order', function () {
     cy.get('.popup__inner')
       .contains('Сохранить')
       .click();
-    cy.wait(1000);
+    cy.wait(2000);
     cy.get('tbody > :nth-child(5) > :nth-child(2)')
       .contains('Азов')
       .should('be.visible');
