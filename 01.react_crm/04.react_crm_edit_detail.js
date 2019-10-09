@@ -140,7 +140,8 @@ describe('edit detail', function () {
       .should('be.visible');
     cy.get(':nth-child(2) > .table > tbody > :nth-child(2) > .w1 > a > .glyphicon') // удалить авто
       .click();
-    cy.get('tbody > :nth-child(2) > :nth-child(3)')
+    cy.wait(2000);
+    cy.get('.modal-body')
       .contains('DB9 2003 - 2016')
       .should('not.be.visible');
     cy.get(':nth-child(4) > .panel-heading')
@@ -156,7 +157,7 @@ describe('edit detail', function () {
     cy.get('.modal-body')
       .contains('На запчасти')
       .should('be.visible');
-    cy.get(':nth-child(4) > .table > tbody > tr > .w1 > a > .glyphicon')
+    cy.get(':nth-child(2) > .w1 > a > .glyphicon')
       .click();
     cy.wait(3000)
     cy.get('.modal-body')
