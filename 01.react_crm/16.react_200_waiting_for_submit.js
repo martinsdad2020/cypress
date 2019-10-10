@@ -68,6 +68,7 @@ describe('waiting for submit', function () {
             .contains('Наименование')
             .next()
             .click();
+        cy.wait(2000);
         cy.get('.inputAutocomplete__popup')
             .contains('Решетка в бампер центральная')
             .click();
