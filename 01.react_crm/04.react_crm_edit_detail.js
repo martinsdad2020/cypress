@@ -157,7 +157,7 @@ describe('edit detail', function () {
     cy.get('.modal-body')
       .contains('На запчасти')
       .should('be.visible');
-    cy.get(':nth-child(2) > .w1 > a > .glyphicon')
+    cy.get(':nth-child(4) > .table > tbody > tr > .w1 > a > .glyphicon')
       .click();
     cy.wait(3000)
     cy.get('.modal-body')
