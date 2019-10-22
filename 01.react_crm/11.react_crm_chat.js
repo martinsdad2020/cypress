@@ -28,6 +28,7 @@ describe('Create an order', function () {
       .type('123456');
     cy.get(enter)
       .click();
+    cy.wait(1000);
     cy.wait('@ww');
   });
 
@@ -49,7 +50,7 @@ describe('Create an order', function () {
     cy.wait(1000);
   });
 
-  it('tow work', function () {
+  it('to work', function () {
     cy.get('.btn-info')
       .contains('Мои задачи')
       .click();
@@ -87,46 +88,16 @@ describe('Create an order', function () {
     cy.get('.messenger__chat')
       .contains('Комментарий')
       .should('be.visible');
-    // cy.get('._2Hrbd')
-    //   .contains('Добавить предзаказ')
-    //   .click();
-    // cy.wait(1000);
-    // cy.get('.app__content')
-    //   .contains('Создать')
-    //   .click();
-    // cy.get('.row') // уведомление под полем ввода имя
-    //   .contains('Поле обязательно для')
-    //   .should('be.visible');
-    // cy.get(name) // поле имя
-    //   .type('Roman')
-    //   .should('value', 'Roman');
-    // cy.get(phone) // поле телефон
-    //   .type('79992070525')
-    //   .should('value', '+79992070525');
-    // cy.get('.has-error > .form__label') // взять селектор слова "Источник" и некстом взять его поле
-    //   .next()
-    //   .click();
-    // cy.get('.app__content') // выбрать на станице "Другое" и кликнуть
-    //   .contains('Другое')
-    //   .should('not.be.visible')
-    // cy.get('.app__content')
-    //   .contains('Колл-центр')
-    //   .should('not.be.visible')
-    // cy.get('.app__content')
-    //   .contains('Прямая продажа')
-    //   .click();
-    // cy.get('.app__content')
-    //   .contains('Создать')
-    //   .click();
-    // cy.wait(2000);
-    // cy.get('.messengerUpload')
-    //   .contains('Предзаказ №')
-    //   .should('be.visible');
-    // cy.get('.messengerUpload')
-    //   .contains('Roman')
-    //   .should('be.visible');
-    // cy.get('#form-description') // поле сообщение*
-    //   .click()
-    //   .type('test');
+    cy.get('.messengerUpload')
+      .contains('Отменить')
+      .click();
+    cy.get('#form-cancelationReason')
+      .type('нет');
+    cy.get('.modal-body')
+      .contains('Сохранить')
+      .click();
+    cy.get('.messengerUpload')
+      .contains('Отменено')
+      .should('be.visible');
   });
 });
