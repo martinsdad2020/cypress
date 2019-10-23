@@ -498,10 +498,10 @@ describe('Create an order', function () {
           .contains('Счета')
           .click();
         cy.wait(500);
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('Список банковских счетов')
           .should('be.visible');
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('Нет прав')
           .should('not.be.visible');
       });
