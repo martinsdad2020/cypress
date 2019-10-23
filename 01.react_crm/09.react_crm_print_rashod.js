@@ -38,15 +38,15 @@ describe("status", function () {
     });
 
    it('Print', function () {
-      cy.get(side).contains('Закрытые').click();
-      cy.wait(2000);
-      cy.get('input').eq(3).type('62574');
-      cy.get('button').contains('Применить').click();
-      cy.wait(3000);
-      cy.get('.collectionTable__container').contains('62574').click();
-      cy.get('.app__content').contains('Расходные накладные').click();
-      cy.get('.app__content').contains('34575').click();
-      cy.wait(2000);
+      // cy.get(side).contains('Закрытые').click();
+      // cy.wait(2000);
+      // cy.get('input').eq(3).type('62574');
+      // cy.get('button').contains('Применить').click();
+      // cy.wait(3000);
+      // cy.get('.collectionTable__container').contains('62574').click();
+      // cy.get('.app__content').contains('Расходные накладные').click();
+      // cy.get('.app__content').contains('34575').click();
+      // cy.wait(2000);
       cy.get('.app__content').contains('ТТН').click();
       cy.wait(3000);
       cy.get('.app__content').contains('Товарного чека').click();
