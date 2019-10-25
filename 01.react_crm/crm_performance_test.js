@@ -156,15 +156,21 @@ describe('Create an order', function () {
           .contains('В резерве')
           .click();
         cy.wait(500);
-        cy.get('#filter-maker')
-          .select('Филихин Даниил');  
-        cy.get('.pull-right > .btn-success')
+        cy.get('.E42Z0')
+          .contains('Деталь')
+          .next()
+          .click();
+        cy.get('.css-11unzgr')
+          .contains('Филихин')
+          .click();
+        cy.get('.E42Z0')
+          .contains('Применить')
           .click();
         cy.wait(500);
-        cy.get('.collectionTable__container')
+        cy.get('.E42Z0')
           .contains('Honda')
           .should('not.be.visible');
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('Нет прав')
           .should('not.be.visible');
       });
