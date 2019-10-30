@@ -83,6 +83,9 @@ describe('add new detail', function () {
       .contains('Сохранить')
       .click();
     cy.wait(1000);
+    cy.get('.modal-footer')
+      .contains('Закрыть')
+      .click();
     cy.get('.E42Z0')
       .contains('Добавить деталь')
       .click();
@@ -90,9 +93,9 @@ describe('add new detail', function () {
     cy.get(':nth-child(1) > .form__label')
       .next()
       .click();
-    cy.wait(2000);
-    cy.get('.inputAutocomplete__popup')
-      .eq(2) // группа
+    cy.wait(500);
+    cy.get('.css-11unzgr')
+      // .eq(2) // группа
       .children()
       .eq(randGroup)
       .click();
@@ -100,20 +103,24 @@ describe('add new detail', function () {
       .next()
       .click();
     cy.wait(1000);
-    cy.get('.inputAutocomplete__popup')
-      .eq(3) // наименование
+    cy.get('.css-11unzgr')
+      // .eq(3) // наименование
       .children()
       .eq(randName)
       .click();
-    cy.get('#form-quantity')
-      .type('1')
+    cy.get('.modal-body')
+      .contains('Количество')
+      .next()
+      .click()
+      .type('1');
+    cy.get(':nth-child(3) > .form__input > .form-control')  
       .should('value', '1');
     cy.get(':nth-child(11) > .form__label')
       .next()
       .click();
     cy.wait(1000);
-    cy.get('.inputAutocomplete__popup')
-      .eq(5) // производитель
+    cy.get('.css-11unzgr')
+      // .eq(5) // производитель
       .children()
       .eq(randProducer)
       .click();
