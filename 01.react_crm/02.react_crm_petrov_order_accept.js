@@ -172,6 +172,40 @@ describe('Create an order', function () {
       .click();
   });
 
+  it('repay', function(){
+    cy.get('span > .fa')
+      .click();
+    cy.get('.contextPopover')
+      .contains('Переоценить')
+      .click();
+    cy.get('#form-newPrice')
+      .type('999');
+    cy.get('#form-reason')
+      .type('Причина');
+    cy.get('.modal-body')
+      .contains('Сохранить')
+      .click();
+    cy.wait(1000);
+    cy.get(':nth-child(5) > .currency')
+      .contains('999,00')
+      .should('be.visible');
+    cy.get('span > .fa')
+      .click();
+    cy.get('.contextPopover')
+      .contains('Переоценить')
+      .click();
+    cy.get('#form-newPrice')
+      .type('888');
+    cy.get('#form-reason')
+      .type('Причина');
+    cy.get('.modal-body')
+      .contains('Сохранить')
+      .click();
+    cy.wait(1000);
+    cy.get(':nth-child(5) > .currency')
+      .contains('888,00')
+      .should('be.visible');
+   });
   it('add payment', function () {
     cy.get('.app__content')
       .contains('Платежи')
@@ -186,7 +220,7 @@ describe('Create an order', function () {
       .contains('карта')
       .click();
     cy.get('#form-summ')
-      .type('777')
+      .type('888')
     cy.get('.modal-body')
       .contains('Создать')
       .click();

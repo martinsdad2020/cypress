@@ -37,14 +37,14 @@ describe('Create an order', function () {
       .next()
       .click();
     cy.get(companies) // выпадающий список со складами
-      .contains('АльфаДетали')
+      .contains('БитАвто')
       .click();
-      cy.get('._2Hrbd')
+    cy.get('._2Hrbd')
       .contains('Склад')
       .next()
       .click();
     cy.get(storages) // выпадающий список со складами
-      .contains('РУССКАЯ')
+      .contains('Склад')
       .click();
     cy.wait(3000);
   });
