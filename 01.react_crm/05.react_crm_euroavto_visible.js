@@ -66,7 +66,7 @@ describe('Create an order', function () {
     cy.get(phone) // поле телефон
       .type('79992070525')
       .should('value', '+79992070525');
-    cy.get('.has-error > .form__label') // взять селектор слова "Источник" и некстом взять его поле
+    cy.get(':nth-child(3) > .form__label') // взять селектор слова "Источник" и некстом взять его поле
       .next()
       .click();
     cy.get('.app__content') // выбрать на станице "Другое" и кликнуть
