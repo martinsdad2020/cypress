@@ -8,7 +8,7 @@ let check = '.tab-pane.active > [template="template"] > [filter-fields="$parent.
 
 describe("status", function () {
    before('cookie', function () {
-      cy.setCookie('guid-191', '{5BA16FE0-DB4C-B041-4D74-7B3CDD9BC1CF}');
+      cy.setCookie('guid-191', '{763D74A3-D668-2BEE-96EA-4B7DAA6EE986}');
    });
 
    it("Auth", function () {
@@ -53,15 +53,15 @@ describe("status", function () {
       cy.wait(3000);
       cy.get('.app__content').contains('Торг 12').click();
       cy.wait(4000);
-      cy.get(':nth-child(12) > :nth-child(2)').contains('62574').click();
+      cy.get(':nth-child(12) > :nth-child(2)').contains('62413').click();
       cy.wait(2000);
       cy.get('.app__content').contains('Счета').click();
       cy.wait(2000);
-      cy.get(check).contains('62574-1').click();
+      cy.get(check).contains('62413-1').click();
       cy.wait(2000);
       cy.get('.app__content').contains('Печать Счета').click();
       cy.wait(4000);
-      cy.get('.app__content').contains('Башмак').click();
+      cy.get('.app__content').contains('Вентилятор').click();
       cy.wait(2000);
       cy.get('.app__content').contains('Печать штрихкода').click();
    });

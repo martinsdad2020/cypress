@@ -10,7 +10,7 @@ let side = '._2Hrbd';
 
 describe('Create an order', function () {
   beforeEach('cookie', function () {
-    cy.setCookie('guid-191', '{5BA16FE0-DB4C-B041-4D74-7B3CDD9BC1CF}')
+    cy.setCookie('guid-191', '{763D74A3-D668-2BEE-96EA-4B7DAA6EE986}')
     cy.server();
     cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
       .as('ww');
@@ -51,78 +51,88 @@ describe('Create an order', function () {
     cy.wait(500);
   });
 
-  it('prihod nakladnie', function () {
-    cy.get(side)
-      .contains('Приходные накладные')
-      .click();
-    cy.get('.LcD1z')
-      .contains('Добавить приходную накладную')
-      .click();
-    cy.wait(500);
-    cy.get('label')
-      .eq(4)
-      .contains('Поставщик')
-      .next()
-      .click();
-    cy.get('.css-11unzgr')
-      .contains('ВОСТОК')
-      .click();
-    cy.get('.modal-body')
-      .contains('Сохранить')
-      .click();
-    cy.wait(500);
-    cy.get('.modal-footer')
-      .contains('Закрыть')
-      .click();
-    cy.get('body')
-      .contains('Нет прав')
-      .should('not.be.visible');
-  });
+  // it('prihod nakladnie', function () {
+  //   cy.get(side)
+  //     .contains('Приходные накладные')
+  //     .click();
+  //   cy.get('.LcD1z')
+  //     .contains('Добавить приходную накладную')
+  //     .click();
+  //   cy.wait(500);
+  //   cy.get('label')
+  //     .eq(4)
+  //     .contains('Поставщик')
+  //     .next()
+  //     .click();
+  //   cy.get('.css-11unzgr')
+  //     .contains('ВОСТОК')
+  //     .click();
+  //   cy.get('.modal-body')
+  //     .contains('Сохранить')
+  //     .click();
+  //   cy.wait(500);
+  //   cy.get('.modal-footer')
+  //     .contains('Закрыть')
+  //     .click();
+  //   cy.get('body')
+  //     .contains('Нет прав')
+  //     .should('not.be.visible');
+  // });
 
-  it('na sklade', function () {
-    cy.get(side)
-      .contains('На складе')
-      .click();
-    cy.get('#filter-type')
-      .select('Легковая');
-    cy.get('.app__content')
-      .contains('Марка')
-      .next()
-      .click();
-    cy.get('.inputAutocomplete__popup')
-      .contains('Audi')
-      .click();
-    cy.get('.pull-right > .btn-success')
-      .click();
-    cy.wait(500);
-    cy.get('.collectionTable__container')
-      .contains('Audi')
-      .should('be.visible');
-    cy.get('.app__content')
-      .contains('Нет прав')
-      .should('not.be.visible');
-  });
+  // it('na sklade', function () {
+  //   cy.get(side)
+  //     .contains('На складе')
+  //     .click();
+  //   cy.wait(3000);
+  //   // cy.get('#filter-type')
+  //   //   .select('Легковая');
+  //   // 
+  //   cy.get(':nth-child(1) > :nth-child(1) > .form-control')
+  //     .click();
+  //   cy.get('.modal-body')
+  //     .contains('Audi')
+  //     .click();
+  //   cy.get('.modal-body')
+  //     .contains('Выбрать')
+  //     .click();
+  //   cy.get('.E42Z0')
+  //     .contains('Применить')
+  //     .click();
+  //   cy.wait(500);
+  //   cy.get('._2WIgO')
+  //     .contains('Audi')
+  //     .should('be.visible');
+  //   cy.get('.E42Z0')
+  //     .contains('Нет прав')
+  //     .should('not.be.visible');
+  // });
 
     it('neocenennie', function (){
       cy.get(side)
         .contains('Неоцененные')
         .click();
-      cy.get('#filter-type')
-        .select('Легковая');
-      cy.get('.app__content')
-        .contains('Марка')
-        .next()
+      // cy.get('#filter-type')
+      //   .select('Легковая');
+      // cy.get('.E42Z0')
+      //   .contains('Машина')
+      //   .next()
+      //   .click();
+      cy.get(':nth-child(1) > :nth-child(1) > .form-control')
         .click();
-      cy.get('.inputAutocomplete__popup')
+      cy.get('.modal-body')
         .contains('Audi')
         .click();
-      cy.get('.pull-right > .btn-success')
+      cy.get('.modal-body')
+        .contains('Выбрать')
+        .click();
+      cy.get('.E42Z0')
+        .contains('Применить')
         .click();
       cy.wait(500);
-      cy.get('.collectionTable__container')
+      cy.get('._2WIgO')
         .contains('Audi')
         .should('be.visible');
-    cy.get('.app__content')
+      cy.get('.E42Z0')
         .contains('Нет прав')
         .should('not.be.visible');
     });
@@ -131,33 +141,38 @@ describe('Create an order', function () {
         cy.get(side)
           .contains('Неопознанные')
           .click();
-        cy.get('#filter-type')
-          .select('Легковая');
-        cy.get('.app__content')
-          .contains('Марка')
-          .next()
-          .click();
-        cy.get('.inputAutocomplete__popup')
-          .contains('Audi')
-          .click();
-        cy.get('.pull-right > .btn-success')
-          .click();
-        cy.wait(500);
-        cy.get('.collectionTable__container')
-          .contains('Audi')
-          .should('be.visible');
-        cy.get('.app__content')
-          .contains('Нет прав')
-          .should('not.be.visible');
+        // cy.get('#filter-type')
+        //   .select('Легковая');
+      cy.get(':nth-child(1) > :nth-child(1) > .form-control')
+        .click();
+      cy.get('.modal-body')
+        .contains('Audi')
+        .click();
+      cy.get('.modal-body')
+        .contains('Выбрать')
+        .click();
+      cy.get('.E42Z0')
+        .contains('Применить')
+        .click();
+      cy.wait(500);
+      cy.get('._2WIgO')
+        .contains('Audi')
+        .should('be.visible');
+      cy.get('.E42Z0')
+        .contains('Нет прав')
+        .should('not.be.visible');
       });
 
       it('v rezerve', function (){
         cy.get(side)
           .contains('В резерве')
           .click();
-        cy.wait(500);
-        cy.get('.E42Z0')
-          .contains('Деталь')
+        cy.wait(1000);
+        // cy.get('.E42Z0')
+        //   .contains('Деталь')
+        //   .next()
+        //   .click();
+        cy.get(':nth-child(3) > ._1Cd4l')
           .next()
           .click();
         cy.get('.css-11unzgr')

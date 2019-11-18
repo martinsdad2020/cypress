@@ -9,7 +9,7 @@ let para = ':nth-child(15) > :nth-child(2) > a'
 
 describe('Create an order', function () {
   beforeEach('cookie', function () {
-    cy.setCookie('guid-191', '{5BA16FE0-DB4C-B041-4D74-7B3CDD9BC1CF}')
+    cy.setCookie('guid-191', '{763D74A3-D668-2BEE-96EA-4B7DAA6EE986}')
     cy.server();
     cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
       .as('ww');
@@ -37,14 +37,14 @@ describe('Create an order', function () {
       .next()
       .click();
     cy.get(companies) // выпадающий список со складами
-      .contains('БитАвто')
+      .contains('АльфаДетали')
       .click();
     cy.get('._2Hrbd')
       .contains('Склад')
       .next()
       .click();
     cy.get(storages) // выпадающий список со складами
-      .contains('Склад')
+      .contains('РУССКАЯ')
       .click();
     cy.wait(1000);
   });
@@ -79,7 +79,7 @@ describe('Create an order', function () {
       .contains('Сообщение')
       .should('be.visible'); 
     cy.get('.app__content')
-      .contains('Петров')
+      .contains('ПЕТРОВ')
       .should('be.visible');
     cy.get('.app__content')
       .contains('работе')
@@ -104,7 +104,7 @@ describe('Create an order', function () {
       .next()
       .click();
     cy.get('.inputAutocomplete__popup')
-      .contains('Азов')
+      .contains('Евдокимов')
       .click();
     cy.get('#form-changeCause')
       .type('Первая причина это ты')
@@ -114,7 +114,7 @@ describe('Create an order', function () {
       .click();
     cy.wait(2000);
     cy.get('tbody > :nth-child(5) > :nth-child(2)')
-      .contains('Азов')
+      .contains('Евдокимов')
       .should('be.visible');
     cy.get('.app__content') 
       .contains('Прикрепить')
@@ -127,14 +127,14 @@ describe('Create an order', function () {
       .next()
       .click();
     cy.get('.inputAutocomplete__popup')
-      .contains('Петров')
+      .contains('ПЕТРОВ')
       .click();
     cy.get('.modal-body')
       .contains('Сохранить')
       .click();
     cy.wait(1000);
     cy.get('tbody > :nth-child(5) > :nth-child(2)')
-      .contains('Петров')
+      .contains('ПЕТРОВ')
       .should('be.visible');
     cy.get('.app__content')
       .contains('Прикрепить')

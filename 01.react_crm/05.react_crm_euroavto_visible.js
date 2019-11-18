@@ -9,7 +9,7 @@ let para = ':nth-child(15) > :nth-child(2) > a'
 
 describe('Create an order', function () {
   beforeEach('cookie', function () {
-    cy.setCookie('guid-1', '{2DFA0721-8FE7-6884-E7FB-E9DF09738CFF}')
+    cy.setCookie('guid-1', '{693E078B-9FA4-3103-092F-8EFF68DC5CA7}')
     cy.server();
     cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
       .as('ww');
@@ -25,7 +25,7 @@ describe('Create an order', function () {
     cy.get(password)
       .click()
       .clear()
-      .type('654321');
+      .type('superp@ss');
     cy.get(enter)
       .click();
     cy.wait('@ww');
@@ -37,14 +37,14 @@ describe('Create an order', function () {
       .next()
       .click();
     cy.get(companies) // выпадающий список со складами
-      .contains('БитАвто')
+      .contains('АльфаДетали')
       .click();
     cy.get('._2Hrbd')
       .contains('Склад')
       .next()
       .click();
     cy.get(storages) // выпадающий список со складами
-      .contains('Склад')
+      .contains('РУССКАЯ')
       .click();
     cy.wait(3000);
   });

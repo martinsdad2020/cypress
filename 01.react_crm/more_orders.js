@@ -9,7 +9,7 @@ let para = ':nth-child(15) > :nth-child(2) > a'
 
  describe('orders', function(){
   beforeEach('cookie', function () {
-    cy.setCookie('guid-191', '{5BA16FE0-DB4C-B041-4D74-7B3CDD9BC1CF}')
+    cy.setCookie('guid-191', '{763D74A3-D668-2BEE-96EA-4B7DAA6EE986}')
     cy.server();
     cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
       .as('ww');
@@ -36,16 +36,16 @@ let para = ':nth-child(15) > :nth-child(2) > a'
       .next()
       .click();
     cy.get(companies) // выпадающий список со складами
-      .contains('БитАвто')
+      .contains('АльфаДетали')
       .click();
     cy.get('._2Hrbd')
       .contains('Склад')
       .next()
       .click();
     cy.get(storages) // выпадающий список со складами
-      .contains('Склад')
+      .contains('РУССКАЯ')
       .click();
-    cy.wait(3000);
+    cy.wait(1000);
   });
 
   it('preorder', function () {
@@ -96,23 +96,27 @@ let para = ':nth-child(15) > :nth-child(2) > a'
       .click();
     cy.wait(2000);
     cy.get('.modal-body') // список марок в поле поиска
-      .contains('Genesis')
+      .contains('BMW')
+      .click();
+    cy.get('.modal-body')
+      .contains('2-Series Active')
       .click();
     cy.get('.modal-body')
       .contains('Выбрать')
       .click();
     cy.wait(1000);
-    cy.get('#filter-used')
-      .select('Нет')
+    // cy.get('#filter-used')
+    //   .select('Нет')
     cy.get('.pull-right > .btn-success') // кнопка применить во всплывающем поиске
       .click();
     cy.wait(1000);
     cy.get('.partsQuickSearch__content')
       .contains('Добавить')
       .click({ force: true });
-    cy.get('.modal-body > .panel > .panel-body')
-      .contains('Добавить')
-      .click();
+    cy.wait(2000);
+    // cy.get('.modal-body > .panel > .panel-body')
+    //   .contains('Добавить')
+    //   .click();
     cy.get('.draggableWindow__close')
       .click({ force: true });
     cy.get('.messengerUpload')

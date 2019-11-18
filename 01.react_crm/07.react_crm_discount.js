@@ -22,7 +22,7 @@ let randGroup = randomInteger(0, 15).toFixed(0)
 
 describe("добавление детали в систему", function() {
   beforeEach('cookie', function() {
-    cy.setCookie('guid-1', '{2DFA0721-8FE7-6884-E7FB-E9DF09738CFF}')
+    cy.setCookie('guid-1', '{693E078B-9FA4-3103-092F-8EFF68DC5CA7}')
     cy.server();
     cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
       .as('ww');
@@ -35,7 +35,7 @@ describe("добавление детали в систему", function() {
       .type('ra-nt-office@yandex.ru');
     cy.get(password)
       .click()
-      .type('654321');
+      .type('superp@ss');
     cy.get(enter)
       .click();
     cy.wait('@ww');
