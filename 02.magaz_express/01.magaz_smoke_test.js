@@ -98,10 +98,11 @@ describe("магаз", function() {
   it('forgot pass', function() {
     cy.get('#root')
       .contains('Вход')
-      .click();
+      .should('be.visible');
     cy.get('#root')
       .contains('Забыли пароль?')
       .click();
+    cy.wait(2000);
     cy.get('#root')
       .contains('Восстановление пароля')
       .should('be.visible');
