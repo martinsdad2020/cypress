@@ -40,10 +40,10 @@ describe('Brands', function() {
     cy.get('#root').contains('Cadillac').click();
     cy.get('._2dAkl').contains('Cadillac').should('be.visible');
     cy.get('._1FRHG').click();
-    cy.get('#root').contains('Все марки').click();
-    cy.get('#root').contains('Changan').click();
-    cy.get('._2dAkl').contains('Changan').should('be.visible');
-    cy.get('._1FRHG').click();
+    // cy.get('#root').contains('Все марки').click();
+    // cy.get('#root').contains('Changan').click();
+    // cy.get('._2dAkl').contains('Changan').should('be.visible');
+    // cy.get('._1FRHG').click();
     cy.get('#root').contains('Все марки').click();
     cy.get('#root').contains('Chery').click();
     cy.get('._2dAkl').contains('Chery').should('be.visible');
