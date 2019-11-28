@@ -67,12 +67,12 @@ describe('edit detail', function () {
       .clear()
       .type('21')
       .should('be.visible');
-    cy.get(':nth-child(10) > .form__label') // производитель
-      .next()
-      .click();
-    cy.get(':nth-child(10) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup')
-      .contains('AMC')
-      .click();
+    // cy.get(':nth-child(10) > .form__label') // производитель
+    //   .next()
+    //   .click();
+    // cy.get(':nth-child(10) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup')
+    //   .contains('AMC')
+    //   .click();
     cy.get('#form-defects')
       .clear()
       .type('дефекты')

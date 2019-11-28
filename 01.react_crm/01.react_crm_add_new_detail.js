@@ -101,9 +101,9 @@ describe('add new detail', function () {
       .click();
     cy.get(':nth-child(2) > .form__label')
       .next()
-      .click();
-    cy.wait(1000);
-    cy.get('.css-11unzgr')
+      .select()
+    // cy.wait(1000);
+    // cy.get('.css-11unzgr')
       // .eq(3) // наименование
       .children()
       .eq(randName)
@@ -115,37 +115,37 @@ describe('add new detail', function () {
       .type('1');
     cy.get(':nth-child(3) > .form__input > .form-control')  
       .should('value', '1');
-    cy.get(':nth-child(11) > .form__label')
-      .next()
-      .click();
-    cy.wait(1000);
-    cy.get('.css-11unzgr')
-      // .eq(5) // производитель
-      .children()
-      .eq(randProducer)
-      .click();
-    cy.get(':nth-child(15) > .form__label')
-      .next()
-      .click();
-    cy.wait(1000);
-    cy.get('.inputAutocomplete__popup')
-      .eq(6) // Цвет
-      .children()
-      .eq(randColor)
-      .click();
-    cy.get(':nth-child(16) > .form__label')
-      .next()
-      .click();
-    cy.wait(1000);
-    cy.get('.inputAutocomplete__popup')
-      .eq(7) // Рейтинг
-      .children()
-      .eq(randRate)
-      .click();
-    cy.get('.modal-body')
-      .contains('Добавить деталь')
-      .click();
-    cy.wait(1000);
+    // cy.get(':nth-child(11) > .form__label')
+    //   .next()
+    //   .click();
+    // cy.wait(1000);
+    // cy.get('.css-11unzgr')
+    //   // .eq(5) // производитель
+    //   .children()
+    //   .eq(randProducer)
+    //   .click();
+    // cy.get(':nth-child(15) > .form__label')
+    //   .next()
+    //   .click();
+    // cy.wait(1000);
+    // cy.get('.inputAutocomplete__popup')
+    //   .eq(6) // Цвет
+    //   .children()
+    //   .eq(randColor)
+    //   .click();
+    // cy.get(':nth-child(16) > .form__label')
+    //   .next()
+    //   .click();
+    // cy.wait(1000);
+    // cy.get('.inputAutocomplete__popup')
+    //   .eq(7) // Рейтинг
+    //   .children()
+    //   .eq(randRate)
+    //   .click();
+    // cy.get('.modal-body')
+    //   .contains('Добавить деталь')
+    //   .click();
+    // cy.wait(1000);
   });
 
   it('add new car', function () {
