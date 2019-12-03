@@ -43,7 +43,7 @@ describe('SMOKE PRESS', function () {
       .contains('0')
       .should('be.visible');
     cy.get('._NY4w')
-      .contains('бампер')
+      .contains('Кузов')
       .click();
     cy.get('.nmPIX')
       .contains('Санкт-Петербург')
@@ -127,6 +127,7 @@ describe('SMOKE PRESS', function () {
     cy.get('._2ZST_')
       .contains('Фара')
       .click();
+    cy.wait(2000);
     cy.get('._NY4w')
       .contains('Применить')
       .click();

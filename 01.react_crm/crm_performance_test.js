@@ -200,7 +200,7 @@ describe('Create an order', function () {
           .next()
           .click();
         cy.get('.inputAutocomplete__popup')
-          .contains('Двигатель')
+          .contains('Кузов наружные')
           .click();
         cy.get('.app__content')
           .contains('Наименование')
@@ -208,7 +208,7 @@ describe('Create an order', function () {
           .click();
         cy.wait(500);
         cy.get('.inputAutocomplete__popup')
-          .contains('Воздуховод радиатора нижний')
+          .contains('Юбка задняя')
           .click();
         cy.get('.app__content')
           .contains('Нет прав')
@@ -217,10 +217,10 @@ describe('Create an order', function () {
           .click();
         cy.wait(500);
         cy.get('.collectionTable__container')
-          .contains('Peugeot')
+          .contains('BMW')
           .should('be.visible');
         cy.get('.collectionTable__container')
-          .contains('Lexus')
+          .contains('Nissan')
           .should('not.be.visible');
         cy.get('.app__content')
           .contains('Нет прав')
