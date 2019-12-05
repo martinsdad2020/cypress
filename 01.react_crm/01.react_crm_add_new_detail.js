@@ -57,6 +57,9 @@ describe('add new detail', function () {
     cy.get(storages) // выпадающий список со складами
       .contains('РУССКАЯ')
       .click();
+    cy.get('._2JR3u')
+      .contains('7838.RU')
+      .type('АльфаДетали{enter}');
     cy.wait(1000);
   });
 
@@ -69,19 +72,21 @@ describe('add new detail', function () {
       .contains('Добавить')
       .click();
     cy.wait(1000);
-    cy.get('label')
-      .eq(4)
-      .contains('Поставщик')
-      .next()
-      .click();
+    // cy.get('label')
+    //   .eq(4)
+    //   .contains('Поставщик')
+    //   .next()
+    //   .click();
+    // cy.wait(2000)
+    cy.get('._3uesc > .css-2b097c-container') //поле поставщик
+      .type('ВОСТОК{enter}');
+      // .children()
+      // .eq(randProvider)
+      // .click();
     cy.wait(2000)
-    cy.get('.css-11unzgr')
-      .children()
-      .eq(randProvider)
-      .click();
     cy.get('.modal-body')
       .contains('Сохранить')
-      .click();
+      .click('bottom');
     cy.wait(1000);
     cy.get('.modal-footer')
       .contains('Закрыть')
@@ -90,7 +95,8 @@ describe('add new detail', function () {
       .contains('Добавить деталь')
       .click();
     cy.wait(1000);
-    cy.get(':nth-child(1) > .form__label')
+    cy.get('.modal-body')
+      .contains('Группа')
       .next()
       .click();
     cy.wait(500);
@@ -99,27 +105,37 @@ describe('add new detail', function () {
       .children()
       .eq(randGroup)
       .click();
-    cy.get(':nth-child(2) > .form__label')
-      .next()
-      .select()
-    // cy.wait(1000);
+    // cy.get('.modal-body')
+    //   .contains('Наименование')
+    //   .next()
+    //   .click();
+    cy.get(':nth-child(2) > ._3uesc')//поле наименование
+      .type('а{enter}');
+    // cy.wait(500);
     // cy.get('.css-11unzgr')
-      // .eq(3) // наименование
-      .children()
-      .eq(randName)
-      .click();
-    cy.get('.modal-body')
-      .contains('Количество')
-      .next()
-      .click()
+    //   // .eq(3) // наименование
+    //   .children()
+    //   .eq(randName)
+    //   .click();
+    // cy.get('.modal-body')
+    //   .contains('Количество')
+    //   .next()
+    //   .click()
+    //   .type('1');
+    cy.get(':nth-child(3) > ._3uesc > .form-control')//поле количество
       .type('1');
-    cy.get(':nth-child(3) > .form__input > .form-control')  
-      .should('value', '1');
     // cy.get(':nth-child(11) > .form__label')
     //   .next()
     //   .click();
     // cy.wait(1000);
     // cy.get('.css-11unzgr')
+    
+    // cy.get(':nth-child(11) > ._3uesc')//поле производитель
+    //   .type('HONDA{enter}');
+    // cy.wait(1000);
+    // cy.get('form > :nth-child(11)')
+    //   .should('value', 'Honda');
+
     //   // .eq(5) // производитель
     //   .children()
     //   .eq(randProducer)
@@ -142,87 +158,107 @@ describe('add new detail', function () {
     //   .children()
     //   .eq(randRate)
     //   .click();
-    // cy.get('.modal-body')
-    //   .contains('Добавить деталь')
-    //   .click();
-    // cy.wait(1000);
+    cy.get('.modal-body')
+      .contains('Сохранить')
+      .click();
+    cy.wait(1000);
   });
 
   it('add new car', function () {
-    cy.get('#carPiсker-brand')
-      .click();
-    cy.get('.inputAutocomplete__popup') // список с марками
-      .eq(8)
-      .children()
-      .eq(randBrand)
-      .click();
-    cy.get('#carPiсker-model')
-      .click();
-    cy.get('.inputAutocomplete__popup') // список с моделями
-      .eq(9)
-      .children()
-      .eq(randModel)
-      .click();
-    cy.get('#carPiсker-generation')
-      .click()
-    cy.get('.inputAutocomplete__popup') // список с моделями
-      .eq(10)
-      .children()
-      .eq(randGen)
-      .click();
-    cy.get(':nth-child(2) > .panel-body')
+    // cy.get('#carPiсker-brand')
+    //   .click();
+    cy.get('form > :nth-child(1) > :nth-child(2) > ._3uesc > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+      .type('Opel{enter}');
+    
+    // cy.get('#selectMenu') // список с марками
+    //   .eq(8)
+    //   .children()
+    //   .eq(randBrand)
+    //   .click();
+    cy.get(':nth-child(3) > ._3uesc > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+      .type('Omega{enter}');
+    cy.get(':nth-child(2) > .col-sm-8 > ._3uesc > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+      .type('Omega A{enter}');
+    // cy.get('#carPiсker-model')
+    //   .click();
+    // cy.get('.inputAutocomplete__popup') // список с моделями
+    //   .eq(9)
+    //   .children()
+    //   .eq(randModel)
+    //   .click();
+    // cy.get('#carPiсker-generation')
+    //   .click()
+    // cy.get('.inputAutocomplete__popup') // список с моделями
+    //   .eq(10)
+    //   .children()
+    //   .eq(randGen)
+    //   .click();
+    cy.get(':nth-child(1) > .panel-body')
       .contains('Добавить')
       .click();
+    cy.get('.modal-body')
+      .contains('Omega A 1986 - 1994')
+      .should('be.visible');
     // cy.get('tbody > tr.ng-scope > :nth-child(3)') // область для проверки поколения авто на видимость после добавления к детали в окне ред.
     //   .contains('A3 [8PA] 2004 - 2013')
     //   .should('be.visible');
   });
 
   it('add defeсt', function () {
-    cy.get(':nth-child(4) > .panel-heading')
-      .next()
-      .click();
-    cy.get('.inputAutocomplete__popup')
-      .eq(11) // дефект
-      .children()
-      .eq(randDefect)
-      .click();
-    cy.get(':nth-child(4) > .panel-body')
+    cy.get('.col-sm-8 > ._3uesc > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+      .type('Дефект{enter}');
+    cy.get(':nth-child(2) > :nth-child(3) > .panel-body')
       .contains('Добавить')
       .click();
-    cy.wait(3000);
-    cy.get(':nth-child(4) > .panel-body') // область с названием добавленного дефекта
-      .should('have.attr', 'class');
-    cy.get('.popup__close')
+    cy.get('.modal-body')
+      .contains('Дефект корпуса')
+      .should('be.visible');
+    // cy.get(':nth-child(4) > .panel-heading')
+    //   .next()
+    //   .click();
+    // cy.get('.inputAutocomplete__popup')
+    //   .eq(11) // дефект
+    //   .children()
+    //   .eq(randDefect)
+    //   .click();
+    // cy.get(':nth-child(4) > .panel-body')
+    //   .contains('Добавить')
+    //   .click();
+    // cy.wait(3000);
+    // cy.get(':nth-child(4) > .panel-body') // область с названием добавленного дефекта
+    //   .should('have.attr', 'class');
+    cy.get('._3Bz1P > .fa')
       .click();
     cy.wait(2000);
   });
 
   it('submit detail', function () {
-    cy.get(':nth-child(2) > .inputBoolean > .inputBoolean__checkbox')
+    cy.get('thead > tr > :nth-child(2) > ._1jidx > ._3o-8L')
       .click();
-    cy.get('.app__content')
+    cy.get('.E42Z0')
       .contains('Подтвердить')
       .click();
+    cy.wait(1000);
+    cy.get('.E42Z0')
+      .contains('Отменить')
+      .should('be.visible');
   });
 
   it('add price', function () {
-    cy.get('tr > :nth-child(4) > a')
+    cy.get('._2WIgO > .table > tbody > tr > :nth-child(2) > a')
       .click();
-    cy.wait(2000)
+    cy.wait(1000)
     cy.get('.app__content')
       .contains('Оценить')
       .click();
     cy.get('#form-purchasePrice')
-      .click()
       .type('777');
     cy.get('#form-sellingPrice')
-      .click()
       .type('777');
     cy.get('.popup__inner')
       .contains('Сохранить')
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.partModels__item')
       .contains('Открыть в магазине')
       .click({ force: true });

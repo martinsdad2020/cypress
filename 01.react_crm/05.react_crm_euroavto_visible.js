@@ -46,7 +46,14 @@ describe('Create an order', function () {
     cy.get(storages) // выпадающий список со складами
       .contains('РУССКАЯ')
       .click();
-    cy.wait(3000);
+    // cy.get(':nth-child(1) > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+    //   .type('АльфаДетали{enter}');
+    // cy.get(':nth-child(2) > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+    //   .type('РУССКАЯ ДЕРЕВНЯ{enter}');  
+    cy.get('._2JR3u')
+      .contains('7838.RU')
+      .type('АльфаДетали{enter}');
+    cy.wait(1000);
   });
 
   it('preorder', function () {
