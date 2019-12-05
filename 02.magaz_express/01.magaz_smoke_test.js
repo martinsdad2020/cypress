@@ -63,7 +63,7 @@ describe("магаз", function() {
       .should('value', '123456');
     cy.get('form > .iFdeK')
       .click();
-    cy.wait(1000);
+    
     cy.get('#root')
       .contains('Пользователь с такой почтой не найден')
       .should('be.visible')
@@ -98,11 +98,11 @@ describe("магаз", function() {
   it('forgot pass', function() {
     cy.get('#root')
       .contains('Вход')
-      .should('be.visible');
+      .click();
     cy.get('#root')
       .contains('Забыли пароль?')
       .click();
-    cy.wait(2000);
+    
     cy.get('#root')
       .contains('Восстановление пароля')
       .should('be.visible');
@@ -112,7 +112,7 @@ describe("магаз", function() {
       .should('value', 'wrong_parole@provider.com');
     cy.get('form > .iFdeK')
       .click();
-    cy.wait(2000);
+    
     cy.get('#root')
       .contains('На ваш почтовый ящик было отправлено письмо со ссылкой на восстановление пароля.')
       .should('be.visible');
