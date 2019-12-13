@@ -3,8 +3,8 @@ let password = ':nth-child(2) > .form-control'
 let enter = 'p > .btn'
 let companies = '.css-11unzgr'
 let storages = '.css-11unzgr'
-let name = '#form-name'
-let phone = '#form-phoneNumber'
+let name = '.active > .panel > .panel-body > form > :nth-child(1) > ._3uesc > .form-control'
+let phone = '.active > .panel > .panel-body > form > :nth-child(2) > ._3uesc > .form-control'
 let para = ':nth-child(15) > :nth-child(2) > a'
 
 describe('Create an order', function () {
@@ -37,51 +37,44 @@ describe('Create an order', function () {
       .next()
       .click();
     cy.get(companies) // выпадающий список со складами
-      .contains('АльфаДетали')
+      .contains('АСП')
       .click();
     cy.get('._2Hrbd')
       .contains('Склад')
       .next()
       .click();
     cy.get(storages) // выпадающий список со складами
-      .contains('РУССКАЯ')
+      .contains('склад АСП')
       .click();
-    cy.wait(3000);
+    cy.get('._2JR3u')
+      .contains('Альфа')
+      .type('АСП{enter}');
+    cy.wait(1000);
   });
 
   it('preorder', function () {
     cy.get('._2Hrbd')
       .contains('Добавить предзаказ')
-      .click({ force: true });
+      .click();
     cy.wait(1000);
-    cy.get('.app__content')
+    cy.get('.E42Z0')
       .contains('Создать')
       .click();
-    cy.get('.row') // уведомление под полем ввода имя
-      .contains('Поле обязательно для')
+    cy.get('.E42Z0') // уведомление под полем ввода имя
+      .contains('Обязательное поле')
       .should('be.visible');
     cy.get(name) // поле имя
       .type('Roman')
       .should('value', 'Roman');
     cy.get(phone) // поле телефон
-      .type('79992070525')
+      .type('+79992070525')
       .should('value', '+79992070525');
-    cy.get(':nth-child(3) > .form__label') // взять селектор слова "Источник" и некстом взять его поле
-      .next()
-      .click();
-    cy.get('.app__content') // выбрать на станице "Другое" и кликнуть
-      .contains('Другое')
-      .should('not.be.visible')
-    cy.get('.app__content')
-      .contains('Колл-центр')
-      .should('not.be.visible')
-    cy.get('.app__content')
-      .contains('Прямая продажа')
-      .click();
-    cy.get('.app__content')
+    cy.get('._3uesc > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+      .type('Прямая продажа{enter}');
+    cy.get('.E42Z0')
       .contains('Создать')
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.messengerUpload')
       .contains('Предзаказ №')
       .should('be.visible');
@@ -91,7 +84,7 @@ describe('Create an order', function () {
     cy.get('#form-description') // поле сообщение*
       .click()
       .type('test');
-  });
+  });   
 
   it('Search and add detail', function () {
     cy.get('#quickSearch')
@@ -101,29 +94,23 @@ describe('Create an order', function () {
       .should('be.visible');
     cy.get(':nth-child(1) > .row > :nth-child(1) > [field="field"] > .form-control') //поле машина
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.modal-body') // список марок в поле поиска
       .contains('BMW')
-      .should('be.visible')
       .click();
     cy.get('.modal-body')
       .contains('2-Series Grand Tourer')
-      .should('be.visible')
       .click();
+    cy.wait(1000);
     cy.get('.modal-body')
       .contains('Выбрать')
       .click();
-    // cy.get('[style="margin-bottom: 20px"] > :nth-child(1) > .row > :nth-child(2) > [field="field"] > .form-control') // поле наименование
-    //   .click({ force: true });
-    // cy.get('.modal-body')
-    //   .contains('Двигатель')
-    //   .click({ force: true });
-    // cy.get('.modal-body')
-    //   .contains('Башмак')
-    //   .click({ force: true });
+    cy.wait(1000);
+    cy.get('#filter-original')
+      .select('Да');
     cy.get('.pull-right > .btn-success') // кнопка применить во всплывающем поиске
-      .click({ force: true });
-    cy.wait(2000);
+      .click();
+    cy.wait(1000);
     cy.get('.partsQuickSearch__content')
       .contains('Добавить')
       .click({ force: true });
