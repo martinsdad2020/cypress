@@ -3,13 +3,13 @@ let password = ':nth-child(2) > .form-control'
 let enter = 'p > .btn'
 let companies = '.css-11unzgr'
 let storages = '.css-11unzgr'
-let name = '#form-name'
-let phone = '#form-phoneNumber'
+let name = '.active > .panel > .panel-body > form > :nth-child(1) > ._3uesc > .form-control'
+let phone = '.active > .panel > .panel-body > form > :nth-child(2) > ._3uesc > .form-control'
 let para = ':nth-child(15) > :nth-child(2) > a'
 
 describe('Create an order', function () {
   beforeEach('cookie', function () {
-    cy.setCookie('guid-1', '{693E078B-9FA4-3103-092F-8EFF68DC5CA7}')
+    cy.setCookie('guid-191', '{763D74A3-D668-2BEE-96EA-4B7DAA6EE986}')
     cy.server();
     cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
       .as('ww');
@@ -21,11 +21,11 @@ describe('Create an order', function () {
     cy.get(login)
       .click()
       .clear()
-      .type('ra-nt-office@yandex.ru');
+      .type('jinda.project@gmail.com');
     cy.get(password)
       .click()
       .clear()
-      .type('superp@ss');
+      .type('123456');
     cy.get(enter)
       .click();
     cy.wait('@ww');
@@ -37,22 +37,18 @@ describe('Create an order', function () {
       .next()
       .click();
     cy.get(companies) // выпадающий список со складами
-      .contains('АльфаДетали')
+      .contains('АСП')
       .click();
     cy.get('._2Hrbd')
       .contains('Склад')
       .next()
       .click();
     cy.get(storages) // выпадающий список со складами
-      .contains('РУССКАЯ')
+      .contains('склад АСП')
       .click();
-    // cy.get(':nth-child(1) > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
-    //   .type('АльфаДетали{enter}');
-    // cy.get(':nth-child(2) > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
-    //   .type('РУССКАЯ ДЕРЕВНЯ{enter}');  
     cy.get('._2JR3u')
-      .contains('7838.RU')
-      .type('АльфаДетали{enter}');
+      .contains('Альфа')
+      .type('АСП{enter}');
     cy.wait(1000);
   });
 
@@ -61,28 +57,24 @@ describe('Create an order', function () {
       .contains('Добавить предзаказ')
       .click();
     cy.wait(1000);
-    cy.get('.app__content')
+    cy.get('.E42Z0')
       .contains('Создать')
       .click();
-    cy.get('.row') // уведомление под полем ввода имя
-      .contains('Поле обязательно для')
+    cy.get('.E42Z0') // уведомление под полем ввода имя
+      .contains('Обязательное поле')
       .should('be.visible');
     cy.get(name) // поле имя
       .type('Roman')
       .should('value', 'Roman');
     cy.get(phone) // поле телефон
-      .type('79992070525')
+      .type('+79992070525')
       .should('value', '+79992070525');
-    cy.get(':nth-child(3) > .form__label') // взять селектор слова "Источник" и некстом взять его поле
-      .next()
-      .click();
-    cy.get('.app__content') // выбрать на станице "Другое" и кликнуть
-      .contains('Другое')
-      .click();
-    cy.get('.app__content')
+    cy.get('._3uesc > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+      .type('Прямая продажа{enter}');
+    cy.get('.E42Z0')
       .contains('Создать')
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.messengerUpload')
       .contains('Предзаказ №')
       .should('be.visible');
@@ -92,7 +84,7 @@ describe('Create an order', function () {
     cy.get('#form-description') // поле сообщение*
       .click()
       .type('test');
-  });
+  });   
 
   it('Search and add detail', function () {
     cy.get('#quickSearch')
