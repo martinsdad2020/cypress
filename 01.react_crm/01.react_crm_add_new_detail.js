@@ -85,7 +85,7 @@ describe('add new detail', function () {
       // .click();
     cy.wait(2000)
     cy.get('.modal-body')
-      .contains('Сохранить')
+      .contains('Создать')
       .click('bottom');
     cy.wait(1000);
     cy.get('.modal-footer')
@@ -159,7 +159,7 @@ describe('add new detail', function () {
     //   .eq(randRate)
     //   .click();
     cy.get('.modal-body')
-      .contains('Сохранить')
+      .contains('Создать')
       .click();
     cy.wait(1000);
   });

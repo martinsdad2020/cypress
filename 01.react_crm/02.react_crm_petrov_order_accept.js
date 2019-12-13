@@ -3,8 +3,8 @@ let password = ':nth-child(2) > .form-control'
 let enter = 'p > .btn'
 let companies = '.css-11unzgr'
 let storages = '.css-11unzgr'
-let name = '#form-name'
-let phone = '#form-phoneNumber'
+let name = '.active > .panel > .panel-body > form > :nth-child(1) > ._3uesc > .form-control'
+let phone = '.active > .panel > .panel-body > form > :nth-child(2) > ._3uesc > .form-control'
 let para = ':nth-child(15) > :nth-child(2) > a'
 
 describe('Create an order', function () {
@@ -37,16 +37,20 @@ describe('Create an order', function () {
       .next()
       .click();
     cy.get(companies) // выпадающий список со складами
-      .contains('АльфаДетали')
+      .contains('АСП')
       .click();
     cy.get('._2Hrbd')
       .contains('Склад')
       .next()
       .click();
     cy.get(storages) // выпадающий список со складами
-      .contains('РУССКАЯ')
+      .contains('склад АСП')
       .click();
-    cy.wait(3000);
+    cy.get('._2JR3u')
+      .contains('Альфа')
+      .type('АСП{enter}');
+    cy.wait(1000);
+
   });
 
   it('preorder', function () {
@@ -54,34 +58,36 @@ describe('Create an order', function () {
       .contains('Добавить предзаказ')
       .click();
     cy.wait(1000);
-    cy.get('.app__content')
+    cy.get('.E42Z0')
       .contains('Создать')
       .click();
-    cy.get('.row') // уведомление под полем ввода имя
-      .contains('Поле обязательно для')
+    cy.get('.E42Z0') // уведомление под полем ввода имя
+      .contains('Обязательное поле')
       .should('be.visible');
     cy.get(name) // поле имя
       .type('Roman')
       .should('value', 'Roman');
     cy.get(phone) // поле телефон
-      .type('79992070525')
+      .type('+79992070525')
       .should('value', '+79992070525');
-    cy.get(':nth-child(3) > .form__label') // взять селектор слова "Источник" и некстом взять его поле
-      .next()
-      .click();
-    cy.get('.app__content') // выбрать на станице "Другое" и кликнуть
-      .contains('Другое')
-      .should('not.be.visible')
-    cy.get('.app__content')
-      .contains('Колл-центр')
-      .should('not.be.visible')
-    cy.get('.app__content')
-      .contains('Прямая продажа')
-      .click();
-    cy.get('.app__content')
+    // cy.get('.active > .panel > .panel-body > form > :nth-child(3) > ._2u9XO > span') // взять селектор слова "Источник" и некстом взять его поле
+    //   .next()
+    //   .click();
+    cy.get('._3uesc > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+      .type('Прямая продажа{enter}');
+    // cy.get('.E42Z0') // выбрать на станице "Другое" и кликнуть
+    //   .contains('Другое')
+    //   .should('not.be.visible')
+    // cy.get('.E42Z0')
+    //   .contains('Колл-центр')
+    //   .should('not.be.visible')
+    // cy.get('.E42Z0')
+    //   .contains('Прямая продажа')
+    //   .click();
+    cy.get('.E42Z0')
       .contains('Создать')
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.messengerUpload')
       .contains('Предзаказ №')
       .should('be.visible');
@@ -101,20 +107,20 @@ describe('Create an order', function () {
       .should('be.visible');
     cy.get(':nth-child(1) > .row > :nth-child(1) > [field="field"] > .form-control') //поле машина
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.modal-body') // список марок в поле поиска
       .contains('BMW')
-      .should('be.visible')
       .click();
     cy.get('.modal-body')
       .contains('2-Series Grand Tourer')
-      .should('be.visible')
       .click();
-    cy.wait(3000);
+    cy.wait(1000);
     cy.get('.modal-body')
       .contains('Выбрать')
       .click();
     cy.wait(1000);
+    cy.get('#filter-original')
+      .select('Да');
     // cy.get('[style="margin-bottom: 20px"] > :nth-child(1) > .row > :nth-child(2) > [field="field"] > .form-control') // поле наименование
     //   .click();
     // cy.wait(25000);
@@ -126,7 +132,7 @@ describe('Create an order', function () {
     //   .click();
     cy.get('.pull-right > .btn-success') // кнопка применить во всплывающем поиске
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.partsQuickSearch__content')
       .contains('Добавить')
       .click({ force: true });
@@ -144,7 +150,7 @@ describe('Create an order', function () {
     cy.get('.modal-footer')
       .contains('Создать')
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.app__content')
       .contains('работе')
       .should('be.visible');
@@ -166,7 +172,7 @@ describe('Create an order', function () {
     cy.get('.modal-body')
       .contains('Сохранить')
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.alert')
       .contains('№')
       .click();
@@ -224,7 +230,7 @@ describe('Create an order', function () {
     cy.get('.modal-body')
       .contains('Создать')
       .click();
-    cy.wait(3000);
+    cy.wait(1000);
     cy.get('.tab-pane.active > [template="template"] > [filter-fields="$parent.undefined"] > .collection__wrapper > .collectionTable > .collectionTable__wrapper > .collectionTable__container > .collectionTable__table > .table > tbody > tr > .collectionTable__popover-wrapper > .collectionTable__popover > span') // бургер
       .click();
     cy.get('.contextPopover')
@@ -233,7 +239,7 @@ describe('Create an order', function () {
     cy.get('.modal-footer')
       .contains('Подтвердить')
       .click();
-    cy.wait(4000);
+    cy.wait(1000);
   });
 
   it('close order', function () {
@@ -254,13 +260,13 @@ describe('Create an order', function () {
     cy.get('.modal-content > :nth-child(1) > .modal-footer')
       .contains('Добавить')
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.nav')
       .contains('Расходные')
       .click();
     cy.get('.tab-pane.active > [template="template"] > [filter-fields="$parent.undefined"] > .collection__wrapper > .collectionTable > .collectionTable__wrapper > .collectionTable__container > .collectionTable__table > .table > tbody > tr > :nth-child(2) > a')
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.app__content')
       .contains('Подтвердить')
       .click();
@@ -288,7 +294,7 @@ describe('Create an order', function () {
     cy.get('.col-md-8')
       .contains('№')
       .click({ force: true });
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.app__content')
       .contains('Закрыт')
       .should('be.visible');
