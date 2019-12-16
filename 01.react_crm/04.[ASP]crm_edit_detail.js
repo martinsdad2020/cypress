@@ -7,7 +7,7 @@ let side = '._2Hrbd'
 
 describe('edit detail', function () {
     beforeEach('cookie', function () {
-      cy.setCookie('guid-1', '{693E078B-9FA4-3103-092F-8EFF68DC5CA7}')
+      cy.setCookie('guid-217', '{CC975CB2-EC25-A787-9CB4-F8127B0868C5}')
       cy.server();
       cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
         .as('ww');
@@ -17,10 +17,10 @@ describe('edit detail', function () {
       cy.visit("https://apgrup.ru/");
       cy.get(login)
         .click()
-        .type('ra-nt-office@yandex.ru');
+        .type('asp.oc.detali@alfa.ru');
       cy.get(password)
         .click()
-        .type('superp@ss');
+        .type('123456');
       cy.get(enter)
         .click();
       cy.wait('@ww');
@@ -32,41 +32,42 @@ describe('edit detail', function () {
         .next()
         .click();
       cy.get(companies) // выпадающий список со складами
-        .contains('АльфаДетали')
+        .contains('АСП')
         .click();
       cy.get(side)
         .contains('Склад')
         .next()
         .click();
       cy.get(storages) // выпадающий список со складами
-        .contains('РУССКАЯ')
+        .contains('склад АСП')
         .click();
-      cy.wait(3000);
     });
 
   it('edit', function () {
+    // cy.get('._2Hrbd')
+    //   .contains(new RegExp(['^',твое ебаное слово, '$', ].join(''), 'i'))
     cy.get(side)
       .contains('На складе')
       .click();
     cy.get('tbody > :nth-child(1) > :nth-child(2)')
-      .contains('у')
+      .contains('а')
       .click();
     cy.get('.app__content')
       .contains('Изменить')
       .click();
-    cy.wait(3000);
+    cy.wait(1000);
     cy.get('#form-kod') // поле ориг номер
       .clear()
       .type('hsfdg5784')
       .should('be.visible');
-    cy.get('#form-rack') // поле стеллаж
-      .clear()
-      .type('hfF5')
-      .should('be.visible');
-    cy.get('#form-section') // поле секция
-      .clear()
-      .type('21')
-      .should('be.visible');
+    // cy.get('#form-rack') // поле стеллаж
+    //   .clear()
+    //   .type('hfF5')
+    //   .should('be.visible');
+    // cy.get('#form-section') // поле секция
+    //   .clear()
+    //   .type('21')
+    //   .should('be.visible');
     // cy.get(':nth-child(10) > .form__label') // производитель
     //   .next()
     //   .click();
@@ -85,32 +86,32 @@ describe('edit detail', function () {
       .clear()
       .type('коммент')
       .should('be.visible');
-    cy.get(':nth-child(14) > .form__label')  // цвет
+    cy.get(':nth-child(11) > .form__label')  // цвет
       .next()
       .click();
-    cy.get(':nth-child(14) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup')
+    cy.get(':nth-child(11) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup')
       .contains('Желтый')
       .click();
-    cy.get(':nth-child(15) > .form__label') // рейтинг
-      .next()
-      .click();
-    cy.get(':nth-child(15) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup')
-      .contains('3')
-      .click();
+    // cy.get(':nth-child(15) > .form__label') // рейтинг
+    //   .next()
+    //   .click();
+    // cy.get(':nth-child(15) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup')
+    //   .contains('3')
+    //   .click();
     cy.get('#form-gtd')
       .clear()
       .type('GDT1')
       .should('be.visible');
-    cy.get(':nth-child(17) > .form__label') // страна
+    cy.get(':nth-child(13) > .form__label') // страна
       .next()
       .click();
-    cy.get(':nth-child(17) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup')
+    cy.get(':nth-child(13) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup')
       .contains('Россия')
       .click();
     cy.get('.modal-body')
       .contains('Сохранить')
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.modal-body')
       .contains('успешно сохранена')
       .should('be.visible');
@@ -140,7 +141,7 @@ describe('edit detail', function () {
       .should('be.visible');
     cy.get(':nth-child(2) > .table > tbody > :nth-child(2) > .w1 > a > .glyphicon') // удалить авто
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.modal-body')
       .contains('DB9 2003 - 2016')
       .should('not.be.visible');
@@ -153,13 +154,13 @@ describe('edit detail', function () {
     cy.get(':nth-child(4) > .panel-body')
       .contains('Добавить')
       .click();
-    cy.wait(3000);
+    cy.wait(1000);
     cy.get('.modal-body')
       .contains('На запчасти')
       .should('be.visible');
     cy.get(':nth-child(4) > .table > tbody > tr > .w1 > a > .glyphicon')
       .click();
-    cy.wait(3000)
+    cy.wait(1000)
     cy.get('.modal-body')
       .contains('На запчасти')
       .should('not.be.visible');

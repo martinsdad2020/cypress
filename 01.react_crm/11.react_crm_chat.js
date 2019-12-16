@@ -38,15 +38,18 @@ describe('Create an order', function () {
       .next()
       .click();
     cy.get(companies) // выпадающий список со складами
-      .contains('АльфаДетали')
+      .contains('АСП')
       .click();
     cy.get('._2Hrbd')
       .contains('Склад')
       .next()
       .click();
     cy.get(storages) // выпадающий список со складами
-      .contains('РУССКАЯ')
+      .contains('склад АСП')
       .click();
+    cy.get('._2JR3u')
+      .contains('Альфа')
+      .type('АСП{enter}');
     cy.wait(1000);
   });
 

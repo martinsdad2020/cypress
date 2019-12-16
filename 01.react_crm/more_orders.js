@@ -3,8 +3,8 @@ let password = ':nth-child(2) > .form-control'
 let enter = 'p > .btn'
 let companies = '.css-11unzgr'
 let storages = '.css-11unzgr'
-let name = '#form-name'
-let phone = '#form-phoneNumber'
+let name = '.active > .panel > .panel-body > form > :nth-child(1) > ._3uesc > .form-control'
+let phone = '.active > .panel > .panel-body > form > :nth-child(2) > ._3uesc > .form-control'
 let para = ':nth-child(15) > :nth-child(2) > a'
 
  describe('orders', function(){
@@ -36,15 +36,18 @@ let para = ':nth-child(15) > :nth-child(2) > a'
       .next()
       .click();
     cy.get(companies) // выпадающий список со складами
-      .contains('АльфаДетали')
+      .contains('АСП')
       .click();
     cy.get('._2Hrbd')
       .contains('Склад')
       .next()
       .click();
     cy.get(storages) // выпадающий список со складами
-      .contains('РУССКАЯ')
+      .contains('склад АСП')
       .click();
+    cy.get('._2JR3u')
+      .contains('Альфа')
+      .type('АСП{enter}');
     cy.wait(1000);
   });
 
@@ -53,28 +56,24 @@ let para = ':nth-child(15) > :nth-child(2) > a'
       .contains('Добавить предзаказ')
       .click();
     cy.wait(1000);
-    cy.get('.app__content')
+    cy.get('.E42Z0')
       .contains('Создать')
       .click();
-    cy.get('.row') // уведомление под полем ввода имя
-      .contains('Поле обязательно для')
+    cy.get('.E42Z0') // уведомление под полем ввода имя
+      .contains('Обязательное поле')
       .should('be.visible');
     cy.get(name) // поле имя
       .type('Roman')
       .should('value', 'Roman');
     cy.get(phone) // поле телефон
-      .type('79992070525')
+      .type('+79992070525')
       .should('value', '+79992070525');
-    cy.get(':nth-child(3) > .form__label') // взять селектор слова "Источник" и некстом взять его поле
-      .next()
-      .click();
-    cy.get('.app__content')
-      .contains('Прямая продажа')
-      .click();
-    cy.get('.app__content')
+    cy.get('._3uesc > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+      .type('Прямая продажа{enter}');
+    cy.get('.E42Z0')
       .contains('Создать')
       .click();
-    cy.wait(2000);
+    cy.wait(1000);
     cy.get('.messengerUpload')
       .contains('Предзаказ №')
       .should('be.visible');
@@ -99,14 +98,14 @@ let para = ':nth-child(15) > :nth-child(2) > a'
       .contains('BMW')
       .click();
     cy.get('.modal-body')
-      .contains('2-Series Active')
+      .contains('2-Series Grand')
       .click();
     cy.get('.modal-body')
       .contains('Выбрать')
       .click();
     cy.wait(1000);
-    // cy.get('#filter-used')
-    //   .select('Нет')
+    cy.get('#filter-original')
+      .select('Да');
     cy.get('.pull-right > .btn-success') // кнопка применить во всплывающем поиске
       .click();
     cy.wait(1000);
@@ -114,9 +113,9 @@ let para = ':nth-child(15) > :nth-child(2) > a'
       .contains('Добавить')
       .click({ force: true });
     cy.wait(2000);
-    // cy.get('.modal-body > .panel > .panel-body')
-    //   .contains('Добавить')
-    //   .click();
+    cy.get('.modal-body > .panel > .panel-body')
+      .contains('Добавить')
+      .click();
     cy.get('.draggableWindow__close')
       .click({ force: true });
     cy.get('.messengerUpload')

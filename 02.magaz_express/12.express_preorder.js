@@ -32,7 +32,6 @@ describe('express sto', function() {
      cy.get('#app')
        .contains('Отправить')
        .click();
-     cy.wait(1000);
      cy.get('._NY4w')
        .contains('Здравствуйте, хотел бы приобрести левую фару для бмв х5 2013 года')
        .should('be.visible');

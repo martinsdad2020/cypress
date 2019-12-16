@@ -3,8 +3,8 @@ let password = ':nth-child(2) > .form-control'
 let enter = 'p > .btn'
 let companies = '.css-11unzgr'
 let storages = '.css-11unzgr'
-let name = '#form-name'
-let phone = '#form-phone'
+let name = '.active > .panel > .panel-body > form > :nth-child(1) > ._3uesc > .form-control'
+let phone = '.active > .panel > .panel-body > form > :nth-child(2) > ._3uesc > .form-control'
 let para = ':nth-child(15) > :nth-child(2) > a'
 
 describe('Create an order', function () {
@@ -54,30 +54,46 @@ describe('Create an order', function () {
       .contains('Добавить предзаказ')
       .click();
     cy.wait(1000);
-    cy.get('.app__content')
+    cy.get('.E42Z0')
       .contains('Повторное')
       .click();
+    cy.get('.active > .panel > .panel-body')
+      .contains('Сообщение')
+      .should('be.visible');
+    cy.get('.active > .panel > .panel-body > form > :nth-child(4) > ._1a95Z > .btn')
+      .click();
+    cy.get('.E42Z0') // уведомление под полем ввода имя
+      .contains('Обязательное поле')
+      .should('be.visible');
     cy.get(name) // поле имя
       .type('Roman')
       .should('value', 'Roman');
     cy.get(phone) // поле телефон
-      .type('79992070525')
+      .type('+79992070525')
       .should('value', '+79992070525');
-    cy.get('#form-message')
-      .type('Сообщение')
-    cy.get('.app__content')
+    cy.get(':nth-child(3) > ._3uesc > .form-control')
+      .type('Сообщение');
+    // cy.get(name) // поле имя
+    //   .type('Roman')
+    //   .should('value', 'Roman');
+    // cy.get(phone) // поле телефон
+    //   .type('79992070525')
+    //   .should('value', '+79992070525');
+    // cy.get('#form-message')
+    //   .type('Сообщение')
+    cy.get('.active > .panel > .panel-body')
       .contains('Создать')
       .click();
     cy.wait(1000);
+    cy.get(':nth-child(3) > .text')
+      .contains('Сообщение')
+      .should('be.visible');
     cy.get('.app__content')
       .contains('Roman')
       .should('be.visible');
     cy.get('.app__content')
       .contains('+79992070525')
       .should('be.visible');
-    cy.get('.app__content')
-      .contains('Сообщение')
-      .should('be.visible'); 
     cy.get('.app__content')
       .contains('ПЕТРОВ')
       .should('be.visible');
