@@ -8,6 +8,13 @@ let side = '._2Hrbd'
 // asp.oc.detali@alfa.ru 123456
 // 'guid-217', '{CC975CB2-EC25-A787-9CB4-F8127B0868C5}'
 
+function randomInteger(min, max) {
+  let rand = min + Math.random() * (max - min)
+  return rand;
+};
+
+let randColor = randomInteger(0, 7).toFixed(0); // цвет
+
 describe('edit detail', function () {
     beforeEach('cookie', function () {
       cy.setCookie('guid-217', '{CC975CB2-EC25-A787-9CB4-F8127B0868C5}')
@@ -63,16 +70,16 @@ describe('edit detail', function () {
       .should('be.visible');
     cy.get(side)
       .contains('Неоцененные')
-      .should('not.be.visible');
+      .should('be.visible');
     cy.get(side)
       .contains('Неопознанные')
-      .should('not.be.visible');
+      .should('be.visible');
     cy.get(side)
       .contains('В резерве')
       .should('not.be.visible');
     cy.get(side)
       .contains('Ожидают подтверждения')
-      .should('not.be.visible');  
+      .should('be.visible');  
     cy.get(side)
       .contains('Утилизировано')
       .should('not.be.visible');
@@ -301,7 +308,46 @@ describe('edit detail', function () {
   });
   it('edit', function () {
     // cy.get('._2Hrbd')
-    //   .contains(new RegExp(['^',твое ебаное слово, '$', ].join(''), 'i'))
+    //   .contains(new RegExp(['^',слово, '$', ].join(''), 'i'))
+    cy.get(side)
+      .contains('Неоцененные')
+      .click();
+    cy.get('.E42Z0')  
+      .contains('Нет прав')
+      .should('not.be.visible');
+    cy.get('.E42Z0')
+      .contains('Диск')
+      .click();
+    cy.get('.app__content') 
+      .contains('Нет прав')
+      .should('not.be.visible');
+    cy.wait(1000);
+    cy.get(side)
+      .contains('Неопознанные')
+      .click();
+    cy.get('.E42Z0')  
+      .contains('Нет прав')
+      .should('not.be.visible');
+    cy.get('.E42Z0')
+      .contains('Кузов')
+      .click();
+    cy.get('.app__content') 
+      .contains('Нет прав')
+      .should('not.be.visible');
+    cy.wait(1000);
+    cy.get(side)
+      .contains('Ожидают подтверждения')
+      .click();
+    cy.get('.E42Z0')  
+      .contains('Нет прав')
+      .should('not.be.visible');
+    cy.get('.E42Z0')
+      .contains('Двигатель')
+      .click();
+    cy.get('.app__content') 
+      .contains('Нет прав')
+      .should('not.be.visible');
+
     cy.get(side)
       .contains('На складе')
       .click();
@@ -311,13 +357,28 @@ describe('edit detail', function () {
     cy.get('tbody > :nth-child(1) > :nth-child(2)')
       .contains('а')
       .click();
-
+    cy.wait(1000);
     cy.get('.app__content')
       .contains('Нет прав')
       .should('not.be.visible');
-    cy.get('.app__content') // нет кнопки оценить в детале
+
+    cy.get('.app__content') // оцениваем
       .contains('Оценить')
-      .should('not.be.visible');
+      .should('be.visible')
+      .click();
+    cy.get('#form-purchasePrice')
+      .type('1390')
+      .should('value', '1 390');
+    cy.get('#form-sellingPrice')
+      .type('2700')
+      .should('value', '2 700');
+    cy.get('#form-estimationReason')
+      .type('Первая причина это ты')
+      .should('value', 'Первая причина это ты');
+    cy.get('.popup__inner')
+      .contains('Сохранить')
+      .click();
+
     cy.get('.app__content') // нет кнопки добавить в резерв в детале
       .contains('Добавить в резерв')
       .should('not.be.visible');
@@ -351,55 +412,53 @@ describe('edit detail', function () {
     cy.get('#form-kod') // поле ориг номер
       .clear()
       .type('hsfdg5784')
-      .should('be.visible');
-    // cy.get('#form-rack') // поле стеллаж
-    //   .clear()
-    //   .type('hfF5')
-    //   .should('be.visible');
-    // cy.get('#form-section') // поле секция
-    //   .clear()
-    //   .type('21')
-    //   .should('be.visible');
+      .should('value', 'hsfdg5784');
+    cy.get('#form-rack') // поле стеллаж
+      .clear()
+      .type('hfF5')
+      .should('value', 'hfF5');
+    cy.get('#form-section') // поле секция
+      .clear()
+      .type('21')
+      .should('value', '21');
     // cy.get(':nth-child(10) > .form__label') // производитель
     //   .next()
-    //   .click();
-    // cy.get(':nth-child(10) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup')
-    //   .contains('AMC')
     //   .click();
     cy.get('#form-defects')
       .clear()
       .type('дефекты')
-      .should('be.visible');
+      .should('value', 'дефекты');
     cy.get('#form-notes')
       .clear()
       .type('Примечание')
-      .should('be.visible');
+      .should('value', 'Примечание');
     cy.get('#form-comment')
       .clear()
       .type('коммент')
-      .should('be.visible');
-    cy.get(':nth-child(11) > .form__label')  // цвет
+      .should('value', 'коммент');
+
+    cy.get('.modal-body')  // цвет
+      .contains('Цвет')
       .next()
       .click();
-    cy.get(':nth-child(11) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup')
-      .contains('Желтый')
+    cy.get('.inputAutocomplete__popup')
+      .eq(4)
+      .children()
+      .eq(randColor)
       .click();
-    // cy.get(':nth-child(15) > .form__label') // рейтинг
-    //   .next()
-    //   .click();
-    // cy.get(':nth-child(15) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup')
-    //   .contains('3')
-    //   .click();
+
     cy.get('#form-gtd')
       .clear()
       .type('GDT1')
-      .should('be.visible');
-    cy.get(':nth-child(13) > .form__label') // страна
+      .should('value', 'GDT1');
+    cy.get('.modal-body') // страна
+      .contains('Страна')
       .next()
       .click();
-    cy.get(':nth-child(13) > .form__input > [name=""] > .inputAutocomplete > .inputPopup > .inputPopup__popup > div > .inputAutocomplete__popup')
+    cy.get('.inputAutocomplete')
       .contains('Россия')
       .click();
+
     cy.get('.modal-body')
       .contains('Сохранить')
       .click();
@@ -452,13 +511,16 @@ describe('edit detail', function () {
       .should('be.visible');
     cy.get(':nth-child(4) > .table > tbody > tr > .w1 > a > .glyphicon')
       .click();
-    cy.wait(1000)
+    cy.wait(1000);
     cy.get('.modal-body')
       .contains('На запчасти')
       .should('not.be.visible');
     cy.get('.popup__close')
       .click();
     cy.wait(1000);
+    cy.get('.app__content')
+      .contains('Нет прав')
+      .should('not.be.visible');
     cy.get('.app__content')
       .contains('Печать штрихкода')
       .click();
