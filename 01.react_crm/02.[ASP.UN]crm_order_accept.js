@@ -7,6 +7,9 @@ let name = '.active > .panel > .panel-body > form > :nth-child(1) > ._3uesc > .f
 let phone = '.active > .panel > .panel-body > form > :nth-child(2) > ._3uesc > .form-control'
 let para = ':nth-child(15) > :nth-child(2) > a'
 
+// asp.manager@alfa.ru  123456
+// 'guid-216', '{6524511F-44F9-12C7-1FAC-54D62F5374CC}'
+
 describe('Create an order', function () {
   beforeEach('cookie', function () {
     cy.setCookie('guid-216', '{6524511F-44F9-12C7-1FAC-54D62F5374CC}')
