@@ -7,7 +7,7 @@ let side = '._2Hrbd'
 
 // добавление детали / АСП Пулково
 // ДЕТАЛЬ АСП ДОБАВИТЬ asp.add.detail@alfa.ru 123456
-// guid-219', '{EDC2DD64-DFC5-1614-D955-1D77A0F51365}
+// guid-219', '{05B4EA8C-AAEE-86D0-89FB-A509EC9B5A41}
 
 describe('add rule', function () {
     beforeEach('cookie', function () {
@@ -55,9 +55,9 @@ describe('add rule', function () {
             .contains('Добавить группу')
             .click();
         cy.get('._3uesc > .form-control') // поле название группы
-            .type('TEST{enter}');
+            .type('Добавление детали{enter}');
         cy.get('.E42Z0')
-            .contains('TEST')
+            .contains('Добавление детали')
             .click();
         cy.get('.active > .BuNeL')
             .contains('Права')
