@@ -3,8 +3,8 @@ let password = ':nth-child(2) > .form-control'
 let enter = 'p > .btn'
 let companies = '.css-11unzgr'
 let storages = '.css-11unzgr'
-let name = '.active > .panel > .panel-body > form > :nth-child(1) > ._3uesc > .form-control'
-let phone = '.active > .panel > .panel-body > form > :nth-child(2) > ._3uesc > .form-control'
+let name = '.active > .panel > .panel-body > form > :nth-child(1) > ._1a95Z > .form-control'
+let phone = '.active > .panel > .panel-body > form > :nth-child(2) > ._1a95Z > .form-control'
 let para = ':nth-child(15) > :nth-child(2) > a'
 
 // asp.manager@alfa.ru  123456
@@ -71,7 +71,7 @@ describe('Create an order', function () {
     cy.get(phone) // поле телефон
       .type('+79992070525')
       .should('value', '+79992070525');
-    cy.get('._3uesc > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+    cy.get('._1a95Z > .select > .select__control > .select__value-container')
       .type('Прямая продажа{enter}');
     cy.get('.E42Z0')
       .contains('Создать')

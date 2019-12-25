@@ -327,12 +327,12 @@ describe('add new detail', function () {
     cy.wait(1000);
 
 // поставщик
-    cy.get('._3uesc > .css-2b097c-container') 
+    cy.get('._1a95Z > .select > .select__control > .select__value-container') 
       .type('Запкар{enter}{enter}');
     cy.wait(1000);
-    cy.get('.modal-footer')
-      .contains('Закрыть')
-      .click();
+    // cy.get('.modal-footer')
+    //   .contains('Закрыть')
+    //   .click();
     cy.get('.E42Z0')
       .contains('Добавить деталь')
       .click();
@@ -412,7 +412,7 @@ describe('add new detail', function () {
       .contains('коммент')
       .should('be.visible');
 
-    cy.get('form > :nth-child(1) > :nth-child(2) > ._3uesc > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+    cy.get(':nth-child(2) > ._3uesc > .select > .select__control > .select__value-container')
       .type('Opel{enter}');
 
     // cy.get('#selectMenu') // список с марками
@@ -420,9 +420,9 @@ describe('add new detail', function () {
     //   .children()
     //   .eq(randBrand)
     //   .click();
-    cy.get(':nth-child(3) > ._3uesc > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+    cy.get(':nth-child(3) > ._3uesc > .select > .select__control > .select__value-container')
       .type('Omega{enter}');
-    cy.get(':nth-child(2) > .col-sm-8 > ._3uesc > .css-2b097c-container > .css-1tehwa7-control > .css-1hwfws3')
+    cy.get('.col-sm-8 > ._3uesc > .select > .select__control > .select__value-container')
       .type('Omega A{enter}');
     // cy.get('#carPiсker-model')
     //   .click();

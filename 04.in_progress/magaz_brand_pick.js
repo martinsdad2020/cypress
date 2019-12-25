@@ -1,7 +1,7 @@
 describe('Brands', function() {
   it('visit', function() {
     cy.clearCookies()
-    cy.visit('https://magaz.apgrup.ru')
+    cy.visit('https://magaz.vamdetali.ru')
   });
 
   it('A-B', function() {
@@ -14,10 +14,10 @@ describe('Brands', function() {
     cy.get('._2dAkl').contains('Alfa Romeo').should('be.visible');
     cy.get('._1FRHG').click();
     cy.get('#root').contains('Все марки').click();
-    cy.get('#root').contains('Aston Martin').click();
-    cy.get('._2dAkl').contains('Aston Martin').should('be.visible');
-    cy.get('._1FRHG').click();
-    cy.get('#root').contains('Все марки').click();
+    // cy.get('#root').contains('Aston Martin').click();
+    // cy.get('._2dAkl').contains('Aston Martin').should('be.visible');
+    // cy.get('._1FRHG').click();
+    // cy.get('#root').contains('Все марки').click();
     cy.get('#root').contains('Audi').click();
     cy.get('._2dAkl').contains('Audi').should('be.visible');
     cy.get('._1FRHG').click();
@@ -154,10 +154,10 @@ describe('Brands', function() {
     cy.get('._2dAkl').contains('Hummer').should('be.visible');
     cy.get('._1FRHG').click();
     cy.get('#root').contains('Все марки').click();
-    cy.get('#root').contains('Hyundai').click();
-    cy.get('._2dAkl').contains('Hyundai').should('be.visible');
-    cy.get('._1FRHG').click();
-    cy.get('#root').contains('Все марки').click();
+    // cy.get('#root').contains('Hyundai').click();
+    // cy.get('._2dAkl').contains('Hyundai').should('be.visible');
+    // cy.get('._1FRHG').click();
+    // cy.get('#root').contains('Все марки').click();
     cy.get('#root').contains('Infiniti').click();
     cy.get('._2dAkl').contains('Infiniti').should('be.visible')
     cy.get('._1FRHG').click();
