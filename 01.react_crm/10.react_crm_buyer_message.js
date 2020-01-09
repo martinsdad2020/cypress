@@ -104,7 +104,7 @@ describe('Create an order', function () {
       .contains('+79992070525')
       .should('be.visible');
     cy.get('.app__content')
-      .contains('2019')
+      .contains('2020')
       .should('be.visible');
     cy.get('#form-comment')
       .type('Тестовый коммент')

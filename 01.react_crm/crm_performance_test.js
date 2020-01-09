@@ -3,17 +3,14 @@ let password = ':nth-child(2) > .form-control';
 let enter = 'p > .btn';
 let companies = '.css-11unzgr';
 let storages = '.css-11unzgr';
-let name = '#form-name';
-let phone = '#form-phoneNumber';
+let name = '.active > .panel > .panel-body > form > :nth-child(1) > ._1a95Z > .form-control'
+let phone = '.active > .panel > .panel-body > form > :nth-child(2) > ._1a95Z > .form-control'
 let para = ':nth-child(15) > :nth-child(2) > a';
 let side = '._2Hrbd';
 
 describe('Create an order', function () {
   beforeEach('cookie', function () {
-    cy.setCookie('guid-191', '{763D74A3-D668-2BEE-96EA-4B7DAA6EE986}')
-    cy.server();
-    cy.route('GET', 'https://crm.api.apgrup.ru/v1/*')
-      .as('ww');
+    cy.setCookie('guid-1', '{693E078B-9FA4-3103-092F-8EFF68DC5CA7}')
   });
 
   it('visit apgrup', function () {
@@ -22,15 +19,14 @@ describe('Create an order', function () {
     cy.get(login)
       .click()
       .clear()
-      .type('jinda.project@gmail.com');
+      .type('ra-nt-office@yandex.ru');
     cy.get(password)
       .click()
       .clear()
-      .type('123456');
+      .type('superp@ss');
     cy.get(enter)
       .click();
     cy.wait(1000);
-    cy.wait('@ww');
   });
 
   it('pick ruusian village', function () {
@@ -200,7 +196,7 @@ describe('Create an order', function () {
           .next()
           .click();
         cy.get('.inputAutocomplete__popup')
-          .contains('Кузов наружные')
+          .contains('Двигатель')
           .click();
         cy.get('.app__content')
           .contains('Наименование')
@@ -208,7 +204,7 @@ describe('Create an order', function () {
           .click();
         cy.wait(500);
         cy.get('.inputAutocomplete__popup')
-          .contains('Юбка задняя')
+          .contains('Воздуховод')
           .click();
         cy.get('.app__content')
           .contains('Нет прав')
@@ -217,10 +213,10 @@ describe('Create an order', function () {
           .click();
         cy.wait(500);
         cy.get('.collectionTable__container')
-          .contains('BMW')
+          .contains('Fiat')
           .should('be.visible');
         cy.get('.collectionTable__container')
-          .contains('Nissan')
+          .contains('BMW')
           .should('not.be.visible');
         cy.get('.app__content')
           .contains('Нет прав')
@@ -480,10 +476,10 @@ describe('Create an order', function () {
           .contains('Информация')
           .click();
         cy.wait(500);
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ')
           .should('be.visible');
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('Нет прав')
           .should('not.be.visible');
       });
@@ -493,10 +489,10 @@ describe('Create an order', function () {
           .contains('Поставщики')
           .click();
         cy.wait(500);
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('Добавить поставщика')
           .should('be.visible');
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('Нет прав')
           .should('not.be.visible');
       });
@@ -506,10 +502,10 @@ describe('Create an order', function () {
           .contains('Покупатели')
           .click();
         cy.wait(500);
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('Добавить покупателя')
           .should('be.visible');
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('Нет прав')
           .should('not.be.visible');
       });
@@ -536,17 +532,10 @@ describe('Create an order', function () {
           .type('Roman')
           .should('value', 'Roman');
         cy.get(phone) // поле телефон
-          .type('79992070525')
+          .type('+79992070525')
           .should('value', '+79992070525');
-          cy.get(':nth-child(3) > .form__label') // взять селектор слова "Источник" и некстом взять его поле
-          .next()
-          .click();
-        cy.get('.app__content')
-          .contains('Прямая продажа')
-          .click();
-        cy.get('.app__content')
-          .contains('Создать')
-          .click();
+        cy.get('._1a95Z > .select > .select__control > .select__value-container')
+          .type('Прямая продажа{enter}{enter}');
         cy.wait(1000);
         cy.get('.messengerUpload')
           .contains('Предзаказ №')
@@ -564,10 +553,10 @@ describe('Create an order', function () {
           .contains('Список предзаказов')
           .click();
         cy.wait(500);
-        cy.get('.app__content')
-          .contains('Предзаказы')
+        cy.get('.E42Z0')
+          .contains('Список предзаказов')
           .should('be.visible');
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('Нет прав')
           .should('not.be.visible');
       });
@@ -577,16 +566,16 @@ describe('Create an order', function () {
           .contains('Список повторных обращений')
           .click();
         cy.wait(1000);
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('Повторные обращение')
           .should('be.visible');
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('Нет прав')
           .should('not.be.visible');
-        cy.get('.app__content')
-          .contains('10395')
+        cy.get('.E42Z0')
+          .contains('60')
           .click();
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('Нет прав')
           .should('not.be.visible');
       });
@@ -596,17 +585,17 @@ describe('Create an order', function () {
           .contains('История звонков')
           .click();
         cy.wait(1000);
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('История звонков')
           .should('be.visible');
-        cy.get('.app__content')
+          cy.get('.E42Z0')
           .contains('Нет прав')
           .should('not.be.visible');
-        cy.get('.app__content')
-          .contains('46330')
+        cy.get('.E42Z0')
+          .contains('56')
           .click();
         cy.wait(1000);
-        cy.get('.app__content')
+        cy.get('.E42Z0')
           .contains('Входящий звонок')
           .should('be.visible');
         cy.get('.app__content')
