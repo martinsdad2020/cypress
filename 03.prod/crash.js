@@ -27,7 +27,14 @@ describe('crash', function () {
             cy.get('#app')
                 .contains('Авторизация')
                 .should('be.visible');
-            cy.wait(60000);
+        });
+        it('admin.alfa-mt.ru', function () {
+            cy.visit('https://admin.alfa-mt.ru/', { auth: { username: 'admin', password: 'Hw8SwnRZJk9' } })
+            // cy.wait('@ww').its('status').should('eq', 200);
+            cy.get('body')
+                .contains('Change generations and models')
+                .should('be.visible');
+            cy.wait(30000);
         });
     };
 });

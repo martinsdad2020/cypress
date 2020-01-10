@@ -1,7 +1,7 @@
 describe('Brands', function() {
   it('visit', function() {
     cy.clearCookies()
-    cy.visit('https://magaz.vamdetali.ru')
+    cy.visit('https://magaz.apgrup.ru')
   });
 
   it('A-B', function() {
