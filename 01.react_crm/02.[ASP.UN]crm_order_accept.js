@@ -122,7 +122,7 @@ describe('Create an order', function () {
       .click();
     cy.wait(1000);
     cy.get('#filter-original')
-      .select('Нет');
+      .select('Да');
     // cy.get('[style="margin-bottom: 20px"] > :nth-child(1) > .row > :nth-child(2) > [field="field"] > .form-control') // поле наименование
     //   .click();
     // cy.wait(25000);
