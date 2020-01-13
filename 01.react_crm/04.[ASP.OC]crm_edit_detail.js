@@ -391,19 +391,19 @@ describe('edit detail', function () {
 
     cy.get('.app__content') // инвентаризируем и отменяем
       .contains('Инвентаризировать')
-      .click();
-    cy.get('.modal-footer')
-      .contains('Инвентаризировать')
-      .click();
-    cy.get('.app__content')
-      .contains('Отменить инвентаризацию') 
-      .click();
-    cy.get('.modal-footer')
-      .contains('Отменить инвентаризацию')
-      .click();
-    cy.get('.app__content') 
-      .contains('Инвентаризировать')
       .should('be.visible');
+    // cy.get('.modal-footer')
+    //   .contains('Инвентаризировать')
+    //   .click();
+    // cy.get('.app__content')
+    //   .contains('Отменить инвентаризацию') 
+    //   .click();
+    // cy.get('.modal-footer')
+    //   .contains('Отменить инвентаризацию')
+    //   .click();
+    // cy.get('.app__content') 
+    //   .contains('Инвентаризировать')
+    //   .should('be.visible');
 
     cy.get('.app__content')
       .contains('Изменить')
