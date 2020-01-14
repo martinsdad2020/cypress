@@ -111,21 +111,21 @@ describe('SMOKE PRESS', function () {
       .next()
       .click();
     cy.get('._2ZST_')
-      .contains('Hummer')
+      .contains('Audi')
       .click();
     cy.get('._2ZST_')
-      .contains('H3')
+      .contains('A8')
       .click();
     cy.get('._2ZST_')
-      .contains('5')
+      .contains('A8 [D4] 2010 - 2017')
       .click();
     cy.get(':nth-child(2) > :nth-child(1) > ._52eYD') // details
       .next()
       .click()
     cy.get('._2vpgU > .form-control')
       .type('Фара правая');
-    cy.get('._2ZST_')
-      .contains('Фара')
+    cy.get('.CFKjt')
+      .contains('Фара правая')
       .click();
     cy.wait(2000);
     cy.get('._NY4w')
@@ -134,7 +134,7 @@ describe('SMOKE PRESS', function () {
     cy.get(':nth-child(1) > :nth-child(1) > ._2rfW9') // euroavto search result
       .contains('Фара')
       .should('be.visible');
-    cy.get(':nth-child(1) > :nth-child(10) > ._1rCPk > .btn')
+    cy.get(':nth-child(1) > :nth-child(11) > ._1rCPk > .btn')
       .click();
     cy.wait(1000);
     cy.get('.tuVoQ')
@@ -149,7 +149,7 @@ describe('SMOKE PRESS', function () {
       .contains('Корзина')
       .should('be.visible');
     cy.get('#app')
-      .contains('бампер')
+      .contains('Кузов')
       .should('be.visible');
     cy.get('#app')
       .contains('Оформить')
