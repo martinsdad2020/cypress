@@ -582,17 +582,17 @@ describe('Brands', function() {
     cy.get('#root')
       .contains('Все марки')
       .click();
-    cy.get('#root')
-      .contains('UAZ')
-      .click();
-    cy.get('._2dAkl') 
-      .contains('UAZ')
-      .should('be.visible');
-    cy.get('._1FRHG') 
-      .click();
-    cy.get('#root')
-      .contains('Все марки')
-      .click();
+    // cy.get('#root')
+    //   .contains('UAZ')
+    //   .click();
+    // cy.get('._2dAkl') 
+    //   .contains('UAZ')
+    //   .should('be.visible');
+    // cy.get('._1FRHG') 
+    //   .click();
+    // cy.get('#root')
+    //   .contains('Все марки')
+    //   .click();
     cy.get('#root')
       .contains('VAZ')
       .click();
