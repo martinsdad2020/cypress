@@ -56,7 +56,7 @@ cy.wait(1000);
     //   .contains('1')
     //   .click();
     // cy.get('.select__menu-list')
-    //   .contains('1 Альфа')
+    //   .contains('1')
     //   .click();
     // cy.get('._2JR3u')
     //   .contains('1 АльфаДетали')
