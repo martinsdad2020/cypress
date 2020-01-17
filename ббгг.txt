@@ -13,7 +13,7 @@ geyezoy@providier.com
 jaroh@khtyler.com
 000000  менеджер отдела продаж
 
-
+https://publicdocs.alfa-mt.ru/
 
 ВТОРОЙ МЕНЕДЖЕР
 jura_prod@mail-2-you.com
@@ -103,6 +103,7 @@ ADMIN_PASSWORD=g3qRYx8T5ou6
 пути  логин sir_isaak  пароль baedu2Ohphee2ya5(apgrup) eem9TiejeixebooP  78.155.212.47(apgrup)   192.168.1.181 srvprod1.apgrup.ru  путти 
 
 srvdeb3.apgrup.ru(pgadmin) postgres MG#5757-
+srvdeb2.apgrup.ru(reddis) sir_isaak baedu2Ohphee2ya5
 
 avito  /home/sir_isaak/html/alfamt-api/app/console cron:avito:checkAvitoReport
        /home/sir_isaak/html/alfamt-api/app/console cron:avito:clearNotAvailablePartsFromShops
