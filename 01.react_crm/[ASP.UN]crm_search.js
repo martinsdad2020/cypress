@@ -14,10 +14,8 @@ describe('Maint search', function () {
   beforeEach('cookie', function () {
     cy.setCookie('guid-216', '{6524511F-44F9-12C7-1FAC-54D62F5374CC}')
     cy.server();
-    cy.route('https://crm.api.apgrup.ru/v1/*')
+    cy.route('https://crm.api.apgrup.ru/v1/**')
       .as('ww');
-    cy.route('https://crm.api.apgrup.ru/v1/parts/search/*')
-      .as('sear');
   });
 
   it('visit apgrup', function () {
@@ -63,7 +61,7 @@ describe('Maint search', function () {
       .should('value', '00081307170018');
     cy.get('.input-group-btn > .btn')  
       .click(); 
-      cy.wait('@sear');
+      cy.wait('@ww');
     cy.contains('Volvo');   
   });
 
@@ -74,7 +72,7 @@ describe('Maint search', function () {
       .should('value', '00413302926990');
     cy.get('.input-group-btn > .btn')  
       .click(); 
-      cy.wait('@sear');
+      cy.wait('@ww');
     cy.contains('Mazda');   
   });
 
@@ -85,7 +83,7 @@ describe('Maint search', function () {
       .should('value', 'АСП113');
     cy.get('.input-group-btn > .btn')  
       .click(); 
-      cy.wait('@sear');
+      cy.wait('@ww');
     cy.contains('Volvo');
   });  
 
@@ -96,7 +94,7 @@ describe('Maint search', function () {
       .should('value', 'T034012');
     cy.get('.input-group-btn > .btn')  
       .click(); 
-      cy.wait('@sear');
+      cy.wait('@ww');
     cy.contains('Mazda');   
   });
 
@@ -107,7 +105,7 @@ describe('Maint search', function () {
       .should('value', '30698618');
     cy.get('.input-group-btn > .btn')  
       .click(); 
-      cy.wait('@sear');
+      cy.wait('@ww');
     cy.contains('Volvo');   
   });
 
@@ -118,7 +116,7 @@ describe('Maint search', function () {
       .should('value', 'KD5351W21');
     cy.get('.input-group-btn > .btn')  
       .click(); 
-      cy.wait('@sear');
+      cy.wait('@ww');
     cy.contains('Mazda');   
   });
 
@@ -129,7 +127,7 @@ describe('Maint search', function () {
       .should('value', 'Volvo');
     cy.get('.input-group-btn > .btn') 
       .click(); 
-      cy.wait('@sear'); 
+      cy.wait('@ww'); 
     cy.get('.collectionTable__container')  
       .contains('Volvo')
       .should('be.visible');   
@@ -142,7 +140,7 @@ describe('Maint search', function () {
       .should('value', 'Mazda');
     cy.get('.input-group-btn > .btn') 
       .click(); 
-      cy.wait('@sear'); 
+      cy.wait('@ww'); 
     cy.get('.collectionTable__container')  
       .contains('Mazda')
       .should('be.visible');   
