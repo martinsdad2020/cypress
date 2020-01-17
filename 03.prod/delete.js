@@ -15,8 +15,23 @@ describe('Main search', function () {
     cy.setCookie('guid-1', '%7B153B24F9-C1FC-D813-A0B7-038BD34C6733%7D')
   });
 
+  // it('visit apgrup', function () {
+  //   cy.visit("https://alfa-mt.ru/");
+
+  //   cy.get(login)
+  //     .click()
+  //     .clear()
+  //     .type('ra-nt-office@yandex.ru');
+  //   cy.get(password)
+  //     .click()
+  //     .clear()
+  //     .type('superp@ss');
+  //   cy.get(enter)
+  //     .click();
+  // });
+
   it('visit apgrup', function () {
-    cy.visit("https://alfa-mt.ru/");
+    cy.visit("https://alfa-mt.ru/", { onBeforeLoad: (win) => { win.fetch = null } });
 
     cy.get(login)
       .click()
@@ -29,7 +44,7 @@ describe('Main search', function () {
     cy.get(enter)
       .click();
   });
-
+  
   it('pick AlfaDetali', function () {
     cy.get('._2Hrbd')
       .contains('Компания')
