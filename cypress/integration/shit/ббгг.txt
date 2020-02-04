@@ -1,96 +1,98 @@
-восстановление пароля магаз
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 vasizaxeb@geroev.net
 123456
 
-пароль линфон  веб 
-логин test@alfadetali.ru 56
+пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ  пїЅпїЅпїЅ 
+пїЅпїЅпїЅпїЅпїЅ test@alfadetali.ru 56
 123456
 
-владелец новой компании на апгруп
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 geyezoy@providier.com
 000000
 
 jaroh@khtyler.com
-000000  менеджер отдела продаж
+000000  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
 https://publicdocs.alfa-mt.ru/
 
-ВТОРОЙ МЕНЕДЖЕР
+пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 jura_prod@mail-2-you.com
 
-ГРУППА ПРАВ МЕНЕДЖЕР ПО РАБОТЕ С ПАРТНЕРАМИ
-ВТОРЙО МЕНЕДЖЕР АЛЬФА ДЕТАЛИ
+пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 manager@ya.ru 
 
-РЕББИТ
+пїЅпїЅпїЅпїЅпїЅпїЅ
 http://srvdeb2.apgrup.ru:15672/#/queues
 eeLai9ahjoo4Er9p
 
 
-сервис кири
+пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 https://ug.alfa-mt.ru/
 admin  2Eo39P9yh9ZD
 
-ВОГРОГРАД ТОКЕН
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 http://express.apgrup.ru/auth/register?registrationToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb21wYW55SWQiOiI0NiJ9.juAHDKaVx7y_YbPlD5eLR-CzKVHq-76Frtt6BJgid18
-ПОРОГИ ТОКЕН
+пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 http://express.apgrup.ru/auth/register?registrationToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb21wYW55SWQiOjQ4fQ.AYQoC0UTRJMG-e5zIXNHFa6iiNrter3hOb2r88xfC4o
-АСП ТОКЕН
+пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 http://express.apgrup.ru/auth/register?registrationToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb21wYW55SWQiOiIyMSJ9.Z8hoojlAKnuTCZ2WUVkExRHzG3qukyJYn-SarfwHADs
 
-ПОКУПАТЕЛЬ ВОЛГОГРАДА ЭКСПРЕСС
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 volgograd_prod@providier.com
 123456
 
-ВЛАДЕЛЕЦ ВОЛГОГРАДА(Для проверки прав)
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ(пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ)
 volga_main@t.com
 123456
 
-ПОКУПАТЕЛЬ СТО ЭКСПРЕСС
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 menufolesu_prod@2mailnext.com
 123456
 
-ПОКУПАТЕЛЬ ПОРОГОВ ЭКСПРЕСС
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 POROG_EXPRESS@providier.com
 123456
 
-НОВЫЙ ЮЗЕР ЭКСПРЕССА КОТОРЫЙ НИЧЕГО НЕ МОЖЕТ
+пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 nokenivune_prod@datasoma.com
 123456
 
 
 
-ЭКСПРЕСС ВОССТАНОВЛЕНИЕ ПАРОЛЯ
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 express_parole@2mailnext.com
 
-ОБЫЧНЫЙ ЮЗЕР МАГАЗА
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 parole@provider.com
 
-ЮЗЕР МАГАЗА (ВОССТАНОВЛЕНИЕ ПАРОЛЯ)
+пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ)
 wrong_parole@provider.com
 
-ЮЗЕР МАГАЗА ПРОД
+пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 nwh17007@cndps.com
 
-ЮЗЕР МАГАЗА ДЛЯ ВОССТАНОВЛЕНИЯ ПАРОЛЯ
+пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 eti11194@cndps.com
 
+РІР»Р°РґРµР»РµС† РєРѕРјРїР°РЅРёРё newCompany
+newcompany@alfa.rr
+123456
 
 
-
-волгоград покупатель экспресс
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 123456
 
-Кладовщик Волгограда
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 gabaget@prmail.top
 123456
 
-почта ra-nt 
+пїЅпїЅпїЅпїЅпїЅ ra-nt 
 r@-0ffice
 
 
-админка прод
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 admin.alfa-mt.ru
 admin Hw8SwnRZJk9
 
@@ -99,24 +101,29 @@ ADMIN_URL=kA89ArTx5g3s
 ADMIN_LOGIN=admin
 ADMIN_PASSWORD=g3qRYx8T5ou6
 
-ВЫГРУЗКА АВИТО
-пути  логин sir_isaak  пароль baedu2Ohphee2ya5(apgrup) eem9TiejeixebooP  78.155.212.47(apgrup)   192.168.1.181 srvprod1.apgrup.ru  путти 
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+пїЅпїЅпїЅпїЅ  пїЅпїЅпїЅпїЅпїЅ sir_isaak  пїЅпїЅпїЅпїЅпїЅпїЅ baedu2Ohphee2ya5(apgrup) eem9TiejeixebooP  78.155.212.47(apgrup)   192.168.1.181 srvprod1.apgrup.ru  пїЅпїЅпїЅпїЅпїЅ 
 
 srvdeb3.apgrup.ru(pgadmin) postgres MG#5757-
 srvdeb2.apgrup.ru(reddis) sir_isaak baedu2Ohphee2ya5
 
+test
+192.168.2.181
+sir_isaak
+baedu2Ohphee2ya5
+
 avito  /home/sir_isaak/html/alfamt-api/app/console cron:avito:checkAvitoReport
        /home/sir_isaak/html/alfamt-api/app/console cron:avito:clearNotAvailablePartsFromShops
-удалить ранее выгруженные детали в авито      /home/sir_isaak/html/alfamt-api/app/console cron:export:clearExpired
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ      /home/sir_isaak/html/alfamt-api/app/console cron:export:clearExpired
 /home/sir_isaak/html/alfamt-api/reapp/console changePartBrand 775 2641 
 
-пересчитать эластик  /home/sir_isaak/html/alfamt-api/app/console elastic:populate --env=prod
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ  /home/sir_isaak/html/alfamt-api/app/console elastic:populate --env=prod
 
-ПОЧИСТИТЬ РЕДИС 
-в консоли redis-cli
-потом flushall
-Команда для сопоставлений
-app/console make:matches <id компании>
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 
+пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ redis-cli
+пїЅпїЅпїЅпїЅпїЅ flushall
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+app/console make:matches <id пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ>
 
 TOGGLE_PRICES()
 
@@ -124,27 +131,27 @@ FOR PARTNERS
 /home/sir_isaak/html/alfamt-api/app/console cron:refillAssortments 9
 /home/sir_isaak/html/alfamt-api/app/console export:all -a 32
 https://static.apgrup.ru/gnauto/file32.csv
-https://static.alfa-mt.ru/gnauto/bumper.by_car1 продакшн
+https://static.alfa-mt.ru/gnauto/bumper.by_car1 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 https://static.apgrup.ru/avito/omsk.xml
 https://static.apgrup.ru/gnauto/autoru1.xml
 
-АВТОИМПОРТ
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 ftp://192.168.1.181/html/alfamt-api.sta/gnauto/file32.csv
 sir_isaak
 baedu2Ohphee2ya5
 
 
-ТЕЛЕФОНИЯ админка voip.ALFA-MT.RU  логин 79819037415 пароль g2mb43WwduDb
-Тестовый пользователь jinda.project 123456  5534 Тестер Толя 103 труба
-ГЛАВНЫЙ АДМИН ra-nt     5536
-ТЕСТОВЫЙ АДМИН  test@alfadetali.ru   91 100
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ voip.ALFA-MT.RU  пїЅпїЅпїЅпїЅпїЅ 79819037415 пїЅпїЅпїЅпїЅпїЅпїЅ g2mb43WwduDb
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ jinda.project 123456  5534 пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ 103 пїЅпїЅпїЅпїЅпїЅ
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ ra-nt     5536
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ  test@alfadetali.ru   91 100
 
-телефония voip.apgrup.ru логин +7 (981) 903-74-15 пароль 123456
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ voip.apgrup.ru пїЅпїЅпїЅпїЅпїЅ +7 (981) 903-74-15 пїЅпїЅпїЅпїЅпїЅпїЅ 123456
 
 
-админка https://admin.apgrup.ru
-логин admin
-пароль shoh5phief0fae0O
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅ https://admin.apgrup.ru
+пїЅпїЅпїЅпїЅпїЅ admin
+пїЅпїЅпїЅпїЅпїЅпїЅ shoh5phief0fae0O
 
 
 visa fake card 4276 5500 1473 8572
@@ -164,8 +171,8 @@ price.xls
 usedprice.xls
 
 Natalie Teterina, [26.04.19 15:41]
-Для alfa-NW условия статус = 3, б/у = false, производитель не пустой, оригинальный номер не пустой и не равен пустой строке 
-Отдельно по две выгрузки (обычная и discount) для складов 8 и 34
+пїЅпїЅпїЅ alfa-NW пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ = 3, пїЅ/пїЅ = false, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ discount) пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 8 пїЅ 34
 
 https://apgrup.ru/parts/3720012/
 

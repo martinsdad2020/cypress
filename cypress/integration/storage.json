@@ -1,0 +1,36 @@
+{
+    "dataSerch": {
+        "barcode_our_detail": {
+            "type": "00081307170018",
+            "cont": "Volvo"
+        },
+        "barcode_other_companies": {
+            "type": "00413302926990",
+            "cont": "Mazda"
+        },
+        "inv_our_detail": {
+            "type": "АСП113",
+            "cont": "Volvo"
+        },
+        "inv_other_companies": {
+            "type": "T034012",
+            "cont": "Mazda"
+        },
+        "original_our_detail": {
+            "type": "30698618",
+            "cont": "Volvo"
+        },
+        "original_other_companies": {
+            "type": "KD5351W21",
+            "cont": "Mazda"
+        },
+        "brand_our_detail": {
+            "type": "Volvo",
+            "cont": "Volvo"
+        },
+        "brand_other_companies": {
+            "type": "Mazda",
+            "cont": "Mazda"
+        }
+    }
+}
