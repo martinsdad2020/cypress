@@ -7,7 +7,7 @@ describe('Selectel', function() {
         cy.get('.login-form')
             .contains('Вход в панель управления')
             .should('be.visible');
-
+        //s
         // авторизация с пустыми полями
         // cy.get('.login-form')
         //     .contains('Войти в панель')
