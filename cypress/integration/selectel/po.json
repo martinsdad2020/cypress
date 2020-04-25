@@ -1,0 +1,21 @@
+{
+    cy.get('.login-form') область с логином паролем и кнопками для входа
+    cy.get(':nth-child(1) > .md-input-messages-animation > .md-input-message-animation') - область с уведомлением под логином о том что необходимо заполнить логин
+    cy.get(':nth-child(2) > .md-input-messages-animation > .md-input-message-animation') - область с уведомлением под логином о том что необходимо заполнить логин
+    cy.get('#login') - поле логин
+    cy.get('#password') - поле пассворд
+    cy.get('body') - тело
+    cy.get('.layout-row.flex > .layout-column.flex') - большая область на странице регистрации
+    cy.get('.sp-header') - область головы на странице с регой
+    cy.get('.ng-pristine > .md-container') - чекбокс на странице эл почта
+    cy.get('.l-mt-s > .md-input-invalid > .md-input-messages-animation > .md-input-message-animation') - уведомление под "фамилией"
+    cy.get(':nth-child(2) > .md-input-invalid > .md-input-messages-animation > .md-input-message-animation') - уведомление под "именем"
+    cy.get('.phone_w_code > .md-input-invalid > .md-input-messages-animation > .md-input-message-animation') - уведомление под номером телефона
+    cy.get('.f-danger') - уведомление(проверьте отмеченнные поля)
+    cy.get('.sp-content-layout') - маленькая область на странице "регистрации"
+    cy.get('#input_40') - поле с номером телефон(динамичный селектор вроде)
+    cy.get('.l-mt-s > .md-input-invalid') - уведомление под фамилией когда невалидные "значения"
+    cy.get(':nth-child(2) > .md-input-invalid') - уведомления под именем с невал "знач"
+    cy.get(':nth-child(3) > .md-input-has-value') - увед под отчеством с невал "знач"
+    cy.get('a.ng-binding') - селектор кнопки создайте тикет
+}
